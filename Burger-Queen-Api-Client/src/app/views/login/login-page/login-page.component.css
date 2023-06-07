@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  /* body {
+    background-image: url(/img/imgFondo.jpg);
+    background-position: center;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: 1fr auto;
+  } */
+  #button-login{
+    background-color: #B3B826;
+  }

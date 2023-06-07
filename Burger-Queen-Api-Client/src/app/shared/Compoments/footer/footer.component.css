@@ -1,0 +1,17 @@
+footer {
+    background: #6b417c;
+    border-radius: 25px 25px 0px 0px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.716);
+    font-size: 0.9em;
+    padding: 2% 1%;
+    font-family: var(--font-secondary);
+  }
+  footer a {
+    color: inherit;
+    cursor: pointer;
+  }
+  footer img {
+    width: 2vh;
+    filter: brightness(5);
+  }
