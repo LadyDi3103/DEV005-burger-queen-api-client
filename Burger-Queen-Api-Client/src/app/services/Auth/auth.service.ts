@@ -7,8 +7,8 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   constructor(private router:Router) {}
-  public login(email: string, password: string): boolean {
-    if (email === 'usuario@example.com' && password === '123') {
+  login(email: string, password: string): boolean {
+    if (email === 'usuario@example.com' && password === '1234567') {
       return true; // Credenciales válidas, retorna true para indicar que el inicio de sesión fue exitoso
     } else {
       return false; // Credenciales inválidas, retorna false para indicar que el inicio de sesión falló

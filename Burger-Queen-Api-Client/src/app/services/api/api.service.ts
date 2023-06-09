@@ -8,9 +8,10 @@ import { Observable, map } from 'rxjs';
 export class ApiService{
   constructor(private http: HttpClient) {}
 // crear función método para llamar al endpoint api  luego llamar en cada componente.
-  getCredentials():Observable<Credential[]>{   
-    return this.http.get('https://app.swaggerhub.com/apis-docs/ssinuco/BurgerQueenAPI/2.0.0#/').pipe(map((resp:any)=> {
-      return resp.results as Credential[]
-    }))
-   }
+  // getCredentials():Observable<Credential[]>{   
+  //   return this.http.post('http://localhost:8080/login', objeto).pipe(map((resp:any)=> {
+  //     return resp.results as Credential[]
+  //     // hacer console.log de resp
+  //   }))
+  //  }
 }
