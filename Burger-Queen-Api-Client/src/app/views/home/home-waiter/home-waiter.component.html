@@ -1,1 +1,15 @@
-<h1>               E N          C O N S T R U C C I Ò N           </h1>
+<h1> E N C O N S T R U C C I Ò N </h1>
+<section class="Container-menu">
+    <nav class="ContainerOptionsMenu">
+        <button (click)="exchangeMenu('breakfast')">Breakfast</button>
+        <button (click)="exchangeMenu('meals')">Meals</button>
+        <button (click)="onLogoutClick()">Log Out</button>
+    </nav>
+    <div *ngIf="isModalVisible">
+        <div class="modal">
+            <h2>Modal</h2>
+            <p>Selected Menu: {{ selectedMenu }}</p>
+            <button (click)="isModalVisible = false">Close</button>
+        </div>
+    </div>
+</section>

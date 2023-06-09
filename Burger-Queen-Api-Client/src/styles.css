@@ -1,11 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 /*Manual de identidad*/
 :root {
-    --color-1: #1DB954;
-    --color-2: #323232;
-    --color-3: #000000;
-    --color-4: #FFFFFF;
-    --color-5: #181818;
+    --color-1: #F72C25;
+    --color-2: #4F1A0F;
+    --color-3: #B3B826;
+    --color-4: #F7B32C;
+    --color-5: #D3C6C3;
+    --color-4: #ECE6E4;
+    --color-5: #f4f4ff;
+   
     --font-size-1: 1rem;
     --font-size-2: 1.2rem;
     --font-size-3: 1.8rem;
@@ -13,7 +16,7 @@
     --shadow-2: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     --border-radius-1: .25rem;
     --border-radius-2: .5rem;
-    --font-family-1: 'Poppins', sans-serif;
+    --font-family-1: 'Poppins', sans-serif, 'Ubuntu';
     --animation-1: 200ms;
 }
 
