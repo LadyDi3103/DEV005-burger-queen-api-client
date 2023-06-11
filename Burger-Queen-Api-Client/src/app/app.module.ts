@@ -6,6 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from '@shared/shared.module';
 import { LoginPageComponent } from './views/login/login-page/login-page.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './services/Auth/auth.service';
+
 
 
 @NgModule({
@@ -19,7 +22,6 @@ import { LoginPageComponent } from './views/login/login-page/login-page.componen
     SharedModule,
     FormsModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
