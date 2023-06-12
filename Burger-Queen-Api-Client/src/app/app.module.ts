@@ -5,10 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from '@shared/shared.module';
-import { LoginPageComponent } from './views/login/login-page/login-page.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthService } from './services/Auth/auth.service';
-
+// import { AuthService } from './services/Auth/auth.service';
+// import { LoginService } from './services/login/login.service';
+import { LoginPageComponent } from './views/login/login-page/login-page.component';
 
 
 @NgModule({
@@ -21,7 +21,9 @@ import { AuthService } from './services/Auth/auth.service';
     AppRoutingModule,
     SharedModule,
     FormsModule,
+    HttpClientModule,
   ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
