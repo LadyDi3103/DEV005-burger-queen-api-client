@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/Auth/auth.service';
+import { LoginService } from 'src/app/services/LoginService/login.service';
 // Se importa el módulo Router de @angular/router para poder utilizar la funcionalidad de enrutamiento.
 @Component({
   selector: 'app-login-page',
@@ -10,19 +10,26 @@ import { AuthService } from 'src/app/services/Auth/auth.service';
 export class LoginPageComponent {
   email: string = '';
   password: string = '';
+  errorMessage: string = '';
   // errorMessagePassword: string = '';
   // errorMessageEmail: string = '';
-  errorMessage: string = '';
 
-  constructor(private authService: AuthService, private router: Router) { }
-  public onSubmit(): void {
-    const loggedIn = this.authService.login(this.email, this.password);
+  constructor(private loginService: LoginService, private router: Router) { }
+
+  onSubmit(): void {
+    const loggedIn = this.loginService.login(this.email, this.password);
     console.log(loggedIn);
-
-    if (loggedIn) {
+      if (loggedIn) {
       this.router.navigate(['/home']);
     } else {
       this.errorMessage = 'Wrong Credentials!!!';
     }
   }
+//ngOnInit():
+  // auth: Credential
+  // getAuth(){
+  //   this.loginService.getCredentials().subscribe((resp)=>{
+  // console.log(resp);
+  // }}
+
 }
