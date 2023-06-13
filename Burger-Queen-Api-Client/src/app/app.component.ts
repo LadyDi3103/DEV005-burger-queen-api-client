@@ -7,16 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Burger-Queen-Api-Client';
-
-  // car: CarModel = {
-  //   brand: 'Ford',
-  //   model: 'Focus',
-  //   year: 2021
-  // }
 }
-
-// interface CarModel{
-//   brand: string;
-//   model: string;
-//   year: number;
-// }

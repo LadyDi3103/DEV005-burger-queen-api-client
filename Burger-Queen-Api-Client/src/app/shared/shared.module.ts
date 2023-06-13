@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './Compoments/header/header.component';
 import { FooterComponent } from './Compoments/footer/footer.component';
 
-
-
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -19,5 +17,4 @@ import { FooterComponent } from './Compoments/footer/footer.component';
   ]
 })
 export class SharedModule {
-
 }

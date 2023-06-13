@@ -16,26 +16,20 @@
     --shadow-2: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     --border-radius-1: .25rem;
     --border-radius-2: .5rem;
-    --font-family-1: 'Poppins', sans-serif, 'Ubuntu';
+    --font-family-1:'Ubuntu';
     --animation-1: 200ms;
 }
-
-/* html,
+html,
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--color-3);
     font-family: var(--font-family-1);
-    font-size: var(--font-size-1);
-    color: var(--color-4);
 }
-
-input,
+/* input,
 button {
     cursor: pointer;
     font-family: var(--font-family-1);
 }
-
 button:disabled {
     opacity: .5;
 } */

@@ -1,41 +1,21 @@
-<!-- <div class="login-view">
-    <div id="container-logo">
-        <img class="imgLogin" src="../../../../assets/img/LogoBurguer.png" alt="Imagen de logo en forma de hamburguesa">
+<div class="login-view"> <!--ngstyle/ngclass-->
+    <div class="container-logo">
+        <img class="imgLogin" src="../../../../assets/img/LogoBurguer.png" alt="Imagen de logo Burger Queen ">
     </div>
     <div class="container-login">
-        <form id="form-login">
-            <label for="mail">EMAIL</label>
-            <input class="btn" type="text" [ngModel]="email" id="mail" name="user_mail" title="El email es incorrecto"
-                placeholder="ejemplo@ejemplo.com" required /> -->
-<!-- <p id="errorEmail" class=input-error>*Enter a valid email.</p> -->
-<!-- <label for="password">PASSWORD</label>
-            <div class="icon-login">
-                <span class="icon-eye" id="icon-password"> -->
-<!-- <i class="fa-regular fa-eye-slash"></i> -->
-<!-- </span>
-                <input class="btn" type="password" id="password" name="user_password" placeholder="**********"
-                    required />
-            </div> -->
-<!-- <p id="errorPassword" class=input-error>*Password [5-10] characteres. </p> -->
-<!-- <button id="button-login" type="submit">Login</button>
+        <form class="form-login" (ngSubmit)="onSubmit()">
+            <label for="email">Email:</label>
+            <input class="inputS" type="email" id="mail" [(ngModel)]="email" name="user_mail"
+                title="El email es incorrecto" placeholder="ejemplo@ejemplo.com" required>
+            <!-- <div *ngIf="errorMessageEmail" class="error-message-email">{{errorMessageEmail}}</div> -->
+            <label for="password">Password:</label>
+            <input class="inputS" type="password" [(ngModel)]="password" id="password" name="user_password"
+                placeholder="**********" id="password" required>
+            <!-- <div *ngIf="errorMessagePassword" class="error-message-password">{{errorMessagePassword}}</div> -->
+            <div class="containerBtn">
+                <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+                <button class="btnLogin" type="submit">Login</button>
+            </div>
         </form>
     </div>
-</div> -->
-<div class="login-view">
-    <div id="container-logo">
-        <img class="imgLogin" src="../../../../assets/img/LogoBurguer.png" alt="Imagen de logo en forma de hamburguesa">
-    </div>
-    <div class="container-login">
-    <form id="form-login" (ngSubmit)="onSubmit()">
-      <label for="email">Email:</label>
-      <input class="btn" type="email" id="mail" [(ngModel)]= "email" name="user_mail" title="El email es incorrecto"
-      placeholder="ejemplo@ejemplo.com" required>
-      <!-- <div *ngIf="errorMessageEmail" class="error-message-email">{{errorMessageEmail}}</div> -->
-      <label for="password">Password:</label>
-      <input class="btn" type="password" [(ngModel)]= "password" id="password" name="user_password" placeholder="**********" id="password"  required>
-    <!-- <div *ngIf="errorMessagePassword" class="error-message-password">{{errorMessagePassword}}</div> -->
-    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
-    <button id="button-login" type="submit">Login</button>
-  </form>
 </div>
-<app-footer></app-footer>

@@ -1,15 +1,34 @@
-<h1> E N C O N S T R U C C I Ò N </h1>
 <section class="Container-menu">
     <nav class="ContainerOptionsMenu">
-        <button (click)="exchangeMenu('breakfast')">Breakfast</button>
-        <button (click)="exchangeMenu('meals')">Meals</button>
-        <button (click)="onLogoutClick()">Log Out</button>
+        <button (click)="exchangeMenu('breakfast')" class="btn-header"><img src="../../../../assets/img/btn_status2.png" alt="button-status"></button>
+        <button (click)="exchangeMenu('meals')" class="btn-header"><img src="../../../../assets/img/btn_To_Deliver2.png" alt="button-deliver"></button>
+        <button (click)="exchangeMenu('meals')" class="btn-header"><img src="../../../../assets/img/btn_Reward.png" alt="button-reward"></button>
+        <button (click)="onLogoutClick()" class="btn-header"id="button-exit"><img src="../../../../assets/img/logOut.png" alt="button-exit"></button>
     </nav>
-    <div *ngIf="isModalVisible">
+    <p>Waiter: {{waitersName}}</p>
+    <div class="container-homeForm">
+        <form id="form-home-waiter" (ngSubmit)="onSubmitDoThis()"> 
+            <label for="clientsName">Client: </label>
+            <input type="text" [(ngModel)]="clientsName"><br>
+            <label for="nOrder">N° Order: 0000000 </label><br>
+            <label for="nTable">N° Table: </label>
+            <input type="number" id="nTable" min="0" max="20" value="0"><br>
+            <button (click)="decrease()">-</button>
+            <p>{{counter}}</p>
+            <button (click)="increase()">+</button>
+            <button>Submit Order</button>
+            <button>Cancel Order</button>
+        </form>
+    </div>
+    <!-- <div *ngIf="isModalVisible">
         <div class="modal">
             <h2>Modal</h2>
             <p>Selected Menu: {{ selectedMenu }}</p>
             <button (click)="isModalVisible = false">Close</button>
         </div>
-    </div>
+    </div> -->
 </section>
+<!-- <app-footer></app-footer> -->
+<!-- actualizar la interfaz visual sin tener que llamar a algún método.
+
+Este concepto se conoce como 'binding' en una dirección (cambio en atributos de la clase se actualizan en la vista) -->
