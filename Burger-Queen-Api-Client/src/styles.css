@@ -7,7 +7,7 @@
     --color-4: #F7B32C;
     --color-5: #D3C6C3;
     --color-4: #ECE6E4;
-    --color-5: #f4f4f4;
+    --color-5: #f4f4ff;
    
     --font-size-1: 1rem;
     --font-size-2: 1.2rem;
@@ -16,18 +16,21 @@
     --shadow-2: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     --border-radius-1: .25rem;
     --border-radius-2: .5rem;
-    --font-family-1:'Ubuntu';
+    --font-family-1: 'Poppins', sans-serif, 'Ubuntu';
     --animation-1: 200ms;
 }
 
-html,
+/* html,
 body {
     margin: 0;
     padding: 0;
+    background-color: var(--color-3);
     font-family: var(--font-family-1);
+    font-size: var(--font-size-1);
+    color: var(--color-4);
 }
 
-/* input,
+input,
 button {
     cursor: pointer;
     font-family: var(--font-family-1);
@@ -35,4 +38,4 @@ button {
 
 button:disabled {
     opacity: .5;
-} */ 
+} */
