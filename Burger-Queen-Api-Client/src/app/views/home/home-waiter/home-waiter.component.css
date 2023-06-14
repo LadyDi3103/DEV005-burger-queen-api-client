@@ -1,16 +1,198 @@
-.ContainerOptionsMenu{
-    display: flex;
-    border:0;
+* {
+    color: var(--color-2);
+    font-family: ubuntu;
+    font-style: italic;
 }
-button>img{
-    width: 85%;
+
+.Container-general {
+    margin: auto;
+    background-image: url(../../../../assets/img/LogoBackGround_waiter.png);
+    background-position: center;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.ContainerOptionsMenu {
+    display: flex;
+    border: 0;
+}
+
+.btn-header {
+    width: 220px;
+    margin-left: 20px;
+    background-color: transparent;
+    border: none;
+}
+
+.btn-logOut {
+    height: 15%;
+    width: 11%;
+    margin-top: 25px;
+    margin-left: 15px;
+    background-color: transparent;
+    border: none;
+
+}
+
+button>img {
+    width: 90%;
     height: 85%;
     border: 0;
     /* display: inline-block; */
-    }
-#button-exit{
-    height:15%;
-    width:11%;
+}
+
+/* 
+#button-exit {
+    height: 15%;
+    width: 11%;
     margin-bottom: 10px;
     border: 0;
+} */
+
+.Container-menu-form {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 60% 40%;
 }
+
+.container-Form {
+    max-width: 100%;
+    min-height: 100vh;
+    /* background-color: aqua; */
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    /* justify-content: space-around; */
+    /* align-content: center; */
+    line-height: 100%;
+}
+.labels{
+font-size: 18px;
+background: var(--color-4);
+}
+.btns {
+    display: flex;
+}
+
+.drinks, .brunch {
+    background: var(--color-4);
+    display: flex;
+    /* flex-direction:column; */
+    flex-wrap: wrap;
+    /* align-content: center; */
+    justify-content: center;
+}
+
+
+
+.breakfast {
+    padding-top: 20px;
+    width: 221px;
+    /* margin-left: 20px; */
+    background: var(--color-4);
+    border: none;
+    border-top: 2px solid var(--color-2);
+    border-left: 2px solid var(--color-2);
+    border-radius: 25px 10px 0px 0px;
+}
+
+.meals {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    width: 250px;
+    height: 180px;
+    /* height: 180px; */
+    padding-left: 45px;
+    padding-right: 45px;
+    /* margin-left: 20px; */
+    background-color: var(--color-6);
+    border: none;
+    border-top: 2px solid var(--color-2);
+    border-left: 2px solid var(--color-2);
+    border-bottom: 2px solid var(--color-2);
+    border-radius: 25px 10px 0px 0px;
+}
+
+.imgMeal {
+    width: 50%;
+    height: 50%;
+    border: 0;
+}
+
+.icons-Breakfast {
+    width: 150px;
+    height: 80px;
+    margin-top: 12px;
+    margin-bottom: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: transparent;
+    border: none;
+}
+
+.head-form, .ubuntu, .Number1 {
+    margin-bottom: 7px;
+    font-size: 22px;
+    margin-top: 0px;
+    /* background-color: blue; */
+}
+
+.order {
+    margin-bottom: 15px;
+    /* background-color: brown; */
+}
+
+.totalOrder {
+    margin-top: 360px;
+    margin-bottom: 5px;
+    /* background-color: blueviolet; */
+}
+
+
+.btn-ordered {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* justify-content: center; */
+    font-style: italic;
+    /* letter-spacing: 1.5px; */
+    /* text-align: center;
+    align-self: center; */
+}
+
+.btn-sub {
+    /* flex-direction: column; */
+    /* background-color: black; */
+    background-color: var(--color-3);
+    letter-spacing: 1.5px;
+    width: 95%;
+    height: 50%;
+    padding: 2.2%;
+    margin-top: 5%;
+    border-radius: 8px;
+    color: var(--color-2);
+    font-size: 25px;
+    font-style: italic;
+    /* justify-content: center; */
+    text-align: center;
+    align-self: center;
+}
+
+
+/* Estilos DIV2 */
+.priceTag {
+    flex: 1;
+    padding-left: 200px;
+    padding-right: 30px;
+    margin-top: 5px;
+}
+.btn-Des, .btn-Plus{
+    background-color: var(--color-2);
+    color: antiquewhite;
+    font-size: 20px;
+    border-radius: 8px;
+    width: 40px;
+    height: 30px;   
+}
+

@@ -10,8 +10,6 @@ import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './views/home/home.module';
 import { LoginModule } from './views/login/login.module';
 
-// import { AuthService } from './services/Auth/auth.service';
-// import { FooterComponent } from '@shared/Compoments/footer/footer.component';
 // import { HomeWaiterComponent } from './views/home/home-waiter/home-waiter.component';
 @NgModule({
   declarations: [ //TODO: Declaraciones, componentes, directivas, pipes
@@ -19,7 +17,6 @@ import { LoginModule } from './views/login/login.module';
     // LoginPageComponent,
     // HomeWaiterComponent,
     // FooterComponent,
-
   ],
   imports: [  //TODO: Solo se importan otros modulos
     BrowserModule,

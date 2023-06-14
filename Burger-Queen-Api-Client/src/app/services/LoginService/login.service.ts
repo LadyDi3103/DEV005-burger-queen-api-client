@@ -10,18 +10,20 @@ export class LoginService {
 
   constructor(private http: HttpClient, private router: Router) { }
 //
-  getCredentials(body: {}): Observable<any> {
-    return this.http.post('http://localhost:8080/login', body)
-  }
-
-  login(email: string, password: string): boolean {
-    if (email === 'anita.borg@systers.xyz' && password === 'g6WQSrsv7rC7et5B') {
-      return true; // Credenciales válidas, retorna true para indicar que el inicio de sesión fue exitoso
-    } else {
-      return false; // Credenciales inválidas, retorna false para indicar que el inicio de sesión falló
+  getCredentials(email: string, password: string): Observable<any> { 
+    return this.http.post('http://localhost:8080/login', {
+    email: email, // traer el valor de los imputs
+    password: password, // traaer la información de ambos
     }
+    )
   }
-
+  // login(email: string, password: string): boolean {
+  //   if () {
+  //     return true; // Credenciales válidas, retorna true para indicar que el inicio de sesión fue exitoso
+  //   } else {
+  //     return false; // Credenciales inválidas, retorna false para indicar que el inicio de sesión falló
+  //   }
+  // }
   logout(): void {
     // Redirige al usuario a la página de inicio de sesión
     this.router.navigateByUrl('/login');
