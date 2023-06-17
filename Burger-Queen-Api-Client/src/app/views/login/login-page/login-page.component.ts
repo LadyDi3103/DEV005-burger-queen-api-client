@@ -1,4 +1,4 @@
-import { HttpErrorResponse } from '@angular/common/http';
+// import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/LoginService/login.service';
@@ -20,26 +20,23 @@ export class LoginPageComponent {
 
   onSubmit(): void {
     // JUGAR CON ESTO LÍNEA 21
-    this.loginService.getCredentials(this.email, this.password).subscribe((resp)=>{
-      console.log('RESP', resp);      
-      if (resp.accessToken) {
-        // console.log('ESTATUS',(resp.status));        
-        this.router.navigate(['/home']);
-        this.email= ' ';
-        this.password= ' ';
-      } else {
+    this.loginService.getCredentials(this.email, this.password).subscribe({
+      next: (resp)=>{
+        console.log('RESP', resp);      
+        if (resp.accessToken) {
+          // console.log('ESTATUS',(resp.status));        
+          this.router.navigate(['/home-waiter']);
+          this.email= ' ';
+          this.password= ' ';
+        } else if(resp.accessToken === undefined) {
+          this.errorMessage = 'Wrong Credentials!!!';
+        }
+        //observables reciben de otra forma los errores 
+      },
+      error: ()=>{
         this.errorMessage = 'Wrong Credentials!!!';
-      };
-      (err: HttpErrorResponse)=>{
-        console.log("Error.");
       }
-      // if(HttpErrorResponse){
-      //   this.router.navigate(['/home']);
-      // }
     })
   }
-  
-  // console.log('error',HttpErrorResponse);
-  // subscribirme y leer lo del backend para leer
 //   queremos subcribirnos a su respuesta
 }

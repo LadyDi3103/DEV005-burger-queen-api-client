@@ -1,0 +1,89 @@
+* {
+    color: var(--color-2);
+    font-family: ubuntu;
+    font-style: italic;
+}
+button>img { /* etiqueta general */
+    width: 90%;
+    height: 85%;
+    border: 0;
+    /* display: inline-block; */
+}
+/* inicio menu */
+.Container-menu-form {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+/* me hace ruido */
+.container-Form {
+    max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    line-height: 100%;
+}
+
+.labels{
+font-size: 18px;
+background: var(--color-4);
+}
+
+.btns {
+    display: flex;
+}
+
+.drinks, .brunch {
+    background: var(--color-4);
+    display: flex;
+    /* flex-direction:column; */
+    flex-wrap: wrap;
+    /* align-content: center; */
+    justify-content: center;
+}
+
+.breakfast {
+    padding-top: 20px;
+    width: 221px;
+    /* margin-left: 20px; */
+    background: var(--color-4);
+    border: none;
+    border-top: 2px solid var(--color-2);
+    border-left: 2px solid var(--color-2);
+    border-radius: 25px 10px 0px 0px;
+}
+
+.meals {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    width: 250px;
+    height: 180px;
+    /* height: 180px; */
+    padding-left: 45px;
+    padding-right: 45px;
+    /* margin-left: 20px; */
+    background-color: var(--color-6);
+    border: none;
+    border-top: 2px solid var(--color-2);
+    border-left: 2px solid var(--color-2);
+    border-bottom: 2px solid var(--color-2);
+    border-radius: 25px 10px 0px 0px;
+}
+
+.imgMeal {
+    width: 50%;
+    height: 50%;
+    border: 0;
+}
+
+.icons-Breakfast {
+    width: 150px;
+    height: 80px;
+    margin-top: 12px;
+    margin-bottom: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: transparent;
+    border: none;
+}
+/* end menu */

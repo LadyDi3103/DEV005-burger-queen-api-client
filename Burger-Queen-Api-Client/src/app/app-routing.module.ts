@@ -2,6 +2,8 @@ import { NgModule} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginPageComponent } from './views/login/login-page/login-page.component';
 import { HomeWaiterComponent } from './views/home/home-waiter/home-waiter.component';
+import { HomeAdminComponent } from './views/home/home-admin/home-admin.component';
+import { HomeChefComponent } from './views/home/home-chef/home-chef.component';
 
 const routes: Routes = [  /*lazy-loading
 /* se declaran las rutas*/
@@ -15,8 +17,16 @@ const routes: Routes = [  /*lazy-loading
   component:LoginPageComponent
 },
 {
-  path: 'home' ,//TODO: http://localhost:4200/ <--- /home
+  path: 'home-waiter' ,//TODO: http://localhost:4200/ <--- /home
   component: HomeWaiterComponent
+},
+{
+  path: 'home-admin' ,//TODO: http://localhost:4200/ <--- /home
+  component: HomeAdminComponent
+},
+{
+  path: 'home-kitchen' ,//TODO: http://localhost:4200/ <--- /home
+  component: HomeChefComponent
 },
 // {
 //   path: 'dashboard' ,//TODO: http://localhost:4200/ <--- /home

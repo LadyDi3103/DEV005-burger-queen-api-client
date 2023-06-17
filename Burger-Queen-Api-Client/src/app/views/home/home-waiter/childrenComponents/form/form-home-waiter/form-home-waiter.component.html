@@ -1,0 +1,61 @@
+<!-- <p>form-home-waiter works!</p> -->
+<!-- Incio form -->
+<!-- En este voy a trabajar DIANA     -->
+<div class="Container-menu-form">
+    <div class="container-Form">
+        <form id="form-home-waiter" (ngSubmit)="onSubmitDoThis()">
+            <div class="head-form">
+                <label for="clientsName">Client: </label>
+                <input type="text" [(ngModel)]="clientsName" placeholder="Clients name">
+                <hr>
+                <label for="nOrder">N° Order: {{numOrder}} </label><br>
+                <hr>
+                <label for="nTable">N° Table: </label>
+                <input type="number" id="nTable" min="0" max="20" value="0">
+            </div>
+            <!-- <div class="order" *ngFor="let product of products"> -->
+            <!-- <hr>
+                <button class="btn-Des" (click)="decrease()">-</button> -->
+            <!-- <span class="Number1"> {{counter}} </span>
+                <button class="btn-Plus" (click)="increase()">+</button>
+                <span class="item"> {{ products.name}} </span> -->
+            <!-- <span>{{product.nombre}}</span> -->
+            <!-- <button(click)="agregarProducto(producto)">Agregar</button> -->
+            <!-- </div> -->
+            <div class="order">
+                <hr>
+                <button class="btn-Des" (click)="decrease()">-</button>
+                <span class="Number1"> {{counter}} </span>
+                <button class="btn-Plus" (click)="increase()">+</button>
+                <span class="item"> Short Cafe </span>
+                <span class="priceItem">$ 2000</span>
+                <hr>
+            </div>
+            <div class="order">
+                <button class="btn-Des" (click)="decrease()">-</button>
+                <span class="Number1"> {{counter}} </span>
+                <button class="btn-Plus" (click)="increase()">+</button>
+                <span class="item"> Short Cafe </span>
+                <span class="priceItem">$ 2000 </span>
+                <hr>
+            </div>
+            <div class="order">
+                <button class="btn-Des" (click)="decrease()">-</button>
+                <span class="Number1"> {{counter}} </span>
+                <button class="btn-Plus" (click)="increase()">+</button>
+                <span class="item"> Short Cafe </span>
+                <span class="priceItem">$ 2000 </span>
+                <hr>
+            </div>
+            <div class="totalOrder">
+                <span class="totalOrder"> Total: </span>
+                <span class="priceTag"> $ 8000</span>
+                <hr>
+            </div>
+            <div class="btn-ordered">
+                <button (click)="incrementOrderNumber()" class="btn-sub">Submit Order</button>
+                <button class="btn-sub">Cancel Order</button>
+            </div>
+        </form>
+    </div>
+</div>

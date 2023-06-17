@@ -1,1 +1,71 @@
-<p>home-admin works!</p>
+<div class="body">
+  <div class="signupFrm">
+      <form class="form" (ngSubmit)="onSubmit()">
+        <h1 class="title">Ragsitro Usuario</h1>
+  
+        <div class="inputContainer">
+          <input class="input" type="email" id="mail" [(ngModel)]="email" name="user_mail" placeholder="a"
+          title="El email es incorrecto" placeholder="ejemplo@ejemplo.com" required>>
+          <label for="" class="label">Email</label>
+        </div>
+  
+        <div class="inputContainer">
+          <input class="input" type="password" [(ngModel)]="password" id="password" name="user_password"
+          placeholder="**********" id="password" required>
+          <label for="" class="label">Password</label>
+        </div>
+  
+        <div class="inputContainer">
+          <input type="text" class="input" [(ngModel)]="rol" id="rol" name="rol" placeholder="a" required>
+          <label for="" class="label">rol</label>
+        </div>
+<!--   
+        <div class="inputContainer">
+          <input type="text" class="input" [(ngModel)]="id" id="id" name="id" placeholder="a" required>
+          <label for="" class="label">Id</label>
+        </div> -->
+        
+        <input type="submit" class="submitBtn" value="Sign up">
+      </form>
+    </div>
+  </div>
+<!-- <h1>VISTA DEL ADMIN</h1>
+
+<button>Employees</button>
+<button>Products</button>
+
+<div class="modalCreateEmployee">
+    <hr>
+    <form>
+        <button class="add-employee" (click)="openModal()">Create Employee</button>
+        <hr>
+        <span class="closeModal" (click)="closeModal()">&times;</span>
+        <hr>
+        <label for="Email">Email: </label>
+        <input type="text" id="email" placeholder="example@example.com">
+        <hr>
+        <label for="Password">Password: </label>
+        <input type="text" id="password" placeholder="*************">
+        <hr>
+        <label for="rol">Rol: </label>
+        <input type="text" id="rol" placeholder="waiter">
+        <hr>
+        <button type="submit">Add Employee</button>
+        <button type="button" (click)="closeModal()">Cancel</button>
+        <hr>
+    </form>
+</div>
+<div>
+    <ul>
+        <li *ngFor="let user of users">
+          ID: {{ user.id }} - Email: {{ user.email }} - Rol: {{ user.role }}
+        </li>
+      </ul>
+
+</div>
+
+<button>Edit</button>
+<button>Delete</button>
+<button>Status</button>
+<button>Orders</button>
+<button>LogOut</button> -->
