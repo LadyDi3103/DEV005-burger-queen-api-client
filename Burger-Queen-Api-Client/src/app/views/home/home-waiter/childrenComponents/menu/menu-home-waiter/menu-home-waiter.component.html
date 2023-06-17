@@ -1,0 +1,323 @@
+<!-- <p>menu-home-waiter works!</p> -->
+<!-- menu -->
+<!-- <div class="Container-menu-form"> -->
+
+<Button (click)="showTabContent('option1')" class="breakfast">
+    <img class="imgBreakfast" src="../../../../../../../assets/img/btn_Breakfast_red.png" alt="Option 1 MENU">
+</Button>
+
+
+<button (click)="showTabContent('option2')" class="meals">
+    <img class="imgMeal" src="../../../../../../../assets/img/btn_ham_green.png" alt="Option 2 MENU">
+</button>
+
+<!-- <div *ngIf="selectedMenu === 'option1'"> -->
+
+<ng-container *ngIf="selectedMenu === 'option1'">
+    <div class="brunch">
+
+        <button *ngFor="let product of products" (click)="selectProduct(product)" class="icons-Breakfast">
+            <img class="imgCroisant" src="../../../../assets/img/croissant_red.png">
+            <div>
+                <p>{{product.name}}</p>
+            </div>
+            <div>
+                <p>$ {{product.price}} </p>
+            </div>
+        </button>
+            <!-- <span class="closeModal" *ngFor="let product of selectedProducts" (click)="deleteSelection(product)">&times;</span> -->
+        </div>
+</ng-container>
+
+        <!-- <button (click)="agregar()" class="icons-Breakfast">
+            <img class="imgCroisant" src="../../../../assets/img/slice_red.png">
+            <div>
+                <p>Slice Bread</p>
+            </div>
+            <div>
+                <p>$ Price</p>
+            </div>
+        </button>
+        <button (click)="agregar()" class="icons-Breakfast">
+            <img class="imgCroisant" src="../../../../assets/img/sandwich_red.png">
+            <div>
+                <p>Sandwich</p>
+            </div>
+            <div>
+                <p>$ Price</p>
+            </div>
+        </button>
+        <button (click)="agregar()" class="icons-Breakfast">
+            <img class="imgCroisant" src="../../../../assets/img/panqueques_red.png">
+            <div>
+                <p>Pancakes</p>
+            </div>
+            <div>
+                <p>$ Price</p>
+            </div>
+        </button>
+    </div>
+    <div class="labels">
+        <label class="labels" for="line">Drinks</label>
+        <hr>
+    </div>
+    <div class="drinks">
+        <button (click)="agregar()" class="icons-Breakfast">
+            <img class="imgCafe" src="../../../../assets/img/cafe_red.png">
+            <div>
+                <p>Short Coffe</p>
+            </div>
+            <div>
+                <p>$ Price</p>
+            </div>
+        </button>
+        <button (click)="agregar()" class="icons-Breakfast">
+            <img class="imgCafe" src="../../../../assets/img/cafe_red.png">
+            <div>
+                <p>Double Cafe</p>
+            </div>
+            <div>
+                <p>$ Price</p>
+            </div>
+        </button>
+        <button (click)="agregar()" class="icons-Breakfast">
+            <img class="imgCafe" src="../../../../assets/img/Breakfast_water_red.png">
+            <div>
+                <p>Water</p>
+            </div>
+            <div>
+                <p>$ Price</p>
+            </div>
+        </button>
+        <button (click)="agregar()" class="icons-Breakfast">
+            <img class="imgCafe" src="../../../../assets/img/Breakfast_juice_red.png">
+            <div>
+                <p>Juice</p>
+            </div>
+            <div>
+                <p>$ Price</p>
+            </div>
+        </button>
+    </div>
+    <div class="labels">
+        <label class="labels" for="line">Brunch</label>
+        <hr>
+    </div> -->
+<!-- </ng-container>
+</div> -->
+
+<!-- <div *ngIf="selectedMenu === 'option2'">
+    <h1>option2
+    </h1>
+</div> -->
+<!-- <h1>HOLA</h1> -->
+<!-- <div class="container-menu">
+    <mat-tab-group class="btns">
+
+        <mat-tab>
+            <Button mat-tab-label (click)="showTabContent(1)" class="breakfast">
+                <img class="imgBreakfast" src="../../../../../../../assets/img/btn_Breakfast_red.png"
+                    alt="Option 1 MENU">
+            </Button> -->
+<!-- <ng-container *ngIf="selectedTab === 1"> -->
+<!-- <div class="brunch">
+                <button (click)="agregar()" class="icons-Breakfast">
+                    <img class="imgCroisant" src="../../../../assets/img/croissant_red.png">
+                    <div>
+                        <p>Croissant</p>
+                    </div>
+                    <div>
+                        <p>$ Price</p>
+                    </div>
+                </button>
+                <button (click)="agregar()" class="icons-Breakfast">
+                    <img class="imgCroisant" src="../../../../assets/img/slice_red.png">
+                    <div>
+                        <p>Slice Bread</p>
+                    </div>
+                    <div>
+                        <p>$ Price</p>
+                    </div>
+                </button>
+                <button (click)="agregar()" class="icons-Breakfast">
+                    <img class="imgCroisant" src="../../../../assets/img/sandwich_red.png">
+                    <div>
+                        <p>Sandwich</p>
+                    </div>
+                    <div>
+                        <p>$ Price</p>
+                    </div>
+                </button>
+                <button (click)="agregar()" class="icons-Breakfast">
+                    <img class="imgCroisant" src="../../../../assets/img/panqueques_red.png">
+                    <div>
+                        <p>Pancakes</p>
+                    </div>
+                    <div>
+                        <p>$ Price</p>
+                    </div>
+                </button>
+            </div>
+            <div class="labels">
+                <label class="labels" for="line">Drinks</label>
+                <hr>
+            </div>
+            <div class="drinks">
+                <button (click)="agregar()" class="icons-Breakfast">
+                    <img class="imgCafe" src="../../../../assets/img/cafe_red.png">
+                    <div>
+                        <p>Short Coffe</p>
+                    </div>
+                    <div>
+                        <p>$ Price</p>
+                    </div>
+                </button>
+                <button (click)="agregar()" class="icons-Breakfast">
+                    <img class="imgCafe" src="../../../../assets/img/cafe_red.png">
+                    <div>
+                        <p>Double Cafe</p>
+                    </div>
+                    <div>
+                        <p>$ Price</p>
+                    </div>
+                </button>
+                <button (click)="agregar()" class="icons-Breakfast">
+                    <img class="imgCafe" src="../../../../assets/img/Breakfast_water_red.png">
+                    <div>
+                        <p>Water</p>
+                    </div>
+                    <div>
+                        <p>$ Price</p>
+                    </div>
+                </button>
+                <button (click)="agregar()" class="icons-Breakfast">
+                    <img class="imgCafe" src="../../../../assets/img/Breakfast_juice_red.png">
+                    <div>
+                        <p>Juice</p>
+                    </div>
+                    <div>
+                        <p>$ Price</p>
+                    </div>
+                </button>
+            </div>
+            <div class="labels">
+                <label class="labels" for="line">Brunch</label>
+                <hr>
+            </div> -->
+<!-- </ng-container>-->
+
+<!-- </mat-tab> -->
+
+<!-- <mat-tab>
+        <button mat-tab-label (click)="showTabContent(2)" class = "meals">
+            <img class="imgMeal" src="../../../../../../../assets/img/btn_ham_green.png" alt="Option 2 MENU" > 
+        </button>
+        <ng-container *ngIf="selectedTab === 2"> -->
+<!-- <h1>cONTENIDO TAB 2</h1> -->
+<!-- </ng-container>
+    </mat-tab> 
+
+</mat-tab-group> -->
+
+<!-- <div class="btns"> -->
+<!-- <div>
+                <Button (click)="exchangeMenu('breakfast')" class="breakfast">
+                    <img class="imgBreakfast"
+                        src="../../../../assets/img/btn_Breakfast_red.png">
+                </Button>
+            </div> -->
+<!-- <div>
+                <Button (click)="exchangeMenu('breakfast')" class="meals"><img class="imgMeal"
+                        src="../../../../assets/img/btn_ham_green.png"></Button>
+            </div> -->
+<!-- </div> -->
+
+
+
+<!-- <div class="labels">
+            <label class="labels" for="line">Drinks</label>
+            <hr>
+        </div>
+        <div class="drinks">
+            <button (click)="agregar()" class="icons-Breakfast">
+                <img class="imgCafe" src="../../../../assets/img/cafe_red.png">
+                <div>
+                    <p>Short Coffe</p>
+                </div>
+                <div>
+                    <p>$ Price</p>
+                </div>
+            </button>
+            <button (click)="agregar()" class="icons-Breakfast">
+                <img class="imgCafe" src="../../../../assets/img/cafe_red.png">
+                <div>
+                    <p>Double Cafe</p>
+                </div>
+                <div>
+                    <p>$ Price</p>
+                </div>
+            </button>
+            <button (click)="agregar()" class="icons-Breakfast">
+                <img class="imgCafe" src="../../../../assets/img/Breakfast_water_red.png">
+                <div>
+                    <p>Water</p>
+                </div>
+                <div>
+                    <p>$ Price</p>
+                </div>
+            </button>
+            <button (click)="agregar()" class="icons-Breakfast">
+                <img class="imgCafe" src="../../../../assets/img/Breakfast_juice_red.png">
+                <div>
+                    <p>Juice</p>
+                </div>
+                <div>
+                    <p>$ Price</p>
+                </div>
+            </button>
+        </div>
+        <div class="labels">
+            <label class="labels" for="line">Brunch</label>
+            <hr>
+        </div> -->
+<!-- <div class="brunch">
+            <button (click)="agregar()" class="icons-Breakfast">
+                <img class="imgCroisant" src="../../../../assets/img/croissant_red.png">
+                <div>
+                    <p>Croissant</p>
+                </div>
+                <div>
+                    <p>$ Price</p>
+                </div>
+            </button>
+            <button (click)="agregar()" class="icons-Breakfast">
+                <img class="imgCroisant" src="../../../../assets/img/slice_red.png">
+                <div>
+                    <p>Slice Bread</p>
+                </div>
+                <div>
+                    <p>$ Price</p>
+                </div>
+            </button>
+            <button (click)="agregar()" class="icons-Breakfast">
+                <img class="imgCroisant" src="../../../../assets/img/sandwich_red.png">
+                <div>
+                    <p>Sandwich</p>
+                </div>
+                <div>
+                    <p>$ Price</p>
+                </div>
+            </button>
+            <button (click)="agregar()" class="icons-Breakfast">
+                <img class="imgCroisant" src="../../../../assets/img/panqueques_red.png">
+                <div>
+                    <p>Pancakes</p>
+                </div>
+                <div>
+                    <p>$ Price</p>
+                </div>
+            </button>
+        </div> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- end Menu -->

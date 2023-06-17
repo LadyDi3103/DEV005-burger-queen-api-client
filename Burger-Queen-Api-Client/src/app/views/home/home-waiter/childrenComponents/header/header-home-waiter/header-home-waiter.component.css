@@ -1,0 +1,49 @@
+* {
+    color: var(--color-2);
+    font-family: ubuntu;
+    font-style: italic;
+}
+/* inicio header */
+.Container-general {
+    margin: auto;
+    background-image: url(../../../../../../../assets/img/LogoBackGround_waiter.png);
+    background-position: center;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.ContainerOptionsMenu {
+    display: flex;
+    border: 0;
+}
+
+.btn-header {
+    width: 220px;
+    margin-left: 20px;
+    background-color: transparent;
+    border: none;
+}
+
+.btn-logOut {
+    height: 15%;
+    width: 11%;
+    margin-top: 25px;
+    margin-left: 15px;
+    background-color: transparent;
+    border: none;
+
+}
+/* end header */
+button>img { /* etiqueta general */
+    width: 90%;
+    height: 85%;
+    border: 0;
+    /* display: inline-block; */
+}
+.head-form, .ubuntu, .Number1 {
+    margin-bottom: 7px;
+    font-size: 22px;
+    margin-top: 0px;
+    /* background-color: blue; */
+}

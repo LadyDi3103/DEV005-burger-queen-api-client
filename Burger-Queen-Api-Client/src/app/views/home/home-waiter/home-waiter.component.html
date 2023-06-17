@@ -1,4 +1,8 @@
+<!-- Inicio Header -->
 <section class="Container-general">
+    <app-header-home-waiter></app-header-home-waiter>
+</section>
+<!-- <section class="Container-general">
     <nav class="ContainerOptionsMenu">
         <button (click)="exchangeMenu('breakfast')" class="btn-header"><img class="imgHeader"
                 src="../../../../assets/img/btn_status2.png" alt="button-status"></button>
@@ -10,162 +14,179 @@
                 src="../../../../assets/img/logOut.png" alt="button-exit"></button>
     </nav>
     <p class="ubuntu"> Waiter: {{waitersName}}</p>
-    <div class="Container-menu-form">
-        <div class="container-menu">
-            <div class="btns">
-                <div>
-                    <Button (click)="exchangeMenu('breakfast')" class="breakfast"><img class="imgBreakfast"
-                            src="../../../../assets/img/btn_Breakfast_red.png"></Button>
-                </div>
-                <div>
-                    <Button (click)="exchangeMenu('breakfast')" class="meals"><img class="imgMeal"
-                            src="../../../../assets/img/btn_ham_green.png"></Button>
-                </div>
+</section> -->
+<!-- End Header -->
+<div class="Container-menu-form">
+    <app-menu-home-waiter></app-menu-home-waiter>
+</div>
+<!-- menu
+<div class="Container-menu-form">
+    <div class="container-menu">
+        <div class="btns">
+            <div>
+                <Button (click)="exchangeMenu('breakfast')" class="breakfast"><img class="imgBreakfast"
+                        src="../../../../assets/img/btn_Breakfast_red.png"></Button>
             </div>
-            <div class="labels">
-                <label class="labels" for="line">Drinks</label>
-                <hr>
-            </div>
-            <div class="drinks">
-                <button (click)="agregar()" class="icons-Breakfast">
-                    <img class="imgCafe" src="../../../../assets/img/cafe_red.png">
-                    <div>
-                        <p>Short Coffe</p>
-                    </div>
-                    <div>
-                        <p>$ Price</p>
-                    </div>
-                </button>
-                <button (click)="agregar()" class="icons-Breakfast">
-                    <img class="imgCafe" src="../../../../assets/img/cafe_red.png">
-                    <div>
-                        <p>Double Cafe</p>
-                    </div>
-                    <div>
-                        <p>$ Price</p>
-                    </div>
-                </button>
-                <button (click)="agregar()" class="icons-Breakfast">
-                    <img class="imgCafe" src="../../../../assets/img/Breakfast_water_red.png">
-                    <div>
-                        <p>Water</p>
-                    </div>
-                    <div>
-                        <p>$ Price</p>
-                    </div>
-                </button>
-                <button (click)="agregar()" class="icons-Breakfast">
-                    <img class="imgCafe" src="../../../../assets/img/Breakfast_juice_red.png">
-                    <div>
-                        <p>Juice</p>
-                    </div>
-                    <div>
-                        <p>$ Price</p>
-                    </div>
-                </button>
-            </div>
-            <div class="labels">
-                <label class="labels" for="line">Brunch</label>
-                <hr>
-            </div>
-            <div class="brunch">
-                <button (click)="agregar()" class="icons-Breakfast">
-                    <img class="imgCroisant" src="../../../../assets/img/croissant_red.png">
-                    <div>
-                        <p>Croissant</p>
-                    </div>
-                    <div>
-                        <p>$ Price</p>
-                    </div>
-                </button>
-                <button (click)="agregar()" class="icons-Breakfast">
-                    <img class="imgCroisant" src="../../../../assets/img/slice_red.png">
-                    <div>
-                        <p>Slice Bread</p>
-                    </div>
-                    <div>
-                        <p>$ Price</p>
-                    </div>
-                </button>
-                <button (click)="agregar()" class="icons-Breakfast">
-                    <img class="imgCroisant" src="../../../../assets/img/sandwich_red.png">
-                    <div>
-                        <p>Sandwich</p>
-                    </div>
-                    <div>
-                        <p>$ Price</p>
-                    </div>
-                </button>
-                <button (click)="agregar()" class="icons-Breakfast">
-                    <img class="imgCroisant" src="../../../../assets/img/panqueques_red.png">
-                    <div>
-                        <p>Pancakes</p>
-                    </div>
-                    <div>
-                        <p>$ Price</p>
-                    </div>
-                </button>
+            <div>
+                <Button (click)="exchangeMenu('breakfast')" class="meals"><img class="imgMeal"
+                        src="../../../../assets/img/btn_ham_green.png"></Button>
             </div>
         </div>
-        <!-- En este voy a trabajar DIANA     -->
-        <div class="container-Form">
-            <form id="form-home-waiter" (ngSubmit)="onSubmitDoThis()">
-                <div class="head-form">
-                    <label for="clientsName">Client: </label>
-                    <input type="text" (click)="incrementOrderNumber" [(ngModel)]="clientsName"
-                        placeholder="Clients name">
-                    <hr>
-                    <label for="nOrder">N° Order: {{numOrder}} </label><br>
-                    <hr>
-                    <label for="nTable">N° Table: </label>
-                    <input type="number" id="nTable" min="0" max="20" value="0">
+        <div class="labels">
+            <label class="labels" for="line">Drinks</label>
+            <hr>
+        </div>
+        <div class="drinks">
+            <button (click)="agregar()" class="icons-Breakfast">
+                <img class="imgCafe" src="../../../../assets/img/cafe_red.png">
+                <div>
+                    <p>Short Coffe</p>
                 </div>
-                <!-- <div class="order" *ngFor="let product of availableProduts"> -->
-                <!-- <span>{{product.nombre}}</span> -->
-                <!-- <button(click)="agregarProducto(producto)">Agregar</button> -->
-                <!-- </div> -->
-                <div class="order">
-                    <hr>
-                    <button class="btn-Des" (click)="decrease()">-</button>
-                    <span class="Number1"> {{counter}} </span>
-                    <button class="btn-Plus" (click)="increase()">+</button>
-                    <span class="item"> Short Cafe </span>
-                    <span class="priceItem">$ 2000 </span>
-                    <hr>
+                <div>
+                    <p>$ Price</p>
                 </div>
-                <div class="order">
-                    <button class="btn-Des" (click)="decrease()">-</button>
-                    <span class="Number1"> {{counter}} </span>
-                    <button class="btn-Plus" (click)="increase()">+</button>
-                    <span class="item"> Short Cafe </span>
-                    <span class="priceItem">$ 2000 </span>
-                    <hr>
+            </button>
+            <button (click)="agregar()" class="icons-Breakfast">
+                <img class="imgCafe" src="../../../../assets/img/cafe_red.png">
+                <div>
+                    <p>Double Cafe</p>
                 </div>
-                <div class="order">
-                    <button class="btn-Des" (click)="decrease()">-</button>
-                    <span class="Number1"> {{counter}} </span>
-                    <button class="btn-Plus" (click)="increase()">+</button>
-                    <span class="item"> Short Cafe </span>
-                    <span class="priceItem">$ 2000 </span>
-                    <hr>
+                <div>
+                    <p>$ Price</p>
                 </div>
-                <div class="totalOrder">
-                    <span class="totalOrder"> Total: </span>
-                    <span class="priceTag"> $ 8000</span>
-                    <hr>
+            </button>
+            <button (click)="agregar()" class="icons-Breakfast">
+                <img class="imgCafe" src="../../../../assets/img/Breakfast_water_red.png">
+                <div>
+                    <p>Water</p>
                 </div>
-                <div class="btn-ordered">
-                    <button class="btn-sub">Submit Order</button>
-                    <button class="btn-sub">Cancel Order</button>
+                <div>
+                    <p>$ Price</p>
                 </div>
-            </form>
+            </button>
+            <button (click)="agregar()" class="icons-Breakfast">
+                <img class="imgCafe" src="../../../../assets/img/Breakfast_juice_red.png">
+                <div>
+                    <p>Juice</p>
+                </div>
+                <div>
+                    <p>$ Price</p>
+                </div>
+            </button>
+        </div>
+        <div class="labels">
+            <label class="labels" for="line">Brunch</label>
+            <hr>
+        </div>
+        <div class="brunch">
+            <button (click)="agregar()" class="icons-Breakfast">
+                <img class="imgCroisant" src="../../../../assets/img/croissant_red.png">
+                <div>
+                    <p>Croissant</p>
+                </div>
+                <div>
+                    <p>$ Price</p>
+                </div>
+            </button>
+            <button (click)="agregar()" class="icons-Breakfast">
+                <img class="imgCroisant" src="../../../../assets/img/slice_red.png">
+                <div>
+                    <p>Slice Bread</p>
+                </div>
+                <div>
+                    <p>$ Price</p>
+                </div>
+            </button>
+            <button (click)="agregar()" class="icons-Breakfast">
+                <img class="imgCroisant" src="../../../../assets/img/sandwich_red.png">
+                <div>
+                    <p>Sandwich</p>
+                </div>
+                <div>
+                    <p>$ Price</p>
+                </div>
+            </button>
+            <button (click)="agregar()" class="icons-Breakfast">
+                <img class="imgCroisant" src="../../../../assets/img/panqueques_red.png">
+                <div>
+                    <p>Pancakes</p>
+                </div>
+                <div>
+                    <p>$ Price</p>
+                </div>
+            </button>
         </div>
     </div>
-    <!-- <div *ngIf="isModalVisible">
+</div>
+end Menu -->
+<div class="Container-menu-form">
+    <app-form-home-waiter></app-form-home-waiter>
+</div>
+<!-- Incio form -->
+<!-- En este voy a trabajar DIANA     -->
+<!-- <div class="Container-menu-form">
+    <div class="container-Form">
+        <form id="form-home-waiter" (ngSubmit)="onSubmitDoThis()">
+            <div class="head-form">
+                <label for="clientsName">Client: </label>
+                <input type="text" [(ngModel)]="clientsName" placeholder="Clients name">
+                <hr>
+                <label for="nOrder">N° Order: {{numOrder}} </label><br>
+                <hr>
+                <label for="nTable">N° Table: </label>
+                <input type="number" id="nTable" min="0" max="20" value="0">
+            </div> -->
+            <!-- <div class="order" *ngFor="let product of products"> -->
+            <!-- <hr>
+                <button class="btn-Des" (click)="decrease()">-</button> -->
+            <!-- <span class="Number1"> {{counter}} </span>
+                <button class="btn-Plus" (click)="increase()">+</button>
+                <span class="item"> {{ products.name}} </span> -->
+            <!-- <span>{{product.nombre}}</span> -->
+            <!-- <button(click)="agregarProducto(producto)">Agregar</button> -->
+            <!-- </div> -->
+            <!-- <div class="order">
+                <hr>
+                <button class="btn-Des" (click)="decrease()">-</button>
+                <span class="Number1"> {{counter}} </span>
+                <button class="btn-Plus" (click)="increase()">+</button>
+                <span class="item"> Short Cafe </span>
+                <span class="priceItem">$ 2000</span>
+                <hr>
+            </div>
+            <div class="order">
+                <button class="btn-Des" (click)="decrease()">-</button>
+                <span class="Number1"> {{counter}} </span>
+                <button class="btn-Plus" (click)="increase()">+</button>
+                <span class="item"> Short Cafe </span>
+                <span class="priceItem">$ 2000 </span>
+                <hr>
+            </div>
+            <div class="order">
+                <button class="btn-Des" (click)="decrease()">-</button>
+                <span class="Number1"> {{counter}} </span>
+                <button class="btn-Plus" (click)="increase()">+</button>
+                <span class="item"> Short Cafe </span>
+                <span class="priceItem">$ 2000 </span>
+                <hr>
+            </div>
+            <div class="totalOrder">
+                <span class="totalOrder"> Total: </span>
+                <span class="priceTag"> $ 8000</span>
+                <hr>
+            </div>
+            <div class="btn-ordered">
+                <button (click)="incrementOrderNumber()" class="btn-sub">Submit Order</button>
+                <button class="btn-sub">Cancel Order</button>
+            </div>
+        </form>
+    </div>
+</div> -->
+
+<!-- <div *ngIf="isModalVisible">
         <div class="modal">
             <h2>Modal</h2>
             <p>Selected Menu: {{ selectedMenu }}</p>
             <button (click)="isModalVisible = false">Close</button>
         </div>
     </div> -->
-    <!-- </section> -->

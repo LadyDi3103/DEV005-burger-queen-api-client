@@ -1,10 +1,11 @@
-* {
+/*  {
     color: var(--color-2);
     font-family: ubuntu;
     font-style: italic;
-}
-
-.Container-general {
+} */
+/* ---- */
+/* inicio header */
+/* .Container-general {
     margin: auto;
     background-image: url(../../../../assets/img/LogoBackGround_waiter.png);
     background-position: center;
@@ -33,14 +34,15 @@
     background-color: transparent;
     border: none;
 
-}
+} */
+/* end header */
 
-button>img {
+ /* etiqueta general */
+/* button>img { 
     width: 90%;
     height: 85%;
     border: 0;
-    /* display: inline-block; */
-}
+} */
 
 /* 
 #button-exit {
@@ -50,7 +52,8 @@ button>img {
     border: 0;
 } */
 
-.Container-menu-form {
+/* inicio menu */
+/* .Container-menu-form {
     max-width: 100%;
     display: grid;
     grid-template-columns: 60% 40%;
@@ -60,17 +63,19 @@ button>img {
     max-width: 100%;
     min-height: 100vh;
     /* background-color: aqua; */
-    display: flex;
+  
     /* flex-wrap: wrap; */
-    flex-direction: column;
+
     /* justify-content: space-around; */
     /* align-content: center; */
-    line-height: 100%;
-}
+
+/* }
+
 .labels{
 font-size: 18px;
 background: var(--color-4);
 }
+
 .btns {
     display: flex;
 }
@@ -78,34 +83,30 @@ background: var(--color-4);
 .drinks, .brunch {
     background: var(--color-4);
     display: flex;
-    /* flex-direction:column; */
     flex-wrap: wrap;
-    /* align-content: center; */
     justify-content: center;
 }
-
-
 
 .breakfast {
     padding-top: 20px;
     width: 221px;
     /* margin-left: 20px; */
-    background: var(--color-4);
+    /* background: var(--color-4);
     border: none;
     border-top: 2px solid var(--color-2);
     border-left: 2px solid var(--color-2);
     border-radius: 25px 10px 0px 0px;
-}
+} */
 
-.meals {
+/* .meals {
     padding-bottom: 15px;
     padding-top: 15px;
     width: 250px;
     height: 180px;
-    /* height: 180px; */
+    /* height: 180px; 
     padding-left: 45px;
     padding-right: 45px;
-    /* margin-left: 20px; */
+
     background-color: var(--color-6);
     border: none;
     border-top: 2px solid var(--color-2);
@@ -129,41 +130,42 @@ background: var(--color-4);
     margin-right: 20px;
     background-color: transparent;
     border: none;
-}
+}  */
+/* end menu */
 
-.head-form, .ubuntu, .Number1 {
+/* inicio form */
+/* .head-form, .ubuntu, .Number1 {
     margin-bottom: 7px;
     font-size: 22px;
     margin-top: 0px;
-    /* background-color: blue; */
-}
+    background-color: blue;
+} */
 
-.order {
+/* .order {
     margin-bottom: 15px;
-    /* background-color: brown; */
-}
+    background-color: brown;
+} */
 
-.totalOrder {
+/* .totalOrder {
     margin-top: 360px;
     margin-bottom: 5px;
-    /* background-color: blueviolet; */
-}
+    background-color: blueviolet;
+} */
 
-
-.btn-ordered {
+/* .btn-ordered {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    /* justify-content: center; */
+    justify-content: center;
     font-style: italic;
-    /* letter-spacing: 1.5px; */
-    /* text-align: center;
-    align-self: center; */
-}
+    letter-spacing: 1.5px;
+    text-align: center;
+    align-self: center;
+} */
 
-.btn-sub {
-    /* flex-direction: column; */
-    /* background-color: black; */
+/* .btn-sub {
+    flex-direction: column;
+    background-color: black;
     background-color: var(--color-3);
     letter-spacing: 1.5px;
     width: 95%;
@@ -174,14 +176,13 @@ background: var(--color-4);
     color: var(--color-2);
     font-size: 25px;
     font-style: italic;
-    /* justify-content: center; */
+    justify-content: center;
     text-align: center;
     align-self: center;
-}
-
+} */
 
 /* Estilos DIV2 */
-.priceTag {
+/* .priceTag {
     flex: 1;
     padding-left: 200px;
     padding-right: 30px;
@@ -194,5 +195,6 @@ background: var(--color-4);
     border-radius: 8px;
     width: 40px;
     height: 30px;   
-}
+} */
+/* end form */
 
