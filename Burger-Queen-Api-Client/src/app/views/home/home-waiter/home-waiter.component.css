@@ -1,11 +1,11 @@
-/*  {
+* {
     color: var(--color-2);
     font-family: ubuntu;
     font-style: italic;
-} */
+}
 /* ---- */
 /* inicio header */
-/* .Container-general {
+.Container-general {
     margin: auto;
     background-image: url(../../../../assets/img/LogoBackGround_waiter.png);
     background-position: center;
@@ -13,7 +13,14 @@
     background-attachment: fixed;
     min-height: 100vh;
 }
-
+@media (min-width: 900px) {
+    .Container-menu-form {
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+}
+/*
 .ContainerOptionsMenu {
     display: flex;
     border: 0;
@@ -53,13 +60,13 @@
 } */
 
 /* inicio menu */
-/* .Container-menu-form {
+.Container-menu-form {
     max-width: 100%;
     display: grid;
     grid-template-columns: 60% 40%;
 }
 
-.container-Form {
+/*.container-Form {
     max-width: 100%;
     min-height: 100vh;
     /* background-color: aqua; */

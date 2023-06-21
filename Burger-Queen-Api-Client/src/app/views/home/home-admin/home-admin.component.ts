@@ -11,6 +11,7 @@ export class HomeAdminComponent {
   email: string = '';
   password: string = '';
   rol: string = '';
+  // adminName: string = 'Anita Borgez'
   // errorMessage: string =''; 
 
   constructor(private adminService: AdminService, private router: Router) {}

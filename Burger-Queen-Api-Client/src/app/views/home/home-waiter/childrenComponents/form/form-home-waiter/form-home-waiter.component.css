@@ -1,18 +1,25 @@
-* {
+/* * {
     color: var(--color-2);
     font-family: ubuntu;
     font-style: italic;
-}
-button>img { /* etiqueta general */
-    width: 90%;
-    height: 85%;
-    border: 0;
-}
+} */
+
 /* inicio form */
-.head-form, .ubuntu, .Number1 {
-    margin-bottom: 7px;
-    font-size: 22px;
+.container-Form {
+    max-width: 100%;
+    min-height: 82vh;
+    display: flex;
+    flex-direction: column;
+    line-height: 100%;
+    padding-left: 10px;
+}
+.head-form,.Number1 {
     margin-top: 0px;
+    margin-bottom: 7px;
+    margin-left: 3px;
+    margin-right: 3px;
+    font-size: 22px;
+    
     /* background-color: blue; */
 }
 

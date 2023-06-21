@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-chef.component.css']
 })
 export class HomeChefComponent {
-
+chefName: string = 'Maria de las Nubes'
 }

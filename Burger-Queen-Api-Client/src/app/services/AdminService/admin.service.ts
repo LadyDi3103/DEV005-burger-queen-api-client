@@ -20,4 +20,24 @@ export class AdminService {
     }
     )
   }
+  createProduct(name: string, price:number, image: string, type:string): Observable<any> {
+    return this.http.post('http://localhost:8080/users/products', {
+      name: name,
+      price: price,
+      image: image,
+      type: type,
+    })
+  }
+  // getListProducts(id: number, name: string, price:number, image: string, type:string, dateEntry:string): Observable<any> {
+  //   return this.http.post('http://localhost:8080/users/products', {
+  //     id:id
+      // name: name,
+  //     price: price,
+  //     image: image,
+  //     type: type,
+      // dateEntry: dateEntry,
+  //   })
+  // })
+
+
   }

@@ -1,7 +1,6 @@
 <!-- Inicio Header -->
 <section class="Container-general">
     <app-header-home-waiter></app-header-home-waiter>
-</section>
 <!-- <section class="Container-general">
     <nav class="ContainerOptionsMenu">
         <button (click)="exchangeMenu('breakfast')" class="btn-header"><img class="imgHeader"
@@ -16,9 +15,19 @@
     <p class="ubuntu"> Waiter: {{waitersName}}</p>
 </section> -->
 <!-- End Header -->
+<!-- NO TENEMOS ETIQUETA COACH -->
 <div class="Container-menu-form">
-    <app-menu-home-waiter></app-menu-home-waiter>
+    <app-menu-home-waiter (propagate)= 'getData($event)'></app-menu-home-waiter>
+    <app-form-home-waiter [nombre] = "alumno.nombre"
+    [nota]="alumno.nota"
+    [alumno]="alumno"
+    
+    [newItem]="item"
+    >
+    </app-form-home-waiter> 
 </div>
+</section>
+
 <!-- menu
 <div class="Container-menu-form">
     <div class="container-menu">
@@ -119,9 +128,9 @@
     </div>
 </div>
 end Menu -->
-<div class="Container-menu-form">
+<!-- <div class="Container-menu-form">
     <app-form-home-waiter></app-form-home-waiter>
-</div>
+</div> -->
 <!-- Incio form -->
 <!-- En este voy a trabajar DIANA     -->
 <!-- <div class="Container-menu-form">

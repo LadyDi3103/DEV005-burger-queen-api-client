@@ -1,21 +1,46 @@
-* {
+/* * {
     color: var(--color-2);
     font-family: ubuntu;
     font-style: italic;
-}
+} */
 /* inicio header */
-.Container-general {
+/* .Container-general {
     margin: auto;
     background-image: url(../../../../../../../assets/img/LogoBackGround_waiter.png);
     background-position: center;
     background-size: 100% 100%;
     background-attachment: fixed;
     min-height: 100vh;
+} */
+@media (min-width: 900px) {
+    .ContainerOptionsMenu {
+        max-width: 100%;
+        height: 170px;
+        display: flex;
+        /* background: blue; */
+        border: 0;
+        justify-content: center;
+    }
+    .btn-header {
+        margin-left: 30px; 
+    }
+    .btn-logOut {
+        width: 80px;
+        height: 70%;
+        /* margin-top: 25px;
+        margin-left: 15px;
+        background-color: transparent;
+        border: none; */
+    }
+    
 }
-
 .ContainerOptionsMenu {
+    max-width: 100%;
+    height: 170px;
     display: flex;
+    /* background: blue; */
     border: 0;
+    align-items: center;
 }
 
 .btn-header {
@@ -26,22 +51,26 @@
 }
 
 .btn-logOut {
-    height: 15%;
-    width: 11%;
-    margin-top: 25px;
+    width: 70px;
+    height: 80px;
+    /* margin-top: 30px; */
     margin-left: 15px;
     background-color: transparent;
     border: none;
-
 }
 /* end header */
-button>img { /* etiqueta general */
-    width: 90%;
-    height: 85%;
+.imgHeader { /* etiqueta general */
+    width: 100%;
+    height: 80%;
     border: 0;
     /* display: inline-block; */
 }
-.head-form, .ubuntu, .Number1 {
+.imgLogOut{
+    width: 100%;
+    height: 80%;
+    border: 0;
+}
+.waiterName, .Number1 {
     margin-bottom: 7px;
     font-size: 22px;
     margin-top: 0px;

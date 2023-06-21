@@ -10,7 +10,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-waiter.component.css']
 })
 export class HomeWaiterComponent {
+  getData(data: {}){
+    console.log(data, 'DATA');
+    this.item.push(data);
+    }
 
+  // EJEMPLO objeto a enviar al form PAPÁ
+  alumno = {
+    nombre: 'cristian',
+    nota: 10
+  }
+  item: any[] = [];
+}
+// sólo se puede usar en el html de esta clase
 //   isModalVisible: boolean = false;
   // selectedMenu: string = '';
 //   counter: number = 1;
@@ -88,7 +100,7 @@ export class HomeWaiterComponent {
 //   agregarProducto(producto:any): void{
 //     this.productosAgregados.push(producto);
 //   }
-}
+// }
 // interface Product{
 //  name: string;
 //  cost: number; 
