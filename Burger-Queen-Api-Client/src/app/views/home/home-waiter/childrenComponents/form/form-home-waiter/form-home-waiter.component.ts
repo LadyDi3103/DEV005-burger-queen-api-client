@@ -1,5 +1,8 @@
 import { Component, Input } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { __values } from 'tslib';
+
+
 // import { products } from '../../menu/products/produts';
 
 @Component({
@@ -8,6 +11,7 @@ import { __values } from 'tslib';
   styleUrls: ['./form-home-waiter.component.css'],
 })
 export class FormHomeWaiterComponent {
+
   //FN TO OBTAIN DATA FROM MENU
   @Input() data: any;
   // console.log(this.data, 'RES INPUT FORM');
@@ -18,44 +22,62 @@ export class FormHomeWaiterComponent {
 
   @Input() newItem: any[] = [];
 
-  clientsName: string = 'DIANA';
-  numOrder: any = '0000000';
-  // isModalVisible: boolean = false;
-  selectedMenu: string | null = '';
-  counter: number = 1;
-  // waitersName: string = 'Luis Alvares';
-  numTable: number = 0;
+  // clientsName: string = 'DIANA';
+  // numOrder: any = '0000000';
+  // selectedMenu: string | null = '';
+  // counter: number = 1;
+  // numTable: number = 0;
+  // total: number = 0;
+  // totalCost: number = 0;
 
-  total: number = 0;
-  totalCost: number = 0;
-  //miembros de la clase/ petición al backend...
+
+  // counter: number;
+  // totalCost: number;
+  // selectedMenu: string;
+  // numTable: number;
+  // total: number;
+  // clientsName: string;
+  
   products: any[] = []; // AQUÍ DEBERÍA PUSHEARSE LOS PRODUCTOS AL SELECCIONAR
+  
+  // Formulario REACTIVO ****************************************************
+  form:FormGroup = new FormGroup({
+    clientsName: new FormControl(''),
+    numOrder: new FormControl('0000000'),
+    numTable: new FormControl(''),
+    total: new FormControl(''),
+    totalCost: new FormControl(''),
+    counter: new FormControl(1),
+  });
+  numOrder: number = 1;
+  
+//*********************************************************
 
-  increase() {
-    this.counter++;
-    console.log(this.counter);
-    // debe incrementar en el contador de precios unitarios la cantidad del item.
-  }
+  // increase(value:number):void {
+  //   this.counter += value;
+  //   // console.log(this.counter);
+  //   // debe incrementar en el contador de precios unitarios la cantidad del item.
+  // }
 
-  decrease() {
-    if (this.counter > 0) {
-      this.counter--;
-      console.log(this.counter);
-      // debe decrecrementar en el contador de precios unitarios la cantidad del item.
-    }
-  }
-  incrementOrderNumber(): void {
-    let number = parseInt(this.numOrder);
-    number++;
-    this.numOrder = number.toString();
-    // .padStart(7, '0');
-  }
-  decrementOrderNumber() {
-    let number = parseInt(this.numOrder);
-    number--;
-    this.numOrder = number.toString();
-    // .padStart(7, '0');
-  }
+  // decrease(value:number):void {
+  //   if (this.counter > 0) {
+  //     this.counter -= value;
+  //     // console.log(this.counter);
+  //     // debe decrecrementar en el contador de precios unitarios la cantidad del item.
+  //   }
+  // }
+  // incrementOrderNumber(): void {
+  //   let number = parseInt(this.numOrder);
+  //   number++;
+  //   this.numOrder = number.toString();
+  //   // .padStart(7, '0');
+  // }
+  // decrementOrderNumber() {
+  //   let number = parseInt(this.numOrder);
+  //   number--;
+  //   this.numOrder = number.toString();
+  //   // .padStart(7, '0');
+  // }
 
 
   onSubmitDoThis() {
@@ -70,32 +92,32 @@ export class FormHomeWaiterComponent {
   // {{totalCost}}
   // }
   // ---------- quitar una seleción de producto
-  deselectProduct(): void {
-    this.selectedMenu = null;
-    // this.menuItem.breakfast.forEach((product)=>{
-    //   product.selected = false; // reinicia la selección del producto breakfast
-    // });
-    // this.menuItem.meals.forEach((product)=>{
-    //   product.selected = false; // reinicia la selección del producto meals
-    // })
-  }
+  // deselectProduct(): void {
+  //   this.selectedMenu = null;
+  //   // this.menuItem.breakfast.forEach((product)=>{
+  //   //   product.selected = false; // reinicia la selección del producto breakfast
+  //   // });
+  //   // this.menuItem.meals.forEach((product)=>{
+  //   //   product.selected = false; // reinicia la selección del producto meals
+  //   // })
+  // }
 
-  cancelOrder(): void {
-    console.log('CANCEL ORDER2');
-    //reiniciar los valores relacionados con la orden
-    console.log(this.clientsName);
+  // cancelOrder(): void {
+  //   console.log('CANCEL ORDER2');
+  //   //reiniciar los valores relacionados con la orden
+  //   console.log(this.clientsName);
     
-    this.clientsName = ' ';        //no reinicia el nombre del cliente
-    this.numOrder = this.decrementOrderNumber();
-    this.selectedMenu = ' ';
-    this.counter = 0;
-    this.numTable = 0;             //no reinicia
-    this.total = 0;
-    this.totalCost = 0;
+  //   this.clientsName = ' ';        //no reinicia el nombre del cliente
+  //   this.numOrder = this.decrementOrderNumber();
+  //   this.selectedMenu = ' ';
+  //   this.counter = 0;
+  //   this.numTable = 0;             //no reinicia
+  //   this.total = 0;
+  //   this.totalCost = 0;
     
 
     // this.selectedProduct = null;
     // //restaurar los valores predeterminados de los productos
     // }
   }
-}
+// }

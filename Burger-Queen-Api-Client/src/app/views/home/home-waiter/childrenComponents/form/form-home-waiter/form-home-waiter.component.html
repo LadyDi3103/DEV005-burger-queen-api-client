@@ -1,80 +1,74 @@
 <!-- <div class="Container-menu-form"> -->
-    <p>
+<!-- <p>
         Nombre: {{nombre}} 
-        Nota: {{nota}}
-        <!-- Alumnos: {{alumno.nombre}} -->
-    </p>
+        Nota: {{nota}} -->
+<!-- Alumnos: {{alumno.nombre}} -->
+<!-- </p> -->
 
-<div class="container-Form">
-    
+<!-- <div class="container-Form">
+
     <form id="form-home-waiter" (ngSubmit)="onSubmitDoThis()">
         <div class="head-form">
 
             <label for="clientsName">Client: </label>
-            <input type="text" id="clientsName" [(ngModel)]= "clientsName" placeholder="Clients name">
+            <input type="text" id="clientsName" [(ngModel)]="clientsName" placeholder="Clients name">
             <hr>
 
             <label for="nOrder">N° Order: {{numOrder}} </label><br>
             <hr>
             <label for="nTable">N° Table: </label>
             <input type="number" id="nTable" min="0" max="20" [value]="numTable">
-        </div>
-        <!-- ------------------- --> 
-        <!-- NO RENDERIZA -->
-        <div class="order" *ngFor="let product of newItem">
+        </div> -->
+
+<!-- REACTIVE FORM  ***********************************************-->
+
+<div class="containerForm"> GENERAL
+    <form [formGroup]="form" (ngSubmit)="onSubmitDoThis">
+        <!-- E N C A B E Z A D O  -->
+        <div class="headForm">
+            <label for="clientsName">Client: </label>
+            <input type="text" id="clientsName" formControlclientsName="clientsName" placeholder="Clients name">
             <hr>
-            <button class="btn-Des" (click)="decrease()">-</button>
+            <label for="nOrder" formControlnumOrder="numOrder">N° Order: {{numOrder}} </label><br>
+            <span></span>
+            <hr>
+            <label for="nTable">N° Table: </label>
+            <input type="number" id="nTable" min="0" max="20"  formControlnumTable="numTable">
+        </div>
+        <label for="phone-type">Phone</label>
+        <select id="phone-type">
+            <option [value]="type">{{type}}</option>
+        </select>
+        <!-- </form> -->
+        <!-- </div>  -->
+        <!-- <p>Name is:{{clientsName.value}} </p> -->
+        <!-- ------------------- -->
+        <!-- RENDERIZA  R E S U M E N      O R D E  N-->
+        <!-- <div class="order" *ngFor="let product of newItem">
+            <button class="btn-Des" (click)="decrease(-1)">-</button>
             <span class="Number1"> {{counter}} </span>
-            <button class="btn-Plus" (click)="increase()">+</button>
+            <button class="btn-Plus" (click)="increase(+1)">+</button>
             <span class="item"> {{ product.name}} </span>
             <span class="priceItem">$ {{ product.price}} </span>
             <button (click)="deselectProduct()">x</button>
             <hr>
-            <!-- <span class="priceItem">Total: $ {{totalCost}}</span> -->
+        </div> -->
+
+        <!-- T O T A  L   O R D E R ********************************-->
+        <!-- <div class="totalOrder">
+            <span class="totalOrder"> Total: </span>
+            <span class="priceTag"> $ {{totalCost}}</span>
+            <hr>
         </div>
-        <!-- iterar newitem -->
-            <!-- -------------------------- -->
-            <!-- <div class="order">
-                <hr>
-                <button class="btn-Des" (click)="decrease()">-</button>
-                <span class="Number1"> {{counter}} </span>
-                <button class="btn-Plus" (click)="increase()">+</button>
-                <span class="item"> Short Cafe </span>
-                <span class="priceItem">$ 2000</span>
-                <button (click)="deselectProduct()">x</button>
-                <hr>
-                <span class="priceItem">Total: $ {{totalCost}}</span>
-            </div>
-            <div class="order">
-                <button class="btn-Des" (click)="decrease()">-</button>
-                <span class="Number1"> {{counter}} </span>
-                <button class="btn-Plus" (click)="increase()">+</button>
-                <span class="item"> Short Cafe </span>
-                <span class="priceItem">$ 2000 </span>
-                <hr>
-            </div> 
-            <div class="order">
-                <button class="btn-Des" (click)="decrease()">-</button>
-                <span class="Number1"> {{counter}} </span>
-                <button class="btn-Plus" (click)="increase()">+</button>
-                <span class="item"> Short Cafe </span>
-                <span class="priceItem">$ 2000 </span>
-                <hr>
-            </div> -->
-            <div class="totalOrder">
-                <span class="totalOrder"> Total: </span>
-                <span class="priceTag"> $ {{totalCost}}</span>
-                <hr>
-            </div>
-            <div class="btn-ordered">
-                <button (click)="onSubmitDoThis()" class="btn-sub">Submit Order</button>
-            </div>
-            <button (click)="cancelOrder()" class="btn-sub">Cancel Order</button>
-        </form>
-    </div>
-    
-    <span>{{data}}</span>
-    <!-- </div> -->
+        <div class="btn-ordered">
+            <button (click)="onSubmitDoThis()" class="btn-sub">Submit Order</button>
+        </div>
+        <button (click)="cancelOrder()" class="btn-sub">Cancel Order</button> -->
+    </form>
+</div>
+
+<!-- <span>{{data}}</span> -->
+<!-- </div> -->
 <!--DENTRO DE SU HTML TIENE LLAMADO A SU COMPONENTE HIJO por su SELECTOR-->
 <!-- en MENU HOME WAITER COMPONENT -->
 <!-- <app-menu-home-waiter (propagate)="getData($event)"></ app-menu-home-waiter> -->
