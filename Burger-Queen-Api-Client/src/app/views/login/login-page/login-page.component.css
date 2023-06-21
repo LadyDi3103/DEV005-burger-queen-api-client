@@ -1,16 +1,31 @@
-*{
-    color:var(--color-2);
+* {
+    color: var(--color-2);
 }
+
+@media (min-width: 900px) {
+    .login-view {
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        background-image: url(../../../../assets/img/Breakfast_juice_red.png);
+    }
+    .btnLogin {
+        margin-top:10%;
+        /* margin-left: -50%; */
+    }
+}
+
 .login-view {
     margin: auto;
     /* padding: 0; */
     /* background-color: #F72C25; */
-    background-image: url(../../../../assets/img/LogoBackGround.png);
+    background-image: url(../../../../assets/img/LogoBackGround_landScape.png);
     background-position: center;
     background-size: 100% 100%;
     background-attachment: fixed;
     min-height: 100vh;
 }
+
 .container-logo {
     display: flex;
     flex-wrap: wrap;
@@ -18,14 +33,17 @@
     justify-content: space-around;
     align-content: center;
 }
+
 .imgLogin {
     /* display: block; */
     margin-right: auto;
     margin-left: auto;
     margin-top: 8%;
+    margin-bottom: 6%;
     width: 300px;
 }
-.container-login {
+
+.containerLogin {
     margin-right: auto;
     margin-left: auto;
     /* margin-top: 5%; */
@@ -35,16 +53,23 @@
     height: 400px;
     /* margin-left: 140px; */
     font-size: 30px;
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
 }
-.form-login {
+
+.formLogin {
     /* background-color: blue; */
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-around;
     align-content: center;
-    color:var(--color-2);
+    color: var(--color-2);
 }
+
 .inputS {
     width: 90%;
     height: 50px;
@@ -56,12 +81,14 @@
     font-size: 20px;
     /* opacity: 1; */
 }
+
 .containerBtn {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-content: center;
 }
+
 .btnLogin {
     background-color: var(--color-3);
     letter-spacing: 1.5px;
@@ -76,6 +103,15 @@
     justify-content: center;
     /* align-self: center; */
 }
+.errorMessage{
+    /* background: blueviolet; */
+    justify-content: center;
+}
+
+
+
 .error-message {
-    color: var(--color-1);;
+    color: var(--color-1);
+    margin-top: 0;
+    margin-bottom: 0;
 }

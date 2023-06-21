@@ -1,62 +1,67 @@
 * {
     color: var(--color-2);
-    font-family: ubuntu;
+    font-family: var(--font-family-1);
     font-style: italic;
 }
-button>img { /* etiqueta general */
-    width: 90%;
-    height: 85%;
-    border: 0;
-    /* display: inline-block; */
-}
-/* inicio menu */
-.Container-menu-form {
-    max-width: 100%;
-    display: grid;
-    grid-template-columns: 60% 40%;
-}
-/* me hace ruido */
-.container-Form {
-    max-width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    line-height: 100%;
+@media (min-width: 900px) {
+    .container-menu {
+        /* background: purple; */
+        padding-right: 5px;
+        max-width: 100%;
+        min-height: 82vh;
+    }
+    .icons-Breakfast {
+        /* background: blue; */
+            width: 226.5px;
+            height: 142px;
+    }
 }
 
-.labels{
-font-size: 18px;
-background: var(--color-4);
+.container-menu {
+    /* background: purple; */
+    padding-right: 5px;
+    max-width: 100%;
+    min-height: 82vh;
 }
-
 .btns {
     display: flex;
 }
+/* inicio menu */
+/* .Container-menu-form {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 60% 40%;
+} */
+/* me hace ruido */
 
-.drinks, .brunch {
-    background: var(--color-4);
-    display: flex;
-    /* flex-direction:column; */
-    flex-wrap: wrap;
-    /* align-content: center; */
-    justify-content: center;
+.labels {
+    font-size: 25px;
+    /* background: blue; */
+    /* background: var(--color-4); */
+    padding-left: 5px;
 }
-
+.labelsMeals {
+    font-size: 25px;
+    /* background: blue; */
+    /* background: var(--color-6); */
+    padding-left: 5px;
+}
 .breakfast {
     padding-top: 20px;
-    width: 221px;
+    width: 247.7px;
+    height: 180px;
     /* margin-left: 20px; */
     background: var(--color-4);
     border: none;
     border-top: 2px solid var(--color-2);
     border-left: 2px solid var(--color-2);
+    border-bottom: 2px solid var(--color-4);
     border-radius: 25px 10px 0px 0px;
 }
-
 .meals {
     padding-bottom: 15px;
     padding-top: 15px;
-    width: 250px;
+    width: 247.7px;
     height: 180px;
     /* height: 180px; */
     padding-left: 45px;
@@ -66,24 +71,51 @@ background: var(--color-4);
     border: none;
     border-top: 2px solid var(--color-2);
     border-left: 2px solid var(--color-2);
-    border-bottom: 2px solid var(--color-2);
+    border-right: 2px solid var(--color-2);
+    /* border-bottom: 2px solid var(--color-2); */
     border-radius: 25px 10px 0px 0px;
 }
-
-.imgMeal {
-    width: 50%;
-    height: 50%;
+.imgBreakfast, .imgMeal {
+    width: 80%;
+    height: 80%;
     border: 0;
 }
-
+.drinks,
+.brunch {
+    background: var(--color-4);
+    border-right: 2px solid var(--color-2);
+    /* background: var(--color-4); */
+    /* display: flex; */
+    /* flex-direction:column; */
+    /* flex-wrap: wrap; */
+    /* align-content: center; */
+    /* justify-content: center; */
+}
+.Hamburguer, 
+.Pizzas{
+    background: var(--color-6);
+    border-right: 2px solid var(--color-2);
+}
 .icons-Breakfast {
-    width: 150px;
-    height: 80px;
-    margin-top: 12px;
+    width: 226.5px;
+    height: 142px;
+    /* margin-top: 12px;
     margin-bottom: 60px;
     margin-left: 20px;
-    margin-right: 20px;
+    margin-right: 20px; */
+    /* background: yellowgreen; */
     background-color: transparent;
     border: none;
 }
+.imgProduct{
+    width: 30%;
+    height: 45%;
+    border: 0;
+}
+.namePrice{
+font-size: 15px ;
+color: var(--color-2);
+font-family: var(--font-family-1);
+}
+
 /* end menu */
