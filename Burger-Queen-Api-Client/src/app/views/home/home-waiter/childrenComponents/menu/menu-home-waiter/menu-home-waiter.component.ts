@@ -18,9 +18,8 @@ interface Product {
   styleUrls: ['./menu-home-waiter.component.css']
 })
 export class MenuHomeWaiterComponent{
-  // isModalVisible: boolean = false;
+  @Output() propagate = new EventEmitter<any>();
 
-  
     showTabContent(option: string): void {
       this.selectedMenu = option;
     }
@@ -88,37 +87,31 @@ export class MenuHomeWaiterComponent{
       ],
     }
     
-    @Output() propagate = new EventEmitter<any>();
   
     sendData(){
       this.propagate.emit(this.selectedProduct);
-      console.log('sendData ENVIANDO');
-      
+      console.log('sendData ENVIANDO'); 
     }
-
-  selectedMenu: string = 'option1';
-  selectedTab: number = 1;
-  selectedProduct: Product | null = null; // Product representa el tipo de datos de tus productos
-  selectedProducts: Product[] = []; // Product representa el tipo de datos de tus productos
-  totalCost: number = 0;
+    selectedMenu: string = 'option1';
+    selectedTab: number = 1;
+    selectedProduct: Product | null = null; // Product representa el tipo de datos de tus productos
+    selectedProducts: Product[] = []; // Product representa el tipo de datos de tus productos
+    totalCost: number = 0;
+    qtyty: number = 0;
+    // increaseQtyty(value:number){
+    //   this.qtyty += value;
+    // }
   // productList = products; //me traigo el array de prod que importé
 // ENVIAR ESTA DATA 
   selectProduct(product: Product): void {
     this.selectedProduct = product; //seteado
+    this.qtyty+= 1;
     this.sendData();
     this.totalCost += product.price;
     // console.log(this.selectProduct);
-    console.log(this.totalCost, 33);
+    console.log(this.totalCost,this.qtyty, 33);
     // console.log(this.selectProduct(product: Product));
-  }
-  addProduct(): void {
-    if (this.selectedProduct) {
-      this.selectedProducts.push(this.selectedProduct);
-      this.totalCost += this.selectedProduct.price;
-      this.selectedProduct = null;
-      console.log(this.selectedProduct );
-      
-    }
+  } 
   }
 
   // deleteSelection(product: Product): void {
@@ -132,34 +125,4 @@ export class MenuHomeWaiterComponent{
   // }
 
 
-  // menu: Menu = {
-  //   breakfast: [
-  //     {
-  //       id: 1, name: 'Short Coffe', price: 2000, image:"../../../../../../../assets/img/cafe_red.png", type: 'breakfast'
-  //     },
-  //     {
-  //       id: 2, name: 'Double Coffe', price: 2.800, image:"../../../../../../../assets/img/cafe_red.png", type: 'breakfast'
-  //     },
-  //     {
-  //       id: 3, name: 'Water', price: 1.500, image:"../../../../../../../assets/img/Breakfast_water_red.png", type: 'breakfast'
-  //     },
-  //     {
-  //       id: 4, name: 'Juice', price: 3.500, image:"../../../../../../../assets/img/Breakfast_juice_red.png", type: 'breakfast'
-  //     },
-  //   ],
-  //   meals:[
-  //   {
-  //     id: 5, name: 'Croissant', price: 2.000, image:"../../../../../../../assets/img/croissant_red.png", type: 'breakfast'
-  //   },
-  //   {
-  //     id: 6, name: 'Slice Bread', price: 1.500, image:"../../../../../../../assets/img/slice_red.png", type: 'breakfast'
-  //   },
-  //   {
-  //     id: 7, name: 'Sandwich', price: 6.800, image:"../../../../../../../assets/img/sandwich_red.png", type: 'breakfast'
-  //   },
-  //   {
-  //     id: 8, name: 'Pancakes', price: 6.800, image:"../../../../../../../assets/img/panqueques_red.png", type: 'breakfast'
-  //   },
-  // ]
-  // } 
-}
+
