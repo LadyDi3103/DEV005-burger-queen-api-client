@@ -5,6 +5,7 @@ interface Menu {
   meals: Product[],
 }
 interface Product {
+  // qty: number;
   id: number;
   name: string;
   price: number;
@@ -87,7 +88,6 @@ export class MenuHomeWaiterComponent{
       ],
     }
     
-  
     sendData(){
       this.propagate.emit(this.selectedProduct);
       console.log('sendData ENVIANDO'); 
@@ -97,7 +97,7 @@ export class MenuHomeWaiterComponent{
     selectedProduct: Product | null = null; // Product representa el tipo de datos de tus productos
     selectedProducts: Product[] = []; // Product representa el tipo de datos de tus productos
     totalCost: number = 0;
-    qtyty: number = 0;
+    qty: number = 0;
     // increaseQtyty(value:number){
     //   this.qtyty += value;
     // }
@@ -105,11 +105,14 @@ export class MenuHomeWaiterComponent{
 // ENVIAR ESTA DATA 
   selectProduct(product: Product): void {
     this.selectedProduct = product; //seteado
-    this.qtyty+= 1;
+    // this.qty+= 1;
+    // this.selectProduct.qty = 1;
+    console.log(this.selectedProduct, 'LÍNEA 109');
+    
     this.sendData();
     this.totalCost += product.price;
     // console.log(this.selectProduct);
-    console.log(this.totalCost,this.qtyty, 33);
+    console.log(this.totalCost,this.qty, 33);
     // console.log(this.selectProduct(product: Product));
   } 
   }

@@ -11,7 +11,14 @@ import { Component } from '@angular/core';
 })
 export class HomeWaiterComponent {
   getData(data: {}){
-    console.log(data, 'DATA');
+    console.log(data, 'DATAAAA');
+    // this.item.qty = 1 ,
+    //Agregar un nuevo campo qty: inicializado en 1 por default
+    // no debe estar maquetado en  html
+    //debe coger la data del campo qty
+    //antes de hacer push, buscar por id y verificar sí ya existe en this.item sí no existe lo pusheo y sí no agrego el qtyty+1
+    console.log(data,'data con propiedad agregada');
+    
     this.item.push(data);
     }
 
