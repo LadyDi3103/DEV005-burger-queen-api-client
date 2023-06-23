@@ -20,7 +20,7 @@ export class FormHomeWaiterComponent {
   @Input() nota: number = 0;
   @Input() alumno: any;
 
-  @Input() newItem: any[] = [];
+  @Input()  getProduct: any[] = [];
 
   // clientsName: string = 'DIANA';
   // numOrder: any = '0000000';

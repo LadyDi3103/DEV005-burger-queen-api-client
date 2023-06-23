@@ -21,7 +21,7 @@
         </div> -->
 
 <!-- REACTIVE FORM  ***********************************************-->
-
+<h1>HOLAAAAAA</h1>
 <div class="containerForm">
     <form [formGroup]="form" (ngSubmit)="onSubmitDoThis">
         <!-- E N C A B E Z A D O  -->
@@ -29,7 +29,7 @@
             <label for="clientsName">Client: </label>
             <input type="text" id="clientsName" formControlName="clientsName" placeholder="Clients name">
             <hr>
-            <label for="nOrder" formControlName="numOrder">N° Order: {{numOrder}} </label><br>
+            <label for="nOrder" formControlName="numOrder">N° Order: {{this.numOrder}} </label><br>
             <span></span>
             <hr>
             <label for="nTable">N° Table: </label>
@@ -40,7 +40,7 @@
         <p>Name is:{{form.value.clientsName}} </p>
         <!-- ------------------- -->
         <!-- RENDERIZA  R E S U M E N      O R D E  N-->
-        <div class="order" *ngFor="let product of newItem">
+        <div class="order" *ngFor="let product of getProduct">
             <!-- <button class="btn-Des" (click)="decrease(-1)">-</button> -->
             <span class="Number1"> {{product.qty}} </span>
             <!-- <button class="btn-Plus" (click)="increase(+1)">+</button> -->

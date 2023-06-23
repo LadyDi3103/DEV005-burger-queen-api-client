@@ -1,58 +1,75 @@
 import { Component } from '@angular/core';
-import { findIndex } from 'rxjs';
+// import { findIndex } from 'rxjs';
 // import { NgModel } from '@angular/forms';
 // import { Router } from '@angular/router';
 // import { AuthService } from 'src/app/services/Auth/auth.service';
 // import { LoginService } from 'src/app/services/LoginService/login.service';
 
-interface Selected {
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+  type: string;
+}
+interface GetProduct {
   qty: number;
-  product: {
-   id: number;
-   name: string;
-   price: number;
-   image: string;
-   type: string;
-  }
- }
- 
+  product: Product;
+  };
+
 @Component({
   selector: 'app-home-waiter',
   templateUrl: './home-waiter.component.html',
-  styleUrls: ['./home-waiter.component.css']
+  styleUrls: ['./home-waiter.component.css'],
 })
 export class HomeWaiterComponent {
-  getData(product: {}){
-    let qty = [];
+  // item: any[] = [];
+  getProduct: GetProduct[] = [];
+  getData(product: Product) {
+    const index = this.getProduct.findIndex(item => item.product.id === product.id);
+    if(index === -1) {
+      this.getProduct.push({
+          qty: 1,
+          product: product
+        });
+    }else {
+      this.getProduct[index].qty++;
+    }
+    console.log(this.getProduct, 'linea 40')
+  };
+}
+  // getData(product: {}) {
     // if()
     // this.qty+= 1
     // declarar un arr con con dicionales decirle que haga push
-    // this.item[i].qty 
+    // this.item[i].qty
     // findIndex (busca el indice)
     // console.log(product, 'DATAAAA');
-   let newProduct = {
-        qty:1,
-        product: product,
-    };
+    // if (this.item === null) {
+      // item.filter para saber si el producto esta
+      // let newProduct = {
+      //   qty: 1,
+      //   product: product,
+      // }
+      // this.item.push(newProduct);
+   
+      //Agregar un nueva propiedad qty: inicializado en 1 por default
+      // no debe estar maquetado en  html
+      //debe coger la data del campo qty
+      //antes de hacer push, buscar por id y verificar sí ya existe en this.item sí no existe lo pusheo y sí no agrego el qtyty+1
 
-    //Agregar un nueva propiedad qty: inicializado en 1 por default
-    // no debe estar maquetado en  html
-    //debe coger la data del campo qty
-    //antes de hacer push, buscar por id y verificar sí ya existe en this.item sí no existe lo pusheo y sí no agrego el qtyty+1
-    this.item.push(newProduct);
-    console.log(newProduct,'data con propiedad agregada');
-    }
+     
+    // } else {
+      // 'el producto ya existe en el carrito'
+    // }
 
-  // EJEMPLO objeto a enviar al form PAPÁ
-  alumno = {
-    nombre: 'cristian',
-    nota: 10
-  }
-  item: any[] = [];
-}
+    // console.log(newProduct,'data con propiedad agregada');
+  
+  // item: any[] = [];
+
 // sólo se puede usar en el html de esta clase
 //   isModalVisible: boolean = false;
-  // selectedMenu: string = '';
+// selectedMenu: string = '';
 //   counter: number = 1;
 //   // waitersName: string = 'Luis Alvares';
 //   clientsName: any = '';
@@ -83,7 +100,7 @@ export class HomeWaiterComponent {
 // //miembros de la clase/ petición al backend...
 // productosAgregados: any[] = [];
 
-  // constructor(private loginService: LoginService, private router: Router) { }
+// constructor(private loginService: LoginService, private router: Router) { }
 
 //   exchangeMenu(menu: string) {
 //     this.selectedMenu = menu;
@@ -94,17 +111,17 @@ export class HomeWaiterComponent {
 //   //   this.loginService.logout();
 //   //   // this.router.navigate(['/login']);
 //   // }
-  
+
 //   increase(){
 //     this.counter++;
 //   }
-  
+
 //   decrease(){
 //     if(this.counter > 0){
 //       this.counter--;
 //     }
 //   }
-  
+
 //   incrementOrderNumber():void{
 //     let number = parseInt(this.numOrder);
 //     number++;
@@ -131,5 +148,5 @@ export class HomeWaiterComponent {
 // }
 // interface Product{
 //  name: string;
-//  cost: number; 
+//  cost: number;
 // }
