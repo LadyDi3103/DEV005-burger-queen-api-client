@@ -12,6 +12,16 @@ interface Product {
   image: string;
   type: string;
 }
+// interface Selected {
+//  qty: number;
+//  product: {
+//   id: number;
+//   name: string;
+//   price: number;
+//   image: string;
+//   type: string;
+//  }
+// }
 
 @Component({
   selector: 'app-menu-home-waiter',
@@ -107,8 +117,8 @@ export class MenuHomeWaiterComponent{
     this.selectedProduct = product; //seteado
     // this.qty+= 1;
     // this.selectProduct.qty = 1;
-    console.log(this.selectedProduct, 'LÍNEA 109');
-    
+    // console.log(this.selectedProduct, 'LÍNEA 109');
+    // this.selectProduct.Selected.qty
     this.sendData();
     this.totalCost += product.price;
     // console.log(this.selectProduct);
