@@ -41,11 +41,11 @@
         <!-- ------------------- -->
         <!-- RENDERIZA  R E S U M E N      O R D E  N-->
         <div class="order" *ngFor="let product of newItem">
-            <button class="btn-Des" (click)="decrease(-1)">-</button>
-            <span class="Number1"> {{counter}} </span>
-            <button class="btn-Plus" (click)="increase(+1)">+</button>
-            <span class="item"> {{ product.name}} </span>
-            <span class="priceItem">$ {{ product.price}} </span>
+            <!-- <button class="btn-Des" (click)="decrease(-1)">-</button> -->
+            <span class="Number1"> {{product.qty}} </span>
+            <!-- <button class="btn-Plus" (click)="increase(+1)">+</button> -->
+            <span class="item"> {{ product.product.name}} </span>
+            <span class="priceItem">$ {{product.product.price}} </span>
             <button (click)="deselectProduct()">x</button>
             <hr>
         </div>

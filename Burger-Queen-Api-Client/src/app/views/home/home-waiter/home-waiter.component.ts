@@ -1,25 +1,46 @@
 import { Component } from '@angular/core';
+import { findIndex } from 'rxjs';
 // import { NgModel } from '@angular/forms';
 // import { Router } from '@angular/router';
 // import { AuthService } from 'src/app/services/Auth/auth.service';
 // import { LoginService } from 'src/app/services/LoginService/login.service';
 
+interface Selected {
+  qty: number;
+  product: {
+   id: number;
+   name: string;
+   price: number;
+   image: string;
+   type: string;
+  }
+ }
+ 
 @Component({
   selector: 'app-home-waiter',
   templateUrl: './home-waiter.component.html',
   styleUrls: ['./home-waiter.component.css']
 })
 export class HomeWaiterComponent {
-  getData(data: {}){
-    console.log(data, 'DATAAAA');
-    // this.item.qty = 1 ,
-    //Agregar un nuevo campo qty: inicializado en 1 por default
+  getData(product: {}){
+    let qty = [];
+    // if()
+    // this.qty+= 1
+    // declarar un arr con con dicionales decirle que haga push
+    // this.item[i].qty 
+    // findIndex (busca el indice)
+    // console.log(product, 'DATAAAA');
+   let newProduct = {
+        qty:1,
+        product: product,
+    };
+
+    //Agregar un nueva propiedad qty: inicializado en 1 por default
     // no debe estar maquetado en  html
     //debe coger la data del campo qty
     //antes de hacer push, buscar por id y verificar sí ya existe en this.item sí no existe lo pusheo y sí no agrego el qtyty+1
-    console.log(data,'data con propiedad agregada');
-    
-    this.item.push(data);
+    this.item.push(newProduct);
+    console.log(newProduct,'data con propiedad agregada');
     }
 
   // EJEMPLO objeto a enviar al form PAPÁ
