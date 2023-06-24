@@ -11,8 +11,8 @@
         placeholder="Clients name"
       />
       <hr />
-      <label for="nOrder" formControlName="numOrder"
-        >N° Order: {{ this.numOrder }}</label
+      <label for="nOrder"
+        >N° Order: {{ numOrder }}</label
       ><br />
       <span></span>
       <hr />
@@ -36,6 +36,7 @@
       <!-- <button class="btn-Plus" (click)="increase(+1)">+</button> -->
       <span class="item"> {{ product.product.name }} </span>
       <span class="priceItem">$ {{ product.product.price }} </span>
+      <span class=" pricePlusQty"> $ {{product.product.price}}</span>
       <button (click)="deselectProduct()">
         <span class="material-symbols-outlined"> delete </span>
       </button>

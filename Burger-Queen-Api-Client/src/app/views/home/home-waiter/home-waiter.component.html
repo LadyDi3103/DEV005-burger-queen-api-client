@@ -3,7 +3,7 @@
   <app-header-home-waiter></app-header-home-waiter>
   <!-- End Header -->
   <div class="Container-menu-form">
-    <app-menu-home-waiter (propagate)="getData($event)"></app-menu-home-waiter>
-    <app-form-home-waiter [newItem]="getProduct"></app-form-home-waiter>
+    <app-menu-home-waiter  (propagate)="getData($event)"></app-menu-home-waiter>
+    <app-form-home-waiter (newEvent)="getNewItem($event)" [newItem]="getProduct"></app-form-home-waiter>
   </div>
 </section>
