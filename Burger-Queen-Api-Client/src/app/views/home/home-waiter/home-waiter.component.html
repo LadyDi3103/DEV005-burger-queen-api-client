@@ -1,7 +1,7 @@
 <!-- Inicio Header -->
 <section class="Container-general">
-    <app-header-home-waiter></app-header-home-waiter>
-<!-- <section class="Container-general">
+  <app-header-home-waiter></app-header-home-waiter>
+  <!-- <section class="Container-general">
     <nav class="ContainerOptionsMenu">
         <button (click)="exchangeMenu('breakfast')" class="btn-header"><img class="imgHeader"
                 src="../../../../assets/img/btn_status2.png" alt="button-status"></button>
@@ -14,18 +14,12 @@
     </nav>
     <p class="ubuntu"> Waiter: {{waitersName}}</p>
 </section> -->
-<!-- End Header -->
-<!-- NO TENEMOS ETIQUETA COACH -->
-<div class="Container-menu-form">
-    <app-menu-home-waiter (propagate)= 'getData($event)'></app-menu-home-waiter>
-    <app-form-home-waiter [nombre] = "alumno.nombre"
-    [nota]="alumno.nota"
-    [alumno]="alumno"
-    
-    [newItem]="item"
-    >
-    </app-form-home-waiter> 
-</div>
+  <!-- End Header -->
+  <!-- NO TENEMOS ETIQUETA COACH -->
+  <div class="Container-menu-form">
+    <app-menu-home-waiter (propagate)="getData($event)"></app-menu-home-waiter>
+    <app-form-home-waiter [newItem]="getProduct"></app-form-home-waiter>
+  </div>
 </section>
 
 <!-- menu
@@ -145,16 +139,16 @@ end Menu -->
                 <label for="nTable">N° Table: </label>
                 <input type="number" id="nTable" min="0" max="20" value="0">
             </div> -->
-            <!-- <div class="order" *ngFor="let product of products"> -->
-            <!-- <hr>
+<!-- <div class="order" *ngFor="let product of products"> -->
+<!-- <hr>
                 <button class="btn-Des" (click)="decrease()">-</button> -->
-            <!-- <span class="Number1"> {{counter}} </span>
+<!-- <span class="Number1"> {{counter}} </span>
                 <button class="btn-Plus" (click)="increase()">+</button>
                 <span class="item"> {{ products.name}} </span> -->
-            <!-- <span>{{product.nombre}}</span> -->
-            <!-- <button(click)="agregarProducto(producto)">Agregar</button> -->
-            <!-- </div> -->
-            <!-- <div class="order">
+<!-- <span>{{product.nombre}}</span> -->
+<!-- <button(click)="agregarProducto(producto)">Agregar</button> -->
+<!-- </div> -->
+<!-- <div class="order">
                 <hr>
                 <button class="btn-Des" (click)="decrease()">-</button>
                 <span class="Number1"> {{counter}} </span>

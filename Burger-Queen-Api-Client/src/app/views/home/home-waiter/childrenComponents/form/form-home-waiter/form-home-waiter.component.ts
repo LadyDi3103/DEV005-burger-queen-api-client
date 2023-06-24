@@ -16,10 +16,6 @@ export class FormHomeWaiterComponent {
   @Input() data: any;
   // console.log(this.data, 'RES INPUT FORM');
   // ejemplo
-  @Input() nombre: string = '';
-  @Input() nota: number = 0;
-  @Input() alumno: any;
-
   @Input() newItem: any[] = [];
 
   // clientsName: string = 'DIANA';
@@ -29,7 +25,6 @@ export class FormHomeWaiterComponent {
   // numTable: number = 0;
   // total: number = 0;
   // totalCost: number = 0;
-
 
   // counter: number;
   // totalCost: number;
@@ -106,7 +101,7 @@ decrease(value:number):void {
   // }
   // ---------- quitar una seleción de producto
   deselectProduct(): void {
-    // this.selectedMenu = null;
+    // this.newItem = null;
     // this.menuItem.breakfast.forEach((product)=>{
     //   product.selected = false; // reinicia la selección del producto breakfast
     // });
@@ -114,12 +109,13 @@ decrease(value:number):void {
     //   product.selected = false; // reinicia la selección del producto meals
     // })
   }
-
+ 
   cancelOrder(): void {
     this.form.reset({
       numTable: 0,
        
     });
+    this.newItem = [];
     // console.log('CANCEL ORDER2');
     // //reiniciar los valores relacionados con la orden
     // console.log(this.clientsName);
