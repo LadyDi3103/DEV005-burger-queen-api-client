@@ -11,18 +11,16 @@ import { HomeModule } from './views/home/home.module';
 import { LoginModule } from './views/login/login.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// import { HeaderHomeWaiterComponent } from './childrenComponents/header/header-home-waiter/header-home-waiter.component';
-// import { MenuHomeWaiterComponent } from './childrenComponents/menu/menu-home-waiter/menu-home-waiter.component';
-
-// import { HomeWaiterComponent } from './views/home/home-waiter/home-waiter.component';
 @NgModule({
-  declarations: [ //TODO: Declaraciones, componentes, directivas, pipes
+  //TODO: Declaraciones, componentes, directivas, pipes
+  declarations: [ 
     AppComponent
-    // LoginPageComponent,
-    // HomeWaiterComponent,
-    // FooterComponent,
+   
   ],
-  imports: [  //TODO: Solo se importan otros modulos
+  //TODO: Solo se importan otros modulos
+   //disponible todos los componentes en otros
+    //se importará en todos los módulos que se vaya a usar
+  imports: [  
     BrowserModule,
     HttpClientModule,
     FormsModule,
@@ -31,8 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeModule,
     LoginModule,
     BrowserAnimationsModule,
-    //disponible todos los componentes en otros
-    //se importará en todos los módulos que se vaya a usar
+   
     ],
   providers: [
     LoginService

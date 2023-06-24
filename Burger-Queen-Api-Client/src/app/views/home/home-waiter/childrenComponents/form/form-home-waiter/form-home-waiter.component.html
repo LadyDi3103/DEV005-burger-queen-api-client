@@ -1,26 +1,4 @@
-<!-- <div class="Container-menu-form"> -->
-<!-- <p>
-        Nombre: {{nombre}} 
-        Nota: {{nota}} -->
-<!-- Alumnos: {{alumno.nombre}} -->
-<!-- </p> -->
-
-<!-- <div class="container-Form">
-
-    <form id="form-home-waiter" (ngSubmit)="onSubmitDoThis()">
-        <div class="head-form">
-
-            <label for="clientsName">Client: </label>
-            <input type="text" id="clientsName" [(ngModel)]="clientsName" placeholder="Clients name">
-            <hr>
-
-            <label for="nOrder">N° Order: {{numOrder}} </label><br>
-            <hr>
-            <label for="nTable">N° Table: </label>
-            <input type="number" id="nTable" min="0" max="20" [value]="numTable">
-        </div> -->
-
-<!-- REACTIVE FORM  ***********************************************-->
+<!-- R E A C T I V E  F O R M  -->
 <div class="containerForm">
   <form [formGroup]="form" (ngSubmit)="(onSubmitDoThis)">
     <!-- E N C A B E Z A D O  -->
@@ -34,7 +12,7 @@
       />
       <hr />
       <label for="nOrder" formControlName="numOrder"
-        >N° Order: {{ this.numOrder }} </label
+        >N° Order: {{ this.numOrder }}</label
       ><br />
       <span></span>
       <hr />
@@ -51,7 +29,7 @@
     <!-- </div>  -->
     <p>Name is:{{ form.value.clientsName }}</p>
     <!-- ------------------- -->
-    <!-- RENDERIZA  R E S U M E N      O R D E  N-->
+    <!-- R E N D E R I Z A  R E S U M E N  O R D E  N-->
     <div class="order" *ngFor="let product of newItem">
       <!-- <button class="btn-Des" (click)="decrease(-1)">-</button> -->
       <span class="Number1"> {{ product.qty }} </span>
@@ -63,11 +41,10 @@
       </button>
       <hr />
     </div>
-
-    <!-- T O T A  L   O R D E R ********************************-->
+    <!-- T O T A L   O R D E R -->
     <div class="totalOrder">
       <span class="totalOrder"> Total: </span>
-      <!-- <span class="priceTag"> $ {{totalCost}}</span> -->
+      <!-- <span class="priceTag"> ${{totalCost}}</span> -->
       <hr />
     </div>
     <div class="btn-ordered">
