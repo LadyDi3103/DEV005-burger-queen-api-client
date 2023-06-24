@@ -1,10 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { __values } from 'tslib';
-
-
-// import { products } from '../../menu/products/produts';
-
+import { Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-form-home-waiter',
   templateUrl: './form-home-waiter.component.html',
@@ -12,20 +9,17 @@ import { __values } from 'tslib';
 })
 export class FormHomeWaiterComponent {
 
-  //FN TO OBTAIN DATA FROM MENU
+  @Output() newEvent = new EventEmitter<any>();
   @Input() data: any;
-  // console.log(this.data, 'RES INPUT FORM');
-  // ejemplo
   @Input() newItem: any[] = [];
-
-  // clientsName: string = 'DIANA';
+  
   // numOrder: any = '0000000';
   // selectedMenu: string | null = '';
   // counter: number = 1;
   // numTable: number = 0;
   // total: number = 0;
   // totalCost: number = 0;
-
+  
   // counter: number;
   // totalCost: number;
   // selectedMenu: string;
@@ -46,32 +40,46 @@ export class FormHomeWaiterComponent {
   //form va toda la data que se ingresa en un input
   counter: number = 1;
   numOrder: string = '0000001';
-  // clientsName: string = '';
+  
   // numTable: number = 0;
   // totalCost: number = 0;
   // total: number = 0;
   // counter: number = 1;
-//*********************************************************
-//cada producto debería tener su propio counter
-increase(value:number):void {
-  this.counter += value;
-  // console.log(this.counter);
-  // debe incrementar en el contador de precios unitarios la cantidad del item.
-}
-
-decrease(value:number):void {
-  if (this.counter > 0) {
-    this.counter -= value;
-    // console.log(this.counter);
-    // debe decrecrementar en el contador de precios unitarios la cantidad del item.
+  //*********************************************************
+  //EMIT emite valores ny luego debo configurar al papá para que reciba este valor
+  sendValue() {
+    this.newEvent.emit(this.newItem);
+    console.log(this.newItem, 'LÍNEAAAA56FORM');
   }
-}
+  
+  cancelOrder(): void {
+    this.form.reset({
+      numTable: 0,
+    });
+    this.newItem = [];
+    this.sendValue();
+  }
+
+  //cada producto debería tener su propio counter
+  increase(value: number): void {
+    this.counter += value;
+    // console.log(this.counter);
+    // debe incrementar en el contador de precios unitarios la cantidad del item.
+  }
+  
+  decrease(value: number): void {
+    if (this.counter > 0) {
+      this.counter -= value;
+      // console.log(this.counter);
+      // debe decrecrementar en el contador de precios unitarios la cantidad del item.
+    }
+  }
 
   incrementOrderNumber(): void {
-    // let number = parseInt(this.numOrder);
-    // number++;
-    // this.numOrder = number.toString();
-    // .padStart(7, '0');
+    let number = parseInt(this.numOrder);
+    number++;
+    this.numOrder = number.toString();
+    // this.numOrder.padStart(7, '0');
   }
   // decrementOrderNumber() {
   //   let number = parseInt(this.numOrder);
@@ -85,11 +93,11 @@ decrease(value:number):void {
   //     this.totalCost += this.selectedProduct.price;
   //     this.selectedProduct = null;
   //     console.log(this.selectedProduct, this.totalCost, this.selectedProducts, 126666666 );
-      
+
   //   }
 
   onSubmitDoThis() {
-    // this.incrementOrderNumber()
+    this.incrementOrderNumber()
     // console.log(this.selectedMenu, this.counter, this.numOrder, this.numTable, this.totalCost, this.total, this.numTable.valueOf, this.clientsName, this.clientsName, 49999)
 
   }
@@ -101,21 +109,13 @@ decrease(value:number):void {
   // }
   // ---------- quitar una seleción de producto
   deselectProduct(): void {
-    // this.newItem = null;
-    // this.menuItem.breakfast.forEach((product)=>{
+    this.newItem = [];
+    // this.newItem.forEach((product) => {
     //   product.selected = false; // reinicia la selección del producto breakfast
     // });
-    // this.menuItem.meals.forEach((product)=>{
+    // this.newItem.forEach((product) => {
     //   product.selected = false; // reinicia la selección del producto meals
     // })
   }
- 
-  cancelOrder(): void {
-    this.form.reset({
-      numTable: 0,
-       
-    });
-    this.newItem = [];
-  
-    }
-  }
+
+}
