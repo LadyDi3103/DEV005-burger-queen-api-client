@@ -116,21 +116,6 @@ decrease(value:number):void {
        
     });
     this.newItem = [];
-    // console.log('CANCEL ORDER2');
-    // //reiniciar los valores relacionados con la orden
-    // console.log(this.clientsName);
-    
-    // this.clientsName = ' ';        //no reinicia el nombre del cliente
-    // this.numOrder = this.decrementOrderNumber();
-    // this.selectedMenu = ' ';
-    // this.counter = 0;
-    // this.numTable = 0;             //no reinicia
-    // this.total = 0;
-    // this.totalCost = 0;
-    
-
-    // this.selectedProduct = null;
-    //restaurar los valores predeterminados de los productos
+  
     }
   }
-// }

@@ -19,7 +19,6 @@ export class LoginPageComponent {
   constructor(private loginService: LoginService, private router: Router) { }
 
   onSubmit(): void {
-    // JUGAR CON ESTO LÍNEA 21
     this.loginService.getCredentials(this.email, this.password).subscribe({
       next: (resp)=>{
         console.log('RESP', resp);      
@@ -38,5 +37,5 @@ export class LoginPageComponent {
       }
     })
   }
-//   queremos subcribirnos a su respuesta
+//queremos subcribirnos a su respuesta
 }

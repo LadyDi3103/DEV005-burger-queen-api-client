@@ -1,27 +1,15 @@
 import { Component, OnInit,Input,EventEmitter,Output } from '@angular/core';
-// import { products } from '../products/produts'; //importo el array de productos
+
 interface Menu {
   breakfast: Product[],
   meals: Product[],
 }
-interface Product {
-  // qty: number;
-  id: number;
+interface Product {id: number;
   name: string;
   price: number;
   image: string;
   type: string;
 }
-// interface Selected {
-//  qty: number;
-//  product: {
-//   id: number;
-//   name: string;
-//   price: number;
-//   image: string;
-//   type: string;
-//  }
-// }
 
 @Component({
   selector: 'app-menu-home-waiter',
