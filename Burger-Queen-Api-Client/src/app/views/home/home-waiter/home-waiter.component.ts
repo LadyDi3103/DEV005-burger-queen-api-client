@@ -49,11 +49,6 @@ console.log(value, 'getting value de newItem HWC 44'); //NO RECIBE
 }
 // getNewItem: GetProduct[]=[];
 
-
-
-
-
-
 }
 //modificar en el padre.. porque recién ahí es como manda a su hijo
 // getData(product: {}) {
