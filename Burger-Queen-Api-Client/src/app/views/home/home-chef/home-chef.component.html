@@ -1,5 +1,5 @@
 <!-- <p>home-chef works!</p> -->
-<app-header-home-waiter></app-header-home-waiter>
+<!-- <app-header-home-waiter></app-header-home-waiter> -->
 <!-- Inicio Header -->
 <section class="Container-general">
     <nav class="ContainerOptionsMenu">
@@ -12,6 +12,56 @@
         <button  class="btn-logOut" id="button-exit"><img class="imgLogOut"
                 src="../../../../assets/img/logOut.png" alt="button-exit"></button>
     </nav>
-    <p class="waiterName"> Chef: {{chefName}}</p>
-</section>
+    <p class="chefName"> Chef: {{chefName}}</p>
+
 <!-- End Header -->
+<!-- Order Area -->
+<div class="containerOrders">
+        <div class="order">
+          <label for="clientsName">Client: Juan Cristobal </label>
+          <hr />
+          <label for="nOrder">N° Order: 0000003</label>
+          <hr />
+          <label for="nTable">N° Table: 03 </label>
+          <hr />
+          <label for="resumeOrder" class="resumeOrder"> Resume Order: </label>
+          <div class="orederResume"></div>
+          <hr />
+          <div class="containerBottom">
+            <div class="timer">
+              <p>00:16:58</p>
+            </div>
+            <div class="containerToggle">
+              <input type="checkbox" id="switch" class="toggleInput" /><label
+                for="switch"
+                class="toggle"
+                >Toggle</label
+              >
+            </div>
+          </div>
+        </div>
+        <div class="order">
+          <label for="clientsName">Client: Maria Jimena </label>
+          <hr />
+          <label for="nOrder">N° Order: 0000005</label>
+          <hr />
+          <label for="nTable">N° Table: 05 </label>
+          <hr />
+          <label for="resumeOrder" class="resumeOrder"> Resume Order: </label>
+          <div class="orederResume"></div>
+          <hr />
+          <div class="containerBottom">
+            <div class="timer">
+              <p>00:20:45</p>
+            </div>
+            <div class="containerToggle">
+              <input type="checkbox" id="switch" class="toggleInput" /><label
+                for="switch"
+                class="toggle"
+                >Toggle</label
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
