@@ -2,6 +2,17 @@ import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { __values } from 'tslib';
 import { Output, EventEmitter } from '@angular/core';
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+  type: string;
+}
+interface GetProduct {
+  qty: number;
+  product: Product;
+}
 @Component({
   selector: 'app-form-home-waiter',
   templateUrl: './form-home-waiter.component.html',
@@ -10,47 +21,25 @@ import { Output, EventEmitter } from '@angular/core';
 export class FormHomeWaiterComponent {
 
   @Output() newEvent = new EventEmitter<any>();
-  @Input() data: any;
   @Input() newItem: any[] = [];
-  
-  // numOrder: any = '0000000';
-  // selectedMenu: string | null = '';
-  // counter: number = 1;
-  // numTable: number = 0;
-  // total: number = 0;
-  // totalCost: number = 0;
-  
-  // counter: number;
-  // totalCost: number;
-  // selectedMenu: string;
-  // numTable: number;
-  // total: number;
-  // clientsName: string;
-  
-  products: any[] = []; // AQUÍ DEBERÍA PUSHEARSE LOS PRODUCTOS AL SELECCIONAR
-  // numOrder: new FormControl('0000000'),
-  
-  // Formulario REACTIVO ****************************************************
-  form = new FormGroup({
+  // @Input() data: any;
+
+  // F O R M  R E A C T I V O
+   form = new FormGroup({
     clientsName: new FormControl(''),
-    numTable: new FormControl(1),
+    numTable: new FormControl(0),
     total: new FormControl(''),
     // totalCost: new FormControl(''),
   });
   //form va toda la data que se ingresa en un input
   counter: number = 1;
   numOrder: string = '0000001';
-  
-  // numTable: number = 0;
-  // totalCost: number = 0;
-  // total: number = 0;
-  // counter: number = 1;
   //*********************************************************
   //EMIT emite valores ny luego debo configurar al papá para que reciba este valor
   sendValue() {
     this.newEvent.emit(this.newItem);
     console.log(this.newItem, 'LÍNEAAAA56FORM');
-  }
+  } // lo envio vacio.
   
   cancelOrder(): void {
     this.form.reset({
@@ -60,11 +49,11 @@ export class FormHomeWaiterComponent {
     this.sendValue();
   }
 
-  //cada producto debería tener su propio counter
   increase(value: number): void {
-    this.counter += value;
-    // console.log(this.counter);
-    // debe incrementar en el contador de precios unitarios la cantidad del item.
+    // this.newItem[i].product.qty.find(product => product.id===this.newItem[i].product.qty)?.qty += value;
+    // console.log(this.increase(+1), 'linea 54');
+    
+    // this.newItem += value;
   }
   
   decrease(value: number): void {
@@ -78,8 +67,7 @@ export class FormHomeWaiterComponent {
   incrementOrderNumber(): void {
     let number = parseInt(this.numOrder);
     number++;
-    this.numOrder = number.toString();
-    // this.numOrder.padStart(7, '0');
+    this.numOrder = number.toString().padStart(7, '0');
   }
   // decrementOrderNumber() {
   //   let number = parseInt(this.numOrder);
@@ -108,8 +96,21 @@ export class FormHomeWaiterComponent {
   // {{totalCost}}
   // }
   // ---------- quitar una seleción de producto
-  deselectProduct(): void {
-    this.newItem = [];
+  deselectProduct(product: any): void {
+   const index = this.newItem.indexOf(product);
+    if (index !== -1){
+      this.newItem.splice(index, 1);
+      // this.totalCost -= product.price;
+    }
+  }
+    
+  // deleteSelection(product: Product): void {
+  //   const index = this.selectedProducts.indexOf(product);
+  //   if (index !== -1) {
+  //     this.selectedProducts.splice(index, 1);
+  //     this.totalCost -= product.price;
+  //     console.log(product.price);
+      
     // this.newItem.forEach((product) => {
     //   product.selected = false; // reinicia la selección del producto breakfast
     // });
@@ -118,4 +119,3 @@ export class FormHomeWaiterComponent {
     // })
   }
 
-}

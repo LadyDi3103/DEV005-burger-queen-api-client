@@ -28,6 +28,10 @@ export class AdminService {
       type: type,
     })
   }
+  //CREAR EL PRODUCT LO HACE EL ADMIN/    
+  // HACER PETICIÓN PETICIÓN POST..
+  // MANDO BODY MI OBJETO CON TODA LA DATA PARA CREAR UNA ORDEN
+  // ES NECESARIO.. CONECTAR A LA BASE DE DATOS!!!
   // getListProducts(id: number, name: string, price:number, image: string, type:string, dateEntry:string): Observable<any> {
   //   return this.http.post('http://localhost:8080/users/products', {
   //     id:id

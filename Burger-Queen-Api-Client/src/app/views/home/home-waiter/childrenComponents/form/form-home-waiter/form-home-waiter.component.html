@@ -4,26 +4,13 @@
     <!-- E N C A B E Z A D O  -->
     <div class="headForm">
       <label for="clientsName">Client: </label>
-      <input
-        type="text"
-        id="clientsName"
-        formControlName="clientsName"
-        placeholder="Clients name"
-      />
+      <input type="text" id="clientsName" formControlName="clientsName" placeholder="Clients name" />
       <hr />
-      <label for="nOrder"
-        >N° Order: {{ numOrder }}</label
-      ><br />
+      <label for="nOrder">N° Order: {{ numOrder }}</label><br />
       <span></span>
       <hr />
       <label for="nTable">N° Table: </label>
-      <input
-        type="number"
-        id="nTable"
-        min="0"
-        max="20"
-        formControlName="numTable"
-      />
+      <input type="number" id="nTable" min="0" max="20" formControlName="numTable" />
     </div>
     <!-- </form> -->
     <!-- </div>  -->
@@ -31,13 +18,13 @@
     <!-- ------------------- -->
     <!-- R E N D E R I Z A  R E S U M E N  O R D E  N-->
     <div class="order" *ngFor="let product of newItem">
-      <!-- <button class="btn-Des" (click)="decrease(-1)">-</button> -->
+      <button class="btn-Des" (click)="decrease(-1)">-</button>
       <span class="Number1"> {{ product.qty }} </span>
-      <!-- <button class="btn-Plus" (click)="increase(+1)">+</button> -->
-      <span class="item"> {{ product.product.name }} </span>
-      <span class="priceItem">$ {{ product.product.price }} </span>
-      <span class=" pricePlusQty"> $ {{product.product.price}}</span>
-      <button (click)="deselectProduct()">
+      <button class="btn-Plus" (click)="increase(+1)">+</button>
+      <span class="item">{{ product.product.name }}</span>
+      <span class="priceItem">$ {{ product.product.price }}</span>
+      <span class=" pricePlusQty">$ {{ product.product.price * product.qty}}</span>
+      <button (click)="deselectProduct(product)">
         <span class="material-symbols-outlined"> delete </span>
       </button>
       <hr />
