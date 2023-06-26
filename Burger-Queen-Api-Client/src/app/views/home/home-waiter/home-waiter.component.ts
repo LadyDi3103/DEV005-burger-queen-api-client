@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 // import { findIndex } from 'rxjs';
 
 interface Product {
@@ -19,8 +19,11 @@ interface GetProduct {
   styleUrls: ['./home-waiter.component.css'],
 })
 export class HomeWaiterComponent {
+  // @Output
   getProduct: GetProduct[] = [];
+  //Entra acá
   getData(product: Product) {
+    // debugger
     const index = this.getProduct.findIndex(
       (item) => item.product.id === product.id
     );
@@ -34,7 +37,25 @@ export class HomeWaiterComponent {
     }
     console.log(this.getProduct, 'linea 40');
   }
+
+clearOrderOnSubmit():void{
+  this.getProduct = [];
 }
+getNewItem(value: any){
+  this.getProduct = [];
+  // debugger
+console.log(value, 'getting value de newItem HWC 44'); //NO RECIBE
+
+}
+// getNewItem: GetProduct[]=[];
+
+
+
+
+
+
+}
+//modificar en el padre.. porque recién ahí es como manda a su hijo
 // getData(product: {}) {
 // this.item[i].qty
 // this.item.push(newProduct);
