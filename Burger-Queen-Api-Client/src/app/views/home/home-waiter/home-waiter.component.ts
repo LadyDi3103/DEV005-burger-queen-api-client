@@ -29,7 +29,7 @@ export class HomeWaiterComponent {
     );
     if (index === -1) {
       this.getProduct.push({
-        qty: 1,
+        qty: 0,
         product: product,
       });
     } else {
