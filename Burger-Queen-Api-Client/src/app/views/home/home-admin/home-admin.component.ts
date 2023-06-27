@@ -8,18 +8,40 @@ import { AdminService } from 'src/app/services/AdminService/admin.service';
   styleUrls: ['./home-admin.component.css']
 })
 export class HomeAdminComponent {
+  adminName: string = 'LadyDiana';
   email: string = '';
   password: string = '';
   rol: string = '';
   // adminName: string = 'Anita Borgez'
-  // errorMessage: string =''; 
+  errorMessage: string =''; 
 
   constructor(private adminService: AdminService, private router: Router) {}
   onSubmit(): void {
-  this.adminService.getAccessToken(this.email, this.password, this.rol).subscribe((resp) => {
+  this.adminService.getAccessToken(this.email, this.password, this.rol).subscribe({
+    next:(resp) => {
   console.log(resp, 'VALIDA');
+  if(resp.accessToken){
+    this.router.navigate(['/home-admin']);
+    this.email= ' ';
+    this.password= ' ';
+  }else if(resp.accessToken === undefined){
+    this.errorMessage = 'Wrong Credentials!!!'
+  }
+
+ },
+ error: ()=>{
+  this.errorMessage = 'Wrong Credentials!!!';
  }
-)
+})
+}
+closeModal(){
+  
+}
+openModal(){
+
+}
+logout():void{
+  this.router.navigateByUrl('/login');
 }
 }
 //TENER EN CUENTA LA DATA HARDCODEADA...

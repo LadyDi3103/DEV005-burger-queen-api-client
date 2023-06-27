@@ -19,7 +19,7 @@ interface GetProduct {
   styleUrls: ['./home-waiter.component.css'],
 })
 export class HomeWaiterComponent {
-  // @Output
+  waiterName: string = 'Lady Diana';
   getProduct: GetProduct[] = [];
   //Entra acá
   getData(product: Product) {
@@ -29,7 +29,7 @@ export class HomeWaiterComponent {
     );
     if (index === -1) {
       this.getProduct.push({
-        qty: 0,
+        qty: 1,
         product: product,
       });
     } else {
