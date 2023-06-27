@@ -1,69 +1,109 @@
-/* * {
-    color: var(--color-2);
-    font-family: ubuntu;
-    font-style: italic;
-} */
 
 /* inicio form */
 .containerForm {
   max-width: 100%;
   min-height: 82vh;
+  }
+.tabla{
   display: flex;
   flex-direction: column;
-  line-height: 100%;
-  padding-left: 10px;
+  justify-content: center;
 }
 .headForm,
-.Number1 {
+.Number1{
+  padding-bottom: 5px;
   margin-top: 0px;
   margin-bottom: 7px;
   margin-left: 3px;
-  margin-right: 3px;
+  margin-right: 6px;
   font-size: 22px;
-
-  /* background-color: blue; */
+  border-bottom: 2px solid var(--color-2);
+  }
+  input[type=text]{
+    width: 60%;
+    padding: 12px 20px;
+    margin-left: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 20px;
+  }
+  input[type=number]{
+    width: 30%;
+    padding: 15px 20px;
+    margin-left: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 20px;
+  }
+  input[type=number]::-webkit-outer-spin-button, 
+  input[type=number]::-webkit-inner-spin-button {
+        -webkit-appearance: inner-spin-button !important;
+        width: 40px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+      }
+ 
+.containerRender {
+  /* background: blue; */
+  height: 540px;
+  overflow-y: auto;
+  
 }
-
 .order {
-  margin-bottom: 15px;
-  /* background-color: brown; */
+  /* background: blue; */
+  display: flex; 
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
-
 .totalOrder {
-  margin-top: 360px;
-  margin-bottom: 5px;
-  /* background-color: blueviolet; */
-}
-
-.btn-ordered {
+  display: flex; 
+  border-top: 2px solid var(--color-2);
+  border-bottom: 2px solid var(--color-2);
+  font-size: 22px;
+ }
+.btnOrdered{
+  /* background: red; */
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  /* justify-content: center; */
-  font-style: italic;
-  /* letter-spacing: 1.5px; */
-  /* text-align: center;
-    align-self: center; */
+  flex-direction: row;
+  justify-content: space-around;
+  max-width: 100%;
 }
-
-.btn-sub {
-  /* flex-direction: column; */
+.btnSubmit {
   /* background-color: black; */
   background-color: var(--color-3);
   letter-spacing: 1.5px;
-  width: 95%;
-  height: 50%;
+  width: 45%;
+  height: 20%;
   padding: 2.2%;
   margin-top: 5%;
   border-radius: 8px;
-  color: var(--color-2);
+  color: var(--color-6);
   font-size: 25px;
   font-style: italic;
-  /* justify-content: center; */
   text-align: center;
   align-self: center;
+  text-shadow: 2px 2px var(--color-2);
 }
-
+.btnCancel {
+  /* background-color: black; */
+  background-color: var(--color-1);
+  letter-spacing: 1.5px;
+  width: 45%;
+  height: 20%;
+  padding: 2.2%;
+  margin-top: 5%;
+  border-radius: 8px;
+  color: var(--color-6);
+  font-size: 25px;
+  font-style: italic;
+  text-align: center;
+  align-self: center;
+  text-shadow: 2px 2px var(--color-2);
+}
 /* Estilos DIV2 */
 .priceTag {
   flex: 1;
@@ -74,16 +114,39 @@
 .btn-Des,
 .btn-Plus {
   background-color: var(--color-2);
-  color: antiquewhite;
+  color: var(--color-6);
   font-size: 20px;
   border-radius: 8px;
   width: 40px;
   height: 30px;
 }
-/* end form */
-
-.material-symbols-outlined {
-  background-color: transparent;
-  border: none;
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+.item{
+  /* background: red; */
+  width: 60px;
+  margin-left: 10px;
+  margin-right: 5px;
 }
+.priceItem{
+  /* background: red; */
+  width: 30px;
+  margin-left: 10px;
+  margin-right: 5px;
+  align-items: center;
+}
+/* end form */
+.iconDelete{
+  background: transparent;
+  border: none;
+}
+.material-symbols-outlined {
+  position: absolute;
+  font-size: 35px;
+  color: var(--color-2);
+  /* bottom: 5px; */
+  right: 15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-variation-settings: "FILL" 18, "wght" 6000, "GRAD" 10, "opsz" 48;
+}
+
+
