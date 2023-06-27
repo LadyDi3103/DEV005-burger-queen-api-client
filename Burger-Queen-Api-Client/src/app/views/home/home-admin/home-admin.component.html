@@ -1,12 +1,14 @@
+<app-header-home-waiter></app-header-home-waiter>
+<p class="adminName"> Admin: {{adminName}}</p>
 <div class="body">
   <div class="signupFrm">
     <!-- <p class="waiterName"> Chef:</p> -->
     <form class="form" (ngSubmit)="onSubmit()">
-      <h1 class="title">Register User</h1>
+      <h1 class="title">Register User</h1><span class="closeModal" (click)="closeModal()">&times;</span>
 
       <div class="inputContainer">
         <input class="input" type="email" id="mail" [(ngModel)]="email" name="user_mail" placeholder="a"
-          title="El email es incorrecto" placeholder="ejemplo@ejemplo.com" required>>
+          title="El email es incorrecto" placeholder="ejemplo@ejemplo.com" required>
         <label for="" class="label">Email</label>
       </div>
 
@@ -20,17 +22,17 @@
         <input type="text" class="input" [(ngModel)]="rol" id="rol" name="rol" placeholder="a" required>
         <label for="" class="label">rol</label>
       </div>
-      <hr>
+      <button class="add-employee" (click)="onSubmit()">Create Employee</button>
     </form>
   </div>
 </div>
-<!-- <button class="add-employee" (click)="openModal()">Create Employee</button>
-        <hr>
+
+        <!-- <hr>
         <span class="closeModal" (click)="closeModal()">&times;</span>
         <button type="submit">Add Employee</button>
         <button type="button" (click)="closeModal()">Cancel</button>
         <hr>
-    </form>
+    </form> 
 </div>
 <div>
     <ul>

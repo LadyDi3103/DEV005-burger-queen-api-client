@@ -10,32 +10,39 @@ import { LoginService } from 'src/app/services/LoginService/login.service';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent {
-  email: string = '';
-  password: string = '';
-  errorMessage: string = '';
+  public email: string = '';
+  public password: string = '';
+  public errorMessage: string = '';
   // errorMessagePassword: string = '';
   // errorMessageEmail: string = '';
 
   constructor(private loginService: LoginService, private router: Router) { }
-
+  //evaluar que esté logeada ¿?
   onSubmit(): void {
     this.loginService.getCredentials(this.email, this.password).subscribe({
-      next: (resp)=>{
-        console.log('RESP', resp);      
-        if (resp.accessToken) {
-          // console.log('ESTATUS',(resp.status));        
+      next: (resp) => {
+        console.log('RESP', resp);
+        if (resp.user.rol === 'waiter') {
           this.router.navigate(['/home-waiter']);
-          this.email= ' ';
-          this.password= ' ';
-        } else if(resp.accessToken === undefined) {
+          this.email = ' ';
+          this.password = ' ';
+        } if (resp.user.rol === 'chef') {
+          this.router.navigate(['/home-chef']);
+          this.email = ' ';
+          this.password = ' ';
+        } if (resp.user.rol === 'admin') {
+          this.router.navigate(['/home-admin']);
+          this.email = ' ';
+          this.password = ' ';
+        } else if (resp.accessToken === undefined) {
           this.errorMessage = 'Wrong Credentials!!!';
         }
         //observables reciben de otra forma los errores 
       },
-      error: ()=>{
+      error: () => {
         this.errorMessage = 'Wrong Credentials!!!';
       }
     })
   }
-//queremos subcribirnos a su respuesta
+  //queremos subcribirnos a su respuesta
 }

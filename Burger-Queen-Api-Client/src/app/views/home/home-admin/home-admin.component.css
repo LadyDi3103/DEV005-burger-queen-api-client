@@ -1,3 +1,9 @@
+.adminName {
+  margin-bottom: 7px;
+    font-size: 22px;
+    margin-top: 0px;
+    padding-left: 25px;
+}
 .body{
   color: var(--color-2);
     box-sizing: border-box;

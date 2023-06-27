@@ -2,19 +2,18 @@
 <!-- <app-header-home-waiter></app-header-home-waiter> -->
 <!-- Inicio Header -->
 <section class="Container-general">
-    <nav class="ContainerOptionsMenu">
+  <app-header-home-waiter></app-header-home-waiter>
+    <!-- <nav class="ContainerOptionsMenu">
         <button  class="btn-header"><img class="imgHeader"
                 src="../../../../assets/img/btn_status2.png" alt="button-status"></button>
         <button class="btn-header"><img class="imgHeader"
                 src="../../../../assets/img/btn_To_Deliver_2.png" alt="button-deliver"></button>
         <button class="btn-header"><img class="imgHeader"
                 src="../../../../assets/img/btn_Reward.png" alt="button-reward"></button>
-        <button  class="btn-logOut" id="button-exit"><img class="imgLogOut"
+        <button  class="btn-logOut" (click)="logout()" id="button-exit"><img class="imgLogOut"
                 src="../../../../assets/img/logOut.png" alt="button-exit"></button>
-    </nav>
+    </nav> -->
     <p class="chefName"> Chef: {{chefName}}</p>
-
-    
 <!-- End Header -->
 <!-- Order Area -->
 <div class="containerOrders">

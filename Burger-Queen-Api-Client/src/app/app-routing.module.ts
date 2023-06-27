@@ -27,7 +27,7 @@ const routes: Routes = [
     component: HomeAdminComponent,
   },
   {
-    path: 'home-kitchen', //TODO: http://localhost:4200/ <--- /home
+    path: 'home-chef', //TODO: http://localhost:4200/ <--- /home
     component: HomeChefComponent,
   },
   // {
@@ -36,7 +36,7 @@ const routes: Routes = [
   // },
   {
     path: '**', //TODO: cualquier ruta redirijirá al home
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
 ];

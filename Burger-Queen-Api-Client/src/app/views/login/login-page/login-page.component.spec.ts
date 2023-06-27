@@ -1,14 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoginPageComponent } from './login-page.component';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 
-describe('LoginPageComponent', () => {
+fdescribe('LoginPageComponent', () => {
   let component: LoginPageComponent;
   let fixture: ComponentFixture<LoginPageComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [LoginPageComponent]
+      declarations: [LoginPageComponent],
+      providers: [HttpClient, HttpHandler]
     });
     fixture = TestBed.createComponent(LoginPageComponent);
     component = fixture.componentInstance;

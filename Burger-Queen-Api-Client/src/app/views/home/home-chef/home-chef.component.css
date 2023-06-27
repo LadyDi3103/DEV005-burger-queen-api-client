@@ -25,6 +25,12 @@
     font-family: ubuntu;
     font-style: italic;
 }
+.chefName {
+  margin-bottom: 7px;
+    font-size: 22px;
+    margin-top: 0px;
+    padding-left: 25px;
+}
 
 .Container-general {
     margin: auto;
