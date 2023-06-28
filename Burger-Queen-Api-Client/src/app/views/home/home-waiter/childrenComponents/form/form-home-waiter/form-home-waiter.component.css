@@ -2,7 +2,7 @@
 /* inicio form */
 .containerForm {
   max-width: 100%;
-  min-height: 82vh;
+  min-height: 66vh;
   }
 .tabla{
   display: flex;
@@ -49,7 +49,7 @@
  
 .containerRender {
   /* background: blue; */
-  height: 510px;
+  height: 480px;
   overflow-y: auto;
   
 }
@@ -139,12 +139,13 @@
   border: none;
 }
 .material-symbols-outlined {
-  position: absolute;
+  margin-top: 2px;
+  /* position: absolute; */
   font-size: 35px;
   color: var(--color-2);
   /* bottom: 5px; */
   right: 15px;
-  transform: translateY(-50%);
+  transform: translateY(-25%);
   cursor: pointer;
   font-variation-settings: "FILL" 18, "wght" 6000, "GRAD" 10, "opsz" 48;
 }

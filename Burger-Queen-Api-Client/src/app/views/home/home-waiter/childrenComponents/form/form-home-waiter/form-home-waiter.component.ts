@@ -1,5 +1,6 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+
 interface Product {
   id: number;
   name: string;
@@ -32,31 +33,19 @@ export class FormHomeWaiterComponent {
   //form va toda la data que se ingresa en un input
 
   //EMIT emite valores ny luego debo configurar al papá para que reciba este valor
-  sendValue():void {
+  sendValue(): void {
     this.newEvent.emit(this.newItem);
     console.log(this.newItem, 'LÍNEAAAA56FORM');
   } // lo envio vacio.
 
-  cancelOrder(): void {
-    this.form.reset({
-      numTable: 0,
-    });
-    this.numOrder
-    this.newItem = [];
-    this.totalCost = 0;
-    this.sendValue();
-  }
-
   increase(product: GetProduct): void {
     product.qty += 1;
-    this.calculateTotalCost()
   }
 
   decrease(product: GetProduct): void {
     if (product.qty > 1) {
       product.qty -= 1;
     }
-    this.calculateTotalCost()
   }
 
   incrementOrderNumber(): void {
@@ -64,27 +53,48 @@ export class FormHomeWaiterComponent {
     number++;
     this.numOrder = number.toString().padStart(7, '0');
   }
-  decrementOrderNumber(): void{
+  decrementOrderNumber(): void {
     let number = parseInt(this.numOrder, 10);
     number--;
     this.numOrder = number.toString().padStart(7, '0');
   }
   // se asigna el valor total en totalCost
-  calculateTotalCost(): void {
+  calculateTotalCost():number{
     // console.log(this.totalCost, 9000000000000000);
     this.totalCost = this.newItem.reduce((total, product) => total + (product.product.price * product.qty), 0);
     console.log(this.totalCost, 76666);
+    return this.totalCost;
   }
-  onSubmitDoThis(): void {
-    this.incrementOrderNumber()
-    console.log('Nombre del Cliente:', this.form.value.clientsName,'Número de orden:', this.numOrder,'Núm de Mesa: ', this.form.value.numTable, 'Costo Total:', this.totalCost,'Productos: ', this.newItem , 49999)
-  }
-  // ---------- quitar una seleción de producto
+
+  //falta lógica para recibir
+  //falta: No hay un observable, que nos avise cuando una variable cambia... 
+  // ngOnInit(): void {
+  //   this.calculateTotalCost();
+  //   // this.newItem.forEach(product => {
+  //   //   this.totalCost += product.qty * product.product.price
+  //   // });
+  // }
+
   deselectProduct(product: any): void {
     let index = this.newItem.indexOf(product);
-    if(index !== -1){
+    if (index !== -1) {
       const removeProduct = this.newItem.splice(index, 1)[0];
       this.totalCost -= removeProduct.product.price * removeProduct.qty;
     }
+  }
+
+  onSubmitDoThis(): void {
+    this.incrementOrderNumber()
+    console.log('Nombre del Cliente:', this.form.value.clientsName, 'Número de orden:', this.numOrder, 'Núm de Mesa: ', this.form.value.numTable, 'Costo Total:', this.totalCost, 'Productos: ', this.newItem, 49999)
+  }
+  // ---------- quitar una seleción de producto
+  cancelOrder(): void {
+    this.form.reset({
+      numTable: 0,
+    });
+    // this.numOrder
+    this.newItem = [];
+    this.totalCost = 0;
+    this.sendValue();
   }
 }
