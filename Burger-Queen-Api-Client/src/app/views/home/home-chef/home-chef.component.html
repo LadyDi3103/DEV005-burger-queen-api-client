@@ -3,64 +3,54 @@
 <!-- Inicio Header -->
 <section class="Container-general">
   <app-header-home-waiter></app-header-home-waiter>
-    <p class="chefName"> Chef: {{chefName}}</p>
-<!-- End Header -->
-<!-- Order Area -->
-<div class="containerOrders">
-        <div class="order">
-          <label for="clientsName">Client: Juan Cristobal </label>
-          <hr />
-          <label for="nOrder">N° Order: 0000003</label>
-          <hr />
-          <label for="nTable">N° Table: 03 </label>
-          <hr />
-          <label for="resumeOrder" class="resumeOrder"> Resume Order: </label>
-            <div class="orederResume">
-               <!-- *ngFor="let product of newItem"> -->
-                <!-- <button class="btn-Des" (click)="decrease(product)">-</button> -->
-                <span class="Number1"> 5 </span>
-                <!-- <button class="btn-Plus" (click)="increase(product)">+</button> -->
-                <span class="item">short coffe</span>
-                <span class="priceItem"> $ 2</span>
-                <span class=" priceItem"> $ 10</span>
-              <!-- <button class="btn-Des" (click)="decrease(product)">-</button> -->
-          </div>
-          <hr />
-          <div class="containerBottom">
-            <div class="timer">
-              <p>00:16:58</p>
-            </div>
-            <div class="containerToggle">
-              <input type="checkbox" id="switch" class="toggleInput" /><label
-                for="switch"
-                class="toggle"
-                >Toggle</label
-              >
-            </div>
-          </div>
-        </div>
-        <div class="order">
-          <label for="clientsName">Client: Maria Jimena </label>
-          <hr />
-          <label for="nOrder">N° Order: 0000005</label>
-          <hr />
-          <label for="nTable">N° Table: 05 </label>
-          <hr />
-          <label for="resumeOrder" class="resumeOrder"> Resume Order: </label>
-          <div class="orederResume"></div>
-          <hr />
-          <div class="containerBottom">
-            <div class="timer">
-              <p>00:20:45</p>
-            </div>
-            <div class="containerToggle">
-              <input type="checkbox" id="switch" class="toggleInput" /><label
-                for="switch"
-                class="toggle"
-                >Toggle</label
-              >
-            </div>
-          </div>
-        </div>
+  <p class="chefName">Chef: {{ chefName }}</p>
+  <!-- End Header -->
+  <!-- Order Area -->
+  <div class="containerOrders">
+    <div class="order">
+      <label for="clientsName">Client: Juan Cristobal </label>
+      <hr />
+      <label for="nOrder">N° Order: 0000003</label>
+      <hr />
+      <label for="nTable">N° Table: 03 </label>
+      <hr />
+      <label for="resumeOrder" class="resumeOrder"> Resume Order: </label>
+      <div class="orederResume">
+        <span class="Number1"> 5 </span>
+        <span class="item">short coffe</span>
       </div>
-    </section>
+      <hr />
+      <div class="containerBottom">
+        <div class="timer">
+          <p>Date: 2023-06-27</p>
+          <p>Timer: 00:16:58</p>
+        </div>
+        <hr />
+        <button [ngClass]="{'red-button': !buttonState, 'green-button': buttonState}" (click)="toggleButtonState()">
+          {{ buttonState ? 'To Deliver' : 'To Prepare' }}
+        </button>
+      </div>
+    </div>
+    <div class="order">
+      <label for="clientsName">Client: Maria Jimena </label>
+      <hr />
+      <label for="nOrder">N° Order: 0000005</label>
+      <hr />
+      <label for="nTable">N° Table: 05 </label>
+      <hr />
+      <label for="resumeOrder" class="resumeOrder"> Resume Order: </label>
+      <div class="orederResume"></div>
+      <hr />
+      <div class="containerBottom">
+        <div class="timer">
+          <p>Date: 2023-06-27</p>
+          <p>Timer: 00:16:58</p>
+        </div>
+        <hr />
+        <button [ngClass]="{'red-button': !buttonState, 'green-button': buttonState}" (click)="toggleButtonState()">
+          {{ buttonState ? 'To Deliver' : 'To Prepare' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
