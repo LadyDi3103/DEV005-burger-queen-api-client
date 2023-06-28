@@ -3,16 +3,6 @@
 <!-- Inicio Header -->
 <section class="Container-general">
   <app-header-home-waiter></app-header-home-waiter>
-    <!-- <nav class="ContainerOptionsMenu">
-        <button  class="btn-header"><img class="imgHeader"
-                src="../../../../assets/img/btn_status2.png" alt="button-status"></button>
-        <button class="btn-header"><img class="imgHeader"
-                src="../../../../assets/img/btn_To_Deliver_2.png" alt="button-deliver"></button>
-        <button class="btn-header"><img class="imgHeader"
-                src="../../../../assets/img/btn_Reward.png" alt="button-reward"></button>
-        <button  class="btn-logOut" (click)="logout()" id="button-exit"><img class="imgLogOut"
-                src="../../../../assets/img/logOut.png" alt="button-exit"></button>
-    </nav> -->
     <p class="chefName"> Chef: {{chefName}}</p>
 <!-- End Header -->
 <!-- Order Area -->
@@ -25,7 +15,16 @@
           <label for="nTable">N° Table: 03 </label>
           <hr />
           <label for="resumeOrder" class="resumeOrder"> Resume Order: </label>
-          <div class="orederResume"></div>
+            <div class="orederResume">
+               <!-- *ngFor="let product of newItem"> -->
+                <!-- <button class="btn-Des" (click)="decrease(product)">-</button> -->
+                <span class="Number1"> 5 </span>
+                <!-- <button class="btn-Plus" (click)="increase(product)">+</button> -->
+                <span class="item">short coffe</span>
+                <span class="priceItem"> $ 2</span>
+                <span class=" priceItem"> $ 10</span>
+              <!-- <button class="btn-Des" (click)="decrease(product)">-</button> -->
+          </div>
           <hr />
           <div class="containerBottom">
             <div class="timer">
