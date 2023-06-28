@@ -6,14 +6,18 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-home-chef',
   templateUrl: './home-chef.component.html',
-  styleUrls: ['./home-chef.component.css']
+  styleUrls: ['./home-chef.component.css'],
 })
 export class HomeChefComponent {
-chefName: string = 'IndiraDavoin'
+  chefName: string = 'IndiraDavoin';
+  public buttonState: boolean = false;
 
-constructor(private loginService: LoginService, private router: Router){}
-
-logout():void{
-  this.router.navigateByUrl('/login');
-}
+  constructor(private loginService: LoginService, private router: Router) {}
+  
+  public toggleButtonState(): void {
+    this.buttonState = !this.buttonState;
+  }
+  logout(): void {
+    this.router.navigateByUrl('/login');
+  }
 }

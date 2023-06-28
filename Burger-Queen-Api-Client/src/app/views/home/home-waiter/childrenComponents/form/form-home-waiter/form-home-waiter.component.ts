@@ -85,6 +85,10 @@ export class FormHomeWaiterComponent {
 
   onSubmitDoThis(): void {
     this.incrementOrderNumber()
+    this.form.reset({
+      numTable: 0,
+    });
+    this.sendValue();
     console.log('Nombre del Cliente:', this.form.value.clientsName, 'Número de orden:', this.numOrder, 'Núm de Mesa: ', this.form.value.numTable, 'Costo Total:', this.totalCost, 'Productos: ', this.newItem, 49999)
   }
   // ---------- quitar una seleción de producto
