@@ -22,36 +22,16 @@ interface GetProduct {
 })
 export class HomeWaiterComponent {
   // Casita de la data de la api 
-  id: any='';
-  client: string ='';
-  products: []= [];
-  status: string= '';
-  dateEntry: string= '';
-  dateProcessed: string = '';
+  // id: any='';
+  // client: string ='';
+  // products: []= [];
+  // status: string= '';
+  // dateEntry: string= '';
+  // dateProcessed: string = '';
 
   waiterName: string = 'Lady Diana';
   getProduct: GetProduct[] = [];
  
-  constructor(private orderService: OrderService){ }
- 
-  onSubmit():void{
-    const orderData ={
-      id: this.id,
-      client: this.client,
-      products: this.products,
-      status: this.status,
-      dateEntry: this.dateEntry,
-      dateProcessed: this.dateProcessed,
-    };
-    this. orderService.createOrder(orderData).subscribe({
-      next: (resp) =>{
-        console.log(resp, 'RESPUESTA API ORDER');  
-      },
-      error:(error) =>{
-        console.log(error, 'MANEJOR ERROR ORDER');  
-      }
-    })
-  }
 
 getData(product: Product) {
     const index = this.getProduct.findIndex(

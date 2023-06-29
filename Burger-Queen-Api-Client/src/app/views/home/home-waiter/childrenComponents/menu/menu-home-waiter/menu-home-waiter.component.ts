@@ -1,4 +1,5 @@
-import { Component, OnInit,Input,EventEmitter,Output } from '@angular/core';
+import { Component, OnInit,EventEmitter,Output } from '@angular/core';
+import { AdminService } from 'src/app/services/AdminService/admin.service';
 
 interface Menu {
   breakfast: Product[],
@@ -19,6 +20,20 @@ interface Product {id: number;
 export class MenuHomeWaiterComponent{
   @Output() propagate = new EventEmitter<any>();
 
+  constructor(private adminService: AdminService){ }
+  getProducts(): void{
+    this.adminService.getListProducts().subscribe((resp)=>{
+      console.log(resp);
+      
+    },
+    )
+  }
+ngOnInit(): void {
+  //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+  //Add 'implements OnInit' to the class.
+  this.getProducts();
+
+}
     showTabContent(option: string): void {
       this.selectedMenu = option;
     }

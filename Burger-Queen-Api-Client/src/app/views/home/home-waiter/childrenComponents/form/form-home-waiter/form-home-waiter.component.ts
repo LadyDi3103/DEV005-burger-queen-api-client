@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { OrderService } from 'src/app/services/OrderService/order.service';
 
 interface Product {
   id: number;
@@ -12,6 +13,7 @@ interface GetProduct {
   qty: number;
   product: Product;
 }
+// aquí suscribirnos al serivicio
 @Component({
   selector: 'app-form-home-waiter',
   templateUrl: './form-home-waiter.component.html',
@@ -23,6 +25,14 @@ export class FormHomeWaiterComponent {
   numOrder: string = '0000001';
   totalCost: number = 0;
 
+    // Casita de la data de la api 
+    id: any='';
+    client: string ='';
+    products: []= [];
+    status: string= '';
+    dateEntry: string= '';
+    dateProcessed: string = '';
+  
   // F O R M  R E A C T I V O
   form = new FormGroup({
     clientsName: new FormControl(''),
@@ -31,7 +41,27 @@ export class FormHomeWaiterComponent {
     totalCost: new FormControl(''),
   });
   //form va toda la data que se ingresa en un input
-
+  constructor(private orderService: OrderService){ }
+  
+ 
+  onSubmit():void{
+    const orderData ={
+      id: this.id,
+      client: this.client,
+      products: this.products,
+      status: this.status,
+      dateEntry: this.dateEntry,
+      dateProcessed: this.dateProcessed,
+    };
+    this. orderService.createOrder(orderData).subscribe({
+      next: (resp) =>{
+        console.log(resp, 'RESPUESTA API ORDER');  
+      },
+      error:(error) =>{
+        console.log(error, 'MANEJOR ERROR ORDER');  
+      }
+    })
+  }
   //EMIT emite valores ny luego debo configurar al papá para que reciba este valor
   sendValue(): void {
     this.newEvent.emit(this.newItem);

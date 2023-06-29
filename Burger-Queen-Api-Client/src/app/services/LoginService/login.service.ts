@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-
+Headers
 @Injectable({
   providedIn: 'root'
 })
@@ -17,6 +17,7 @@ export class LoginService {
     }
     )
   }
+  // si hay exito guardar el token... 
   // login(email: string, password: string): boolean {
   //   if () {
   //     return true; // Credenciales válidas, retorna true para indicar que el inicio de sesión fue exitoso
