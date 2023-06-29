@@ -15,12 +15,15 @@ export class LoginPageComponent {
   public errorMessage: string = '';
   // errorMessagePassword: string = '';
   // errorMessageEmail: string = '';
-
+// aquí recibir el token cuando tengamos exito
   constructor(private loginService: LoginService, private router: Router) { }
   //evaluar que esté logeada ¿?
   onSubmit(): void {
     this.loginService.getCredentials(this.email, this.password).subscribe({
       next: (resp) => {
+        // en next almacenar.. el token  pouede ser en local storage
+        //un servicio  podría tener una variable que permanezca, cuando tengamos el token.. guarda el token en el servicio. check sí hay alguna mejor manera. para luego mandar el token para autentificación. Check sí angular tiene algo para guardar.. o manejar lo del token!!!!
+        
         console.log('RESP', resp);
         if (resp.user.rol === 'waiter') {
           this.router.navigate(['/home-waiter']);

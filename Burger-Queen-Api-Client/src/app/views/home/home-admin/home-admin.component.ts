@@ -12,43 +12,36 @@ export class HomeAdminComponent {
   email: string = '';
   password: string = '';
   rol: string = '';
+  errorMessage: string = '';
 
-
-
-
-
-
-  
-  errorMessage: string =''; 
-
-  constructor(private adminService: AdminService, private router: Router) {}
+  constructor(private adminService: AdminService, private router: Router) { }
   onSubmit(): void {
-  this.adminService.getAccessToken(this.email, this.password, this.rol).subscribe({
-    next:(resp) => {
-  console.log(resp, 'VALIDA');
-  if(resp.accessToken){
-    this.router.navigate(['/home-admin']);
-    this.email= ' ';
-    this.password= ' ';
-  }else if(resp.accessToken === undefined){
-    this.errorMessage = 'Wrong Credentials!!!'
+    this.adminService.getAccessToken(this.email, this.password, this.rol).subscribe(
+      (resp) => {
+        console.log(resp, 'VALIDA');
+        // if(resp.accessToken){
+        //   this.router.navigate(['/home-admin']);
+        //   this.email= ' ';
+        //   this.password= ' ';
+        // }else if(resp.accessToken === undefined){
+        //   this.errorMessage = 'Wrong Credentials!!!'
+        // }
+
+      },
+      //  error: ()=>{
+      //   this.errorMessage = 'Wrong Credentials!!!';
+      //  }
+    )
   }
+  closeModal() {
 
- },
- error: ()=>{
-  this.errorMessage = 'Wrong Credentials!!!';
- }
-})
-}
-closeModal(){
-  
-}
-openModal(){
+  }
+  openModal() {
 
-}
-logout():void{
-  this.router.navigateByUrl('/login');
-}
+  }
+  logout(): void {
+    this.router.navigateByUrl('/login');
+  }
 }
 //TENER EN CUENTA LA DATA HARDCODEADA...
 // LAMO AL SERVICIO Y A LA FUNCIÓN Y GUARDO MI RESPUESTA EN EL ARRAY DE PRODUCTOS...
