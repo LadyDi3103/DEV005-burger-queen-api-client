@@ -33,6 +33,18 @@ export class HomeAdminComponent {
       //  }
     )
   }
+  ngOnInit(): void {
+    console.log('ENTRÓ AL ngOnInit');
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    this.obtainListProducts()
+    console.log('sigue en el ngOnInit');
+  }
+  obtainListProducts(): void{
+    this.adminService.getListProducts().subscribe((data)=>{
+      console.log(data, 'DATA 388888');
+    })
+  }
   closeModal() {
 
   }

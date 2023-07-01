@@ -39,7 +39,7 @@
     margin-right: auto;
     margin-left: auto;
     margin-top: 8%;
-    margin-bottom: 6%;
+    margin-bottom: 1%;
     width: 300px;
 }
 
@@ -77,7 +77,7 @@
     border: 2px solid var(--color-2);
     border-radius: 5px;
     margin-block-start: 1%;
-    margin-block-end: 8%;
+    margin-block-end: 5%;
     font-size: 20px;
     /* opacity: 1; */
 }
@@ -85,7 +85,7 @@
 .containerBtn {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-content: center;
 }
 
@@ -103,15 +103,16 @@
     justify-content: center;
     /* align-self: center; */
 }
-.errorMessage{
+/* .errorMessage{ */
     /* background: blueviolet; */
-    justify-content: center;
-}
-
-
+    /* justify-content: center; */
+/* } */
 
 .error-message {
-    color: var(--color-1);
-    margin-top: 0;
-    margin-bottom: 0;
+     /* background: red; */
+     display: flex;
+     flex-wrap: wrap;
+     /* flex-direction: column; */
+     justify-content:  center;
+     color: var(--color-1)
 }

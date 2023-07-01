@@ -21,7 +21,12 @@ export class LoginPageComponent {
   onSubmit(): void {
     this.loginService.getCredentials(this.email, this.password).subscribe({
       next: (resp) => {
-        // en next almacenar.. el token  pouede ser en local storage
+        console.log(resp.accessToken, 'ACCESSTOKEN');
+        const tokenSaved = localStorage.setItem("accessToken", resp.accessToken)
+        console.log(tokenSaved, 'TOKEN LÍNEA 25');
+        
+        // en next almacenar.. el token  puede ser en local storage
+        // implementar para guardar el token 
         //un servicio  podría tener una variable que permanezca, cuando tengamos el token.. guarda el token en el servicio. check sí hay alguna mejor manera. para luego mandar el token para autentificación. Check sí angular tiene algo para guardar.. o manejar lo del token!!!!
         
         console.log('RESP', resp);
@@ -48,4 +53,7 @@ export class LoginPageComponent {
     })
   }
   //queremos subcribirnos a su respuesta
+
+
+
 }

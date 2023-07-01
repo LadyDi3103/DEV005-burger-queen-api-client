@@ -1,1 +1,13 @@
-<p>header works!</p>
+<header>
+    <nav class="ContainerOptionsMenu">
+    <!-- RETO DE CONEXION PARA ACCIONAR EL MODAL DANDO CLICK EN CADA BOTON DEL HEADER -->
+        <button (click)="isModalVisible = true" class="btn-header"><img class="imgHeader"
+                        src="../../../../assets/img/btn_status2.png" alt="button-status"></button>
+        <button (click)="exchangeMenu('meals')" class="btn-header"><img class="imgHeader"
+                        src="../../../../assets/img/btn_To_Deliver_2.png" alt="button-deliver"></button>
+        <button (click)="exchangeMenu('meals')" class="btn-header"><img class="imgHeader"
+                        src="../../../../assets/img/btn_Reward.png" alt="button-reward"></button>
+        <button (click)="onLogoutClick()" class="btn-logOut" id="button-exit"><img class="imgLogOut"
+                        src="../../../../assets/img/logOut.png" alt="button-exit"></button>
+    </nav>
+    </header>
