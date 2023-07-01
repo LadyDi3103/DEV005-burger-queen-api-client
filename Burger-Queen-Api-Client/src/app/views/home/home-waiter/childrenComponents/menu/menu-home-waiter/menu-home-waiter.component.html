@@ -1,100 +1,112 @@
 <!-- <p>menu-home-waiter works!</p> -->
 <!-- menu -->
 <!-- <div class="Container-menu-form"> -->
-    <div class="container-menu">
-        <div class="btns">
-            <!-- BOTONES TIPO TAB BREAKFAST AND MEALS -->
-            <div>
-                <Button (click)="showTabContent('option1')" class="breakfast">
-                    <img class="imgBreakfast" src="../../../../../../../assets/img/btn_Breakfast_red.png"
-                        alt="Option 1 MENU">
-                </Button>
+<div class="container-menu">
+    <div class="btns">
+        <!-- BOTONES TIPO TAB BREAKFAST AND MEALS -->
+        <div>
+            <button (click)="showTabContent('option1')" class="breakfast">
+                <img class="imgBreakfast" src="../../../../../../../assets/img/btn_Breakfast_red.png"
+                    alt="Option 1 MENU">
+            </button>
+        </div>
+        <div>
+            <button (click)="showTabContent('option2')" class="meals">
+                <img class="imgMeal" src="../../../../../../../assets/img/btn_ham_green.png" alt="Option 2 MENU">
+            </button>
+        </div>
+        <!-- AQUÍ TERMINA -->
+    </div>
+
+    <!-- <div *ngIf="selectedMenu === 'option1'"> -->
+    <!-- *ngIf="selectedMenu === 'option1'" -->
+    <!-- OPTION1 -->
+    <ng-container *ngIf="selectedMenu === 'option1'">
+        <div class="drinks">
+            <div class="labels">
+                <label class="labels" for="line">Drinks</label>
+                <hr>
             </div>
             <div>
-                <button (click)="showTabContent('option2')" class="meals">
-                    <img class="imgMeal" src="../../../../../../../assets/img/btn_ham_green.png" alt="Option 2 MENU">
+                <button *ngFor="let product of menuItem.drinks" (click)="selectProduct(product)"
+                    class="icons-Breakfast">
+                    <img class="imgProduct" src={{product.image}}>
+                    <div class="namePrice">
+                        <p>{{product.name}}</p>
+                    </div>
+                    <div class="namePrice">
+                        <p>$ {{product.price}} </p>
+                    </div>
                 </button>
             </div>
-            <!-- AQUÍ TERMINA -->
         </div>
-    
-        <!-- <div *ngIf="selectedMenu === 'option1'"> -->
-        <!-- *ngIf="selectedMenu === 'option1'" -->
-        <!-- OPTION1 -->
-        <ng-container *ngIf="selectedMenu === 'option1'">
-            <div class="drinks">
-                <div class="labels">
-                    <label class="labels" for="line">Drinks</label>
-                    <hr>
-                </div>
-                <div>
-                    <button *ngFor="let product of menuItem.breakfast" (click)="selectProduct(product)" class="icons-Breakfast">
-                        <img class="imgProduct" src={{product.image}}>
-                        <div class="namePrice">
-                            <p>{{product.name}}</p>
-                        </div>
-                        <div class="namePrice">
-                            <p>$ {{product.price}} </p>
-                        </div>
-                    </button>
-                </div>
+        <div class="brunch">
+            <div class="labels">
+                <label class="labels" for="line">Brunch</label>
+                <hr>
             </div>
-            <div class="brunch">
-                <div class="labels">
-                    <label class="labels" for="line">Brunch</label>
-                    <hr>
-                </div>
-                <div>
-                    <button *ngFor="let product of menuItem.meals" (click)="selectProduct(product)" class="icons-Breakfast">
-                        <img class="imgProduct" src={{product.image}}>
-                        <div class="namePrice">
-                            <p>{{product.name}}</p>
-                        </div>
-                        <div class="namePrice">
-                            <p>$ {{product.price}} </p>
-                        </div>
-                    </button>
-                </div>
+            <div>
+                <button *ngFor="let product of menuItem.brunch" (click)=" selectProduct(product)"
+                    class="icons-Breakfast">
+                    <img class="imgProduct" src={{product.image}}>
+                    <div class="namePrice">
+                        <p>{{product.name}}</p>
+                    </div>
+                    <div class="namePrice">
+                        <p>$ {{product.price}} </p>
+                    </div>
+                </button>
             </div>
-        </ng-container>
+        </div>
+    </ng-container>
 
-        <!-- OPTION2 -->
-        <ng-container *ngIf="selectedMenu === 'option2'">
-            <div class="Hamburguer">
-                <div class="labelsMeals">
-                    <label class="labels" for="line">Hamburguer</label>
-                    <hr>
-                </div>
-                <div>
-                    <button *ngFor="let product of menuItem.breakfast" (click)="selectProduct(product)" class="icons-Breakfast">
-                        <img class="imgProduct" src={{product.image}}>
-                        <div class="namePrice">
-                            <p>{{product.name}}</p>
-                        </div>
-                        <div class="namePrice">
-                            <p>$ {{product.price}} </p>
-                        </div>
-                    </button>
-                </div>
+    <!-- OPTION2 -->
+    <ng-container *ngIf="selectedMenu === 'option2'">
+        <div class="Hamburguer">
+            <div class="labelsMeals">
+                <label class="labels" for="line">Hamburguer</label>
+                <hr>
             </div>
-            <div class="Pizzas">
-                <div class="labelsMeals">
-                    <label class="labels" for="line">Pizzas</label>
-                    <hr>
-                </div>
-                <div>
-                    <button *ngFor="let product of menuItem.meals" (click)="selectProduct(product)" class="icons-Breakfast">
-                        <img class="imgProduct" src={{product.image}}>
-                        <div class="namePrice">
-                            <p>{{product.name}}</p>
-                        </div>
-                        <div class="namePrice">
-                            <p>$ {{product.price}} </p>
-                        </div>
-                    </button>
-                </div>
+            <div>
+                <button *ngFor="let product of menuItem.drinks" (click)="selectProduct(product)"
+                    class="icons-Breakfast">
+                    <img class="imgProduct" src={{product.image}}>
+                    <div class="namePrice">
+                        <p>{{product.name}}</p>
+                    </div>
+                    <div class="namePrice">
+                        <p>$ {{product.price}} </p>
+                    </div>
+                </button>
             </div>
-        </ng-container>
+        </div>
+        <div class="Pizzas">
+            <div class="labelsMeals">
+                <label class="labels" for="line">Pizzas</label>
+                <hr>
+            </div>
+            <div>
+                <button *ngFor="let product of menuItem.brunch" (click)="selectProduct(product)"
+                    class="icons-Breakfast">
+                    <img class="imgProduct" src={{product.image}}>
+                    <div class="namePrice">
+                        <p>{{product.name}}</p>
+                    </div>
+                    <div class="namePrice">
+                        <p>$ {{product.price}} </p>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </ng-container>
+</div>
+<!-- <span class="closeModal" *ngFor="let product of selectedProducts" (click)="deleteSelection(product)">&times;</span> -->
+<div id="modal3" class="modalmask" *ngIf="isModalVisible">
+    <div class="modalbox resize">
+        <a href="#close" title="Close" class="close">X</a>
+        <h2>REDIMENSIONAR</h2>
+        <p>También puedes redimensionar la ventana hasta hacerla desaparecer.</p>
+        <p>Las posibilidades que ofrece CSS3 son múltiples, tan solo hace falta un poco de imaginación para crear
+            efectos realmente llamativos.</p>
     </div>
-    <!-- <span class="closeModal" *ngFor="let product of selectedProducts" (click)="deleteSelection(product)">&times;</span> -->
-    
+</div>

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+import { environment } from 'environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,16 +9,28 @@ import { Observable } from 'rxjs';
 export class AdminService {
 
   constructor(private http: HttpClient) { }
-  getAccessToken(email: string, password: string, rol: string): Observable<any> { 
-    return this.http.post('http://localhost:8080/users', {
-    email: email, // traer el valor de los imputs
-    password: password, // traer la información de ambos
-    rol: rol,
-    }
-    )
+  //Con esta función crea a los usuarios
+  getAccessToken(email: string, password: string, rol: string): Observable<any> {
+    const user = {
+      email: email, // traer el valor de los imputs
+      password: password, // traer la información de ambos
+      rol: rol,
+    };
+    return this.http.post('http://localhost:8080/users', user);
   }
+  //30junio  USO ENDPOINT GET
+  getListProducts(): Observable<any> {
+    const headers = new HttpHeaders({
+      'accept': 'application/json',
+      'Authorization': 'Bearer ' + environment.URLS.API_KEY
+      // se reemplaza el valor de mi variable que está en environment
+      //'AQUÌ VA UN TOKEN'
+    })
+    return this.http.get('http://localhost:8080/products',{headers});
+  }
+
   createProduct(name: string, price:number, image: string, type:string): Observable<any> {
-    return this.http.post('http://localhost:8080/users/products', {
+    return this.http.post('http://localhost:8080/products', {
       name: name,
       price: price,
       image: image,
@@ -29,7 +41,5 @@ export class AdminService {
   // HACER PETICIÓN PETICIÓN POST..
   // MANDO BODY MI OBJETO CON TODA LA DATA PARA CREAR UNA ORDEN
   // ES NECESARIO.. CONECTAR A LA BASE DE DATOS!!!
-  getListProducts(): Observable<any> {
-    return this.http.get('http://localhost:8080/products',)
-  }
+  
   }

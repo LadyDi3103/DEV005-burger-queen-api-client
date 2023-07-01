@@ -2,8 +2,8 @@ import { Component, OnInit,EventEmitter,Output } from '@angular/core';
 import { AdminService } from 'src/app/services/AdminService/admin.service';
 
 interface Menu {
-  breakfast: Product[],
-  meals: Product[],
+  drinks: Product[],
+  brunch: Product[],
 }
 interface Product {id: number;
   name: string;
@@ -18,6 +18,7 @@ interface Product {id: number;
   styleUrls: ['./menu-home-waiter.component.css']
 })
 export class MenuHomeWaiterComponent{
+  isModalVisible: boolean = false;
   @Output() propagate = new EventEmitter<any>();
 
   constructor(private adminService: AdminService){ }
@@ -39,63 +40,63 @@ ngOnInit(): void {
     }
   
     menuItem: Menu = {
-    breakfast: [
+      drinks: [
       {
         id: 1, 
         name: 'Short Coffe', 
         price: 2.00, 
-        image: "../../../../../../../assets/img/cafe_red.png", 
+        image: "../../../../../../../assets/img/icons8-vaso-100.png", 
         type: 'breakfast'
       },
       {
         id: 2, 
         name: 'Double Coffe', 
         price: 3.00, 
-        image: "../../../../../../../assets/img/cafe_red.png", 
+        image: "../../../../../../../assets/img/icons8-vaso-100.png", 
         type: 'breakfast'
       },
       {
         id: 3, 
         name: 'Water', 
         price: 1.00, 
-        image: "../../../../../../../assets/img/Breakfast_water_red.png", 
+        image: "../../../../../../../assets/img/icons8-plástico-100.png", 
         type: 'breakfast'
       },
       {
         id: 4,
         name: 'Juice', 
         price: 3.00, 
-        image: "../../../../../../../assets/img/Breakfast_juice_red.png", 
+        image: "../../../../../../../assets/img/icons8-jugo-64.png", 
         type: 'breakfast'
       },
     ],
-      meals: [
+      brunch: [
         {
           id: 5, 
           name: 'Croissant', 
           price: 2.00, 
-          image: "../../../../../../../assets/img/croissant_red.png", 
+          image: "../../../../../../../assets/img/icons8-cruasán-100.png", 
           type: 'breakfast'
         },
         {
           id: 6, 
           name: 'Slice Bread', 
           price: 1.00, 
-          image: "../../../../../../../assets/img/slice_red.png", 
+          image: "../../../../../../../assets/img/icons8-pan-100.png", 
           type: 'breakfast'
         },
         {
           id: 7, 
           name: 'Sandwich', 
           price: 6.00, 
-          image: "../../../../../../../assets/img/sandwich_red.png", 
+          image: "../../../../../../../assets/img/icons8-sándwich-100.png", 
           type: 'breakfast'
         },
         {
           id: 8, 
           name: 'Pancakes', 
           price: 6.00, 
-          image: "../../../../../../../assets/img/panqueques_red.png", 
+          image: "../../../../../../../assets/img/icons8-panqueques-64.png", 
           type: 'breakfast'
         },
       ],

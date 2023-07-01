@@ -16,10 +16,10 @@
                 <input class="inputS" type="password" [(ngModel)]="password" id="password" name="user_password"
                     placeholder="**********" id="password" required>
                 <!-- <div *ngIf="errorMessagePassword" class="error-message-password">{{errorMessagePassword}}</div> -->
+                <!-- <div class="errorMessage"> -->
+                <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+                <!-- </div> -->
                 <div class="containerBtn">
-                    <div class="errorMessage">
-                        <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
-                    </div>
                     <button class="btnLogin" type="submit">Login</button>
                 </div>
             </form>
