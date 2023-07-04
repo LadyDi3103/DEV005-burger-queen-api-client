@@ -13,7 +13,20 @@ interface GetProduct {
   qty: number;
   product: Product;
 }
-// aquí suscribirnos al serivicio
+
+// interface NewOrder {
+//   client: string;
+//   products: Product;
+// }
+
+// inteface OrederProduct {
+// {
+//   qty: number;
+//   product: Product [];
+    
+//   }
+// }
+
 @Component({
   selector: 'app-form-home-waiter',
   templateUrl: './form-home-waiter.component.html',
@@ -22,17 +35,18 @@ interface GetProduct {
 export class FormHomeWaiterComponent {
   @Output() newEvent = new EventEmitter<any>();
   @Input() newItem: GetProduct[] = [];
+
   numOrder: string = '0000001';
   totalCost: number = 0;
 
-    // Casita de la data de la api 
-    id: any='';
-    client: string ='';
-    products: []= [];
-    status: string= '';
-    dateEntry: string= '';
-    dateProcessed: string = '';
-  
+  // Casita de la data de la api 
+  id: any = '';
+  client: string = '';
+  products: [] = [];
+  status: string = '';
+  dateEntry: string = '';
+  dateProcessed: string = '';
+
   // F O R M  R E A C T I V O
   form = new FormGroup({
     clientsName: new FormControl(''),
@@ -41,26 +55,46 @@ export class FormHomeWaiterComponent {
     totalCost: new FormControl(''),
   });
   //form va toda la data que se ingresa en un input
-  constructor(private orderService: OrderService){ }
-  
- 
-  onSubmit():void{
-    const orderData ={
-      id: this.id,
-      client: this.client,
-      products: this.products,
-      status: this.status,
-      dateEntry: this.dateEntry,
-      dateProcessed: this.dateProcessed,
-    };
-    this. orderService.createOrder(orderData).subscribe({
-      next: (resp) =>{
-        console.log(resp, 'RESPUESTA API ORDER');  
+  constructor(private orderService: OrderService) { }
+  onSubmitDoThis(): void {
+    this.incrementOrderNumber()
+    this.form.reset({
+      numTable: 0,
+    });
+    this.sendValue(); //
+    console.log('Productos: ', this.newItem, 'LÍNEA arrayProducts 11');
+
+    // console.log('Nombre del Cliente:', this.form.value.clientsName, 'Número de orden:', this.numOrder, 'Núm de Mesa: ', this.form.value.numTable, 'Costo Total:', this.totalCost, 'Productos: ', this.newItem,'LÍNEA 122')
+  }
+  // Vamos a subscribirnos al servicio orderService)
+  onSubmit(): void {
+    let orderData = [
+      {
+        client: this.client,
+        dateEntry: this.dateEntry,
+        dateProcessed: this.dateProcessed,
+        //MANDAR
+        id: this.id,
+        products: this.products, //newItem
+        status: this.status,
+      }
+    ];
+    console.log(orderData, this.newItem, 'ORDERDATA 56');
+
+    this.orderService.createOrder(orderData).subscribe({
+      //MANDAR UN REQUEST
+      next: (resp) => {
+        console.log(resp, 'RESPUESTA API ORDER');
+        this.incrementOrderNumber()
+        this.form.reset({
+          numTable: 0,
+        });
       },
-      error:(error) =>{
-        console.log(error, 'MANEJOR ERROR ORDER');  
+      error: (error) => {
+        console.log(error, 'MANEJOR ERROR ORDER');
       }
     })
+    this.sendValue();
   }
   //EMIT emite valores ny luego debo configurar al papá para que reciba este valor
   sendValue(): void {
@@ -89,22 +123,12 @@ export class FormHomeWaiterComponent {
     this.numOrder = number.toString().padStart(7, '0');
   }
   // se asigna el valor total en totalCost
-  calculateTotalCost():number{
+  calculateTotalCost(): number {
     // console.log(this.totalCost, 9000000000000000);
     this.totalCost = this.newItem.reduce((total, product) => total + (product.product.price * product.qty), 0);
-    console.log(this.totalCost, 76666);
+    // console.log(this.totalCost, 76666);
     return this.totalCost;
   }
-
-  //falta lógica para recibir
-  //falta: No hay un observable, que nos avise cuando una variable cambia... 
-  // ngOnInit(): void {
-  //   this.calculateTotalCost();
-  //   // this.newItem.forEach(product => {
-  //   //   this.totalCost += product.qty * product.product.price
-  //   // });
-  // }
-
   deselectProduct(product: any): void {
     let index = this.newItem.indexOf(product);
     if (index !== -1) {
@@ -113,15 +137,6 @@ export class FormHomeWaiterComponent {
     }
   }
 
-  onSubmitDoThis(): void {
-    this.incrementOrderNumber()
-    this.form.reset({
-      numTable: 0,
-    });
-    this.sendValue();
-    console.log('Nombre del Cliente:', this.form.value.clientsName, 'Número de orden:', this.numOrder, 'Núm de Mesa: ', this.form.value.numTable, 'Costo Total:', this.totalCost, 'Productos: ', this.newItem, 49999)
-  }
-  // ---------- quitar una seleción de producto
   cancelOrder(): void {
     this.form.reset({
       numTable: 0,

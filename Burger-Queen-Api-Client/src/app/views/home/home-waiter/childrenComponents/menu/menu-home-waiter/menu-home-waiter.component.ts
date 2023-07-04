@@ -19,12 +19,15 @@ interface Product {id: number;
 })
 export class MenuHomeWaiterComponent{
   isModalVisible: boolean = false;
+  public APIDATA : any = '';
   @Output() propagate = new EventEmitter<any>();
 
   constructor(private adminService: AdminService){ }
   getProducts(): void{
     this.adminService.getListProducts().subscribe((resp)=>{
       console.log(resp);
+      this.APIDATA = resp;
+      console.log(this.APIDATA, 'apidataaaaaaaa');
       
     },
     )
@@ -104,7 +107,7 @@ ngOnInit(): void {
     
     sendData(){
       this.propagate.emit(this.selectedProduct);
-      console.log('sendData ENVIANDO'); 
+      // console.log('sendData ENVIANDO'); 
     }
     selectedMenu: string = 'option1';
     selectedTab: number = 1;

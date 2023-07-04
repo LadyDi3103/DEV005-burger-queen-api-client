@@ -21,39 +21,40 @@ export class LoginPageComponent {
   onSubmit(): void {
     this.loginService.getCredentials(this.email, this.password).subscribe({
       next: (resp) => {
-        console.log(resp.accessToken, 'ACCESSTOKEN');
-        const tokenSaved = localStorage.setItem("accessToken", resp.accessToken)
-        console.log(tokenSaved, 'TOKEN LÍNEA 25');
-        
+        // console.log(resp.accessToken, 'ACCESSTOKEN');
+        localStorage.setItem("accessToken", resp.accessToken)
+        // console.log(localStorage,'TOKEN LÍNEA 25');
         // en next almacenar.. el token  puede ser en local storage
         // implementar para guardar el token 
         //un servicio  podría tener una variable que permanezca, cuando tengamos el token.. guarda el token en el servicio. check sí hay alguna mejor manera. para luego mandar el token para autentificación. Check sí angular tiene algo para guardar.. o manejar lo del token!!!!
-        
-        console.log('RESP', resp);
+        // console.log('RESP', resp);
         if (resp.user.rol === 'waiter') {
           this.router.navigate(['/home-waiter']);
-          this.email = ' ';
-          this.password = ' ';
-        } if (resp.user.rol === 'chef') {
+        } else if (resp.user.rol === 'chef') {
           this.router.navigate(['/home-chef']);
-          this.email = ' ';
-          this.password = ' ';
-        } if (resp.user.rol === 'admin') {
+        } else if (resp.user.rol === 'admin') {
           this.router.navigate(['/home-admin']);
-          this.email = ' ';
-          this.password = ' ';
-        } else if (resp.accessToken === undefined) {
+        } else {
           this.errorMessage = 'Wrong Credentials!!!';
         }
-        //observables reciben de otra forma los errores 
+        this.email = ' ';
+        this.password = ' '; //observables reciben de otra forma los errores 
       },
       error: () => {
         this.errorMessage = 'Wrong Credentials!!!';
       }
     })
   }
-  //queremos subcribirnos a su respuesta
+  
+//   set(key: string, value: string) {
+//     localStorage.setItem(key, value);
+// }
 
+// get(key: string) {
+//     return localStorage.getItem(key);
+// }
 
-
+// remove(key: string) {
+//     localStorage.removeItem(key);
+// }
 }
