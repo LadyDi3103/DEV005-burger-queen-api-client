@@ -3,7 +3,7 @@
         max-width: 100%;
         height: 170px;
         display: flex;
-        /* background: blue; */
+        background: var(--color-6);
         border: 0;
         justify-content: center;
     }

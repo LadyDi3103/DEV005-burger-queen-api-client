@@ -45,7 +45,8 @@ getData(product: Product) {
     } else {
       this.getProduct[index].qty++;
     }
-    console.log(this.getProduct, 'linea 40')}
+    // console.log(this.getProduct, 'linea 40')
+  }
 
 clearOrderOnSubmit():void{
   this.getProduct = [];
@@ -53,7 +54,7 @@ clearOrderOnSubmit():void{
 getNewItem(value: any){
   this.getProduct = [];
   // debugger
-console.log(value, 'getting value de newItem HWC 44'); //NO RECIBE
+// console.log(value, 'getting value de newItem HWC 44'); //NO RECIBE
 }
 
 

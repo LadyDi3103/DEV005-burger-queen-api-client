@@ -17,14 +17,7 @@ export class LoginService {
     }
     )
   }
-  // si hay exito guardar el token... 
-  // login(email: string, password: string): boolean {
-  //   if () {
-  //     return true; // Credenciales válidas, retorna true para indicar que el inicio de sesión fue exitoso
-  //   } else {
-  //     return false; // Credenciales inválidas, retorna false para indicar que el inicio de sesión falló
-  //   }
-  // }
+
   logout(): void {
     // Redirige al usuario a la página de inicio de sesión
     this.router.navigateByUrl('/login');

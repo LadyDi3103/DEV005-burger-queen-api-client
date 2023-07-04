@@ -10,20 +10,20 @@ export class OrderService {
 constructor(private http: HttpClient) { }
     
 createOrder(orderData:{
-        id: any,
-        client: string,
-        products: [],
-        status: string,
-        dateEntry: string,
-        dateProcessed: string,
+        // id: any;
+        client: string;
+        products: [];
+        // status: string;
+        // dateEntry: string;
+        // dateProcessed: string;
     }): Observable<any> {
         return this.http.post('http://localhost:8080/orders', {
-            id: orderData.id,
+            // id: orderData.id,
             cliente: orderData.client,
             products: orderData.products,
-            status: orderData.status,
-            dateEntry: orderData.dateEntry,
-            dateProcessed: orderData.dateProcessed,
+            // status: orderData.status,
+            // dateEntry: orderData.dateEntry,
+            // dateProcessed: orderData.dateProcessed,
         }
         )
     }

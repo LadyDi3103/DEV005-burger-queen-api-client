@@ -28,14 +28,14 @@
                 <hr>
             </div>
             <div>
-                <button *ngFor="let product of menuItem.drinks" (click)="selectProduct(product)"
+                <button *ngFor="let product of APIDATA"(click)="selectProduct(product)"
                     class="icons-Breakfast">
-                    <img class="imgProduct" src={{product.image}}>
+                    <img class="imgProduct" src={{APIDATA.image}}>
                     <div class="namePrice">
-                        <p>{{product.name}}</p>
+                        <p>{{APIDATA.name}}</p>
                     </div>
                     <div class="namePrice">
-                        <p>$ {{product.price}} </p>
+                        <p>$ {{APIDATA.price}} </p>
                     </div>
                 </button>
             </div>
