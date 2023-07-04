@@ -24,23 +24,23 @@
     <ng-container *ngIf="selectedMenu === 'option1'">
         <div class="drinks">
             <div class="labels">
-                <label class="labels" for="line">Drinks</label>
+                <label class="labels" for="line">Breakfast</label>
                 <hr>
             </div>
             <div>
-                <button *ngFor="let product of APIDATA"(click)="selectProduct(product)"
+                <button *ngFor="let product of APIDATA" (click)="selectProduct(product)"
                     class="icons-Breakfast">
-                    <img class="imgProduct" src={{APIDATA.image}}>
+                    <img class="imgProduct" src={{product.image}}>
                     <div class="namePrice">
-                        <p>{{APIDATA.name}}</p>
+                        <p>{{product.name}}</p>
                     </div>
                     <div class="namePrice">
-                        <p>$ {{APIDATA.price}} </p>
+                        <p>$ {{product.price}} </p>
                     </div>
                 </button>
             </div>
         </div>
-        <div class="brunch">
+        <!-- <div class="brunch">
             <div class="labels">
                 <label class="labels" for="line">Brunch</label>
                 <hr>
@@ -57,7 +57,7 @@
                     </div>
                 </button>
             </div>
-        </div>
+        </div> -->
     </ng-container>
 
     <!-- OPTION2 -->

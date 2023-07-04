@@ -1,7 +1,18 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/AdminService/admin.service';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+interface Menu {
+  drinks: Product[],
+  brunch: Product[],
+}
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+  type: string;
+}
 @Component({
   selector: 'app-home-admin',
   templateUrl: './home-admin.component.html',
@@ -13,47 +24,121 @@ export class HomeAdminComponent {
   password: string = '';
   rol: string = '';
   errorMessage: string = '';
+  selectedMenu: string = 'option1';
+  selectedProduct: Product | null = null; // Product representa el tipo de datos de tus productos
+  // registrationForm: FormGroup;
+  // showModal: boolean = false;
 
-  constructor(private adminService: AdminService, private router: Router) { }
-  onSubmit(): void {
-    this.adminService.getAccessToken(this.email, this.password, this.rol).subscribe(
-      (resp) => {
-        console.log(resp, 'VALIDA');
-        // if(resp.accessToken){
-        //   this.router.navigate(['/home-admin']);
-        //   this.email= ' ';
-        //   this.password= ' ';
-        // }else if(resp.accessToken === undefined){
-        //   this.errorMessage = 'Wrong Credentials!!!'
-        // }
-
+  menuItem: Menu = {
+    drinks: [
+      {
+        id: 1,
+        name: 'Short Coffe',
+        price: 2.00,
+        image: "../../../../../../../assets/img/icons8-vaso-100.png",
+        type: 'breakfast'
       },
-      //  error: ()=>{
-      //   this.errorMessage = 'Wrong Credentials!!!';
-      //  }
-    )
+      {
+        id: 2,
+        name: 'Double Coffe',
+        price: 3.00,
+        image: "../../../../../../../assets/img/icons8-vaso-100.png",
+        type: 'breakfast'
+      },
+      {
+        id: 3,
+        name: 'Water',
+        price: 1.00,
+        image: "../../../../../../../assets/img/icons8-plástico-100.png",
+        type: 'breakfast'
+      },
+      {
+        id: 4,
+        name: 'Juice',
+        price: 3.00,
+        image: "../../../../../../../assets/img/icons8-jugo-64.png",
+        type: 'breakfast'
+      },
+    ],
+    brunch: [
+      {
+        id: 5,
+        name: 'Croissant',
+        price: 2.00,
+        image: "../../../../../../../assets/img/icons8-cruasán-100.png",
+        type: 'breakfast'
+      },
+      {
+        id: 6,
+        name: 'Slice Bread',
+        price: 1.00,
+        image: "../../../../../../../assets/img/icons8-pan-100.png",
+        type: 'breakfast'
+      },
+      {
+        id: 7,
+        name: 'Sandwich',
+        price: 6.00,
+        image: "../../../../../../../assets/img/icons8-sándwich-100.png",
+        type: 'breakfast'
+      },
+      {
+        id: 8,
+        name: 'Pancakes',
+        price: 6.00,
+        image: "../../../../../../../assets/img/icons8-panqueques-64.png",
+        type: 'breakfast'
+      },
+    ],
   }
-  ngOnInit(): void {
-    console.log('ENTRÓ AL ngOnInit');
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    this.obtainListProducts()
+  constructor(private adminService: AdminService, private router: Router, private formBuilder: FormBuilder) { }
+onSubmit(): void {
+  this.adminService.getAccessToken(this.email, this.password, this.rol).subscribe(
+    (resp) => {
+      console.log(resp, 'VALIDA');
+      // if(resp.accessToken){
+      //   this.router.navigate(['/home-admin']);
+      //   this.email= ' ';
+      //   this.password= ' ';
+      // }else if(resp.accessToken === undefined){
+      //   this.errorMessage = 'Wrong Credentials!!!'
+      // }
+
+    },
+    //  error: ()=>{
+    //   this.errorMessage = 'Wrong Credentials!!!';
+    //  }
+  )
+}
+ngOnInit(): void {
+  console.log('ENTRÓ AL ngOnInit');
+  //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+  //Add 'implements OnInit' to the class.
+  this.obtainListProducts()
     console.log('sigue en el ngOnInit');
-  }
-  obtainListProducts(): void{
-    this.adminService.getListProducts().subscribe((data)=>{
-      console.log(data, 'DATA 388888');
-    })
-  }
-  closeModal() {
+}
+obtainListProducts(): void {
+  this.adminService.getListProducts().subscribe((data) => {
+    console.log(data, 'DATA 388888');
+  })
+}
+showTabContent(option: string): void {
+  this.selectedMenu = option;
+}
+selectProduct(product: Product): void {
+  this.selectedProduct = product;
+}
+openModal() {
+  // this.showModal = true;
+}
 
-  }
-  openModal() {
-
-  }
-  logout(): void {
-    this.router.navigateByUrl('/login');
-  }
+closeModal() {
+  // this.showModal = false;
+  // this.registrationForm.reset();
+}
+logout(): void {
+  this.router.navigateByUrl('/login');
+}
 }
 //TENER EN CUENTA LA DATA HARDCODEADA...
 // LAMO AL SERVICIO Y A LA FUNCIÓN Y GUARDO MI RESPUESTA EN EL ARRAY DE PRODUCTOS...

@@ -57,7 +57,4 @@ getNewItem(value: any){
 // console.log(value, 'getting value de newItem HWC 44'); //NO RECIBE
 }
 
-
-
-
 }
