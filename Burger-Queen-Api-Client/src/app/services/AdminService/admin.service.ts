@@ -64,5 +64,16 @@ export class AdminService{
   // HACER PETICIÓN PETICIÓN POST..
   // MANDO BODY MI OBJETO CON TODA LA DATA PARA CREAR UNA ORDEN
   // ES NECESARIO.. CONECTAR A LA BASE DE DATOS!!!
+  // getAllOrders(): Observable<any>{
+    //     return this.http.get<any>('http://localhost:8080/orders',)
+    // }
+    // createProduct(name: string, price: number, image: string, type: string): Observable<any> {
+    //     return this.http.post('http://localhost:8080/users/products', {
+    //         name: name,
+    //         price: price,
+    //         image: image,
+    //         type: type,
+    //     })
+    // }
   
   }

@@ -27,14 +27,12 @@ export class MenuHomeWaiterComponent{
     this.adminService.getListProducts().subscribe((resp)=>{
       console.log(resp);
       this.APIDATA = resp;
-      console.log(this.APIDATA, 'apidataaaaaaaa');
-      
+    // Para entrar en la APIDATA debemos indicar el índice correspondiente []
     },
     )
   }
 ngOnInit(): void {
   //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-  //Add 'implements OnInit' to the class.
   this.getProducts();
 
 }
@@ -129,7 +127,7 @@ ngOnInit(): void {
     this.sendData();
     this.totalCost += product.price;
     // console.log(this.selectProduct);
-    console.log(this.totalCost,this.qty, 33);
+    // console.log(this.totalCost,this.qty, 33);
     // console.log(this.selectProduct(product: Product));
   } 
   }

@@ -13,6 +13,9 @@ export class HomeChefComponent {
   public buttonState: boolean = false;
 
   constructor(private loginService: LoginService, private router: Router) {}
+  getWaitersOrders():void{
+    
+  }
   
   public toggleButtonState(): void {
     this.buttonState = !this.buttonState;

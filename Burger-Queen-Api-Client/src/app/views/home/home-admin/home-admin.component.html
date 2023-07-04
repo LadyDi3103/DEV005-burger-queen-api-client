@@ -1,9 +1,115 @@
 <!-- <app-header-home-waiter></app-header-home-waiter> -->
-<p class="adminName"> Admin: {{adminName}}</p>
-<div class="body">
-  <div class="signupFrm">
-    <!-- <p class="waiterName"> Chef:</p> -->
-    <form class="form" (ngSubmit)="onSubmit()">
+<div class="containerGeneral">
+  <p class="adminName">Admin: {{ adminName }}</p>
+  <div class="btnHead">
+    <div class="btnTags">
+      <button (click)="showTabContent('option1')" class="tagEmployee">
+        Employee
+      </button>
+      <button (click)="showTabContent('option2')" class="tagProducts">
+        Products
+      </button>
+    </div>
+    <ng-container *ngIf="selectedMenu === 'option1'">
+      <div class="btnAdd">
+        <button class="addEmployee" (click)="onSubmit()">
+          Create Employee
+        </button>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="selectedMenu === 'option2'">
+      <div class="btnAddProducts">
+        <button class="addProducts" (click)="onSubmit()">
+          Create Products
+        </button>
+      </div>
+    </ng-container>
+  </div>
+  <ng-container *ngIf="selectedMenu === 'option1'">
+    <label for="admin" class="labels" for="line">A D M I N</label>
+    <hr />
+    <div class="employee">
+      <p class="user">lady.admin@systers.xyz</p>
+      <button class="btnEdit">Edit</button
+      ><button class="btnDelete">Delete</button>
+    </div>
+    <div class="employee">
+      <p class="user">luna.admin@systers.xyz</p>
+      <button class="btnEdit">Edit</button
+      ><button class="btnDelete">Delete</button>
+    </div>
+    <label for="chef" class="labels">C H E F</label>
+    <hr />
+    <div class="employee">
+      <p class="user">lady.admin@systers.xyz</p>
+      <button class="btnEdit">Edit</button
+      ><button class="btnDelete">Delete</button>
+    </div>
+    <div class="employee">
+      <p class="user">luna.admin@systers.xyz</p>
+      <button class="btnEdit">Edit</button
+      ><button class="btnDelete">Delete</button>
+    </div>
+    <label for="waiter" class="labels">W A I T E R</label>
+    <hr />
+    <div class="employee">
+      <p class="user">lady.admin@systers.xyz</p>
+      <button class="btnEdit">Edit</button
+      ><button class="btnDelete">Delete</button>
+    </div>
+    <div class="employee">
+      <p class="user">luna.admin@systers.xyz</p>
+      <button class="btnEdit">Edit</button
+      ><button class="btnDelete">Delete</button>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="selectedMenu === 'option2'">
+    <div class="drinks">
+      <div class="labels">
+        <label class="labels" for="line">Drinks</label>
+        <hr />
+      </div>
+      <div class="containerProducts">
+        <button
+          *ngFor="let product of menuItem.drinks"
+          (click)="selectProduct(product)"
+          class="icons-Breakfast"
+        >
+          <img class="imgProduct" src="{{ product.image }}" />
+          <div class="namePrice">
+            <p>{{ product.name }}</p>
+          </div>
+          <div class="namePrice">
+            <p>$ {{ product.price }}</p>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div class="brunch">
+      <div class="labels">
+        <label class="labels" for="line">Brunch</label>
+        <hr />
+      </div>
+      <div class="contanerProducts">
+        <button
+          *ngFor="let product of menuItem.brunch"
+          (click)="selectProduct(product)"
+          class="icons-Breakfast"
+        >
+          <img class="imgProduct" src="{{ product.image }}" />
+          <div class="namePrice">
+            <p>{{ product.name }}</p>
+          </div>
+          <div class="namePrice">
+            <p>$ {{ product.price }}</p>
+          </div>
+        </button>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+    <!-- <form class="form" (ngSubmit)="onSubmit()">
       <h1 class="title">Register User</h1><span class="closeModal" (click)="closeModal()">&times;</span>
 
       <div class="inputContainer">
@@ -25,7 +131,7 @@
       <button class="add-employee" (click)="onSubmit()">Create Employee</button>
     </form>
   </div>
-</div>
+</div> -->
 
         <!-- <hr>
         <span class="closeModal" (click)="closeModal()">&times;</span>

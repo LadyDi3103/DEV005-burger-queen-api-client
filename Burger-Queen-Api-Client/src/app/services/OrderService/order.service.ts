@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { DataOrder } from 'src/app/interfaces/interfaces';
 
 @Injectable({
     providedIn: 'root'
@@ -8,32 +9,21 @@ import { Observable } from 'rxjs';
 
 export class OrderService {
 constructor(private http: HttpClient) { }
-    
-createOrder(orderData:{
-        // id: any;
-        client: string;
-        products: [];
-        // status: string;
-        // dateEntry: string;
-        // dateProcessed: string;
-    }): Observable<any> {
+
+createOrder(orderData:DataOrder): Observable<any> {
         return this.http.post('http://localhost:8080/orders', {
-            // id: orderData.id,
             cliente: orderData.client,
             products: orderData.products,
-            // status: orderData.status,
-            // dateEntry: orderData.dateEntry,
-            // dateProcessed: orderData.dateProcessed,
+            status: orderData.status,
         }
         )
     }
-    // createProduct(name: string, price: number, image: string, type: string): Observable<any> {
-    //     return this.http.post('http://localhost:8080/users/products', {
-    //         name: name,
-    //         price: price,
-    //         image: image,
-    //         type: type,
-    //     })
+    // sendOrder(order:): Observable<any>{
+    //   const token = localStorage.getItem("accessToken");
+    //   const headers = new HttpHeaders({
+    //     Authorization: `Bearer ${token}`
+    //   });
+    //   return this.http.post<any>('http://localhost:8080/orders', {order}, { headers });
     // }
 }
 
