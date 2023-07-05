@@ -226,15 +226,16 @@
   position: relative;
 }
 
-.form {
+/* .form {
   background-color: var(--color-6);
   width: 400px;
   border-radius: 8px;
   padding: 20px 40px;
   box-shadow: 0 10px 25px var(--color-2);
-}
+} */
 .close {
   position: absolute;
+  font-size: 30px;
   top: 10px;
   right: 10px;
   cursor: pointer;
@@ -287,7 +288,7 @@
   z-index: 0;
 }
 
-.submitBtn {
+.addeMployee {
   display: block;
   margin-left: auto;
   padding: 15px 30px;
@@ -300,8 +301,8 @@
   margin-top: 30px;
 }
 
-.submitBtn:hover {
-  background-color: #9867C5;
+.addeMployee:hover {
+  background-color: var(--color-3);
   transform: translateY(-2px);
 }
 

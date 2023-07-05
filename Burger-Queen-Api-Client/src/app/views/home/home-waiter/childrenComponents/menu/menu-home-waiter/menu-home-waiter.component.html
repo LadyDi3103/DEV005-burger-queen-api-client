@@ -21,12 +21,12 @@
     <!-- <div *ngIf="selectedMenu === 'option1'"> -->
     <!-- *ngIf="selectedMenu === 'option1'" -->
     <!-- OPTION1 -->
-    <ng-container *ngIf="selectedMenu === 'option1'">
+    <ng-container class="ngDrinks"  *ngIf="selectedMenu === 'option1'">
         <div class="drinks">
-            <div class="labels">
+            <!-- <div class="labels">
                 <label class="labels" for="line">Breakfast</label>
                 <hr>
-            </div>
+            </div> -->
             <div>
                 <button *ngFor="let product of APIDATA" (click)="selectProduct(product)"
                     class="icons-Breakfast">
@@ -63,12 +63,24 @@
     <!-- OPTION2 -->
     <ng-container *ngIf="selectedMenu === 'option2'">
         <div class="Hamburguer">
-            <div class="labelsMeals">
+            <!-- <div class="labelsMeals">
                 <label class="labels" for="line">Hamburguer</label>
                 <hr>
-            </div>
-            <div>
+            </div> -->
+            <!-- <div>
                 <button *ngFor="let product of menuItem.drinks" (click)="selectProduct(product)"
+                    class="icons-Breakfast">
+                    <img class="imgProduct" src={{product.image}}>
+                    <div class="namePrice">
+                        <p>{{product.name}}</p>
+                    </div>
+                    <div class="namePrice">
+                        <p>$ {{product.price}} </p>
+                    </div>
+                </button>
+            </div> -->
+            <div>
+                <button *ngFor="let product of APIDATA" (click)="selectProduct(product)"
                     class="icons-Breakfast">
                     <img class="imgProduct" src={{product.image}}>
                     <div class="namePrice">
@@ -80,7 +92,7 @@
                 </button>
             </div>
         </div>
-        <div class="Pizzas">
+        <!-- <div class="Pizzas">
             <div class="labelsMeals">
                 <label class="labels" for="line">Pizzas</label>
                 <hr>
@@ -97,7 +109,7 @@
                     </div>
                 </button>
             </div>
-        </div>
+        </div> -->
     </ng-container>
 </div>
 <!-- <span class="closeModal" *ngFor="let product of selectedProducts" (click)="deleteSelection(product)">&times;</span> -->
