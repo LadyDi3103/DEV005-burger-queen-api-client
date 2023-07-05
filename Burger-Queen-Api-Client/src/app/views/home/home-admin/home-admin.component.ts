@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/AdminService/admin.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
+import { DataUser } from 'src/app/interfaces/interfaces';
 interface Menu {
   drinks: Product[],
   brunch: Product[],
@@ -20,12 +21,20 @@ interface Product {
 })
 export class HomeAdminComponent {
   adminName: string = 'LadyDiana';
-  email: string = '';
-  password: string = '';
-  rol: string = '';
+  // email: string = '';
+  // password: string = '';
+  // rol: string = '';
   errorMessage: string = '';
   selectedMenu: string = 'option1';
   selectedProduct: Product | null = null; // Product representa el tipo de datos de tus productos
+  showModal: boolean = false;
+  // F O R M  R E A C T I V O
+  //form va toda la data que se ingresa en un input
+  form = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl(''),
+    rol: new FormControl(''),
+  });
   // registrationForm: FormGroup;
   // showModal: boolean = false;
 
@@ -91,11 +100,17 @@ export class HomeAdminComponent {
       },
     ],
   }
-  constructor(private adminService: AdminService, private router: Router, private formBuilder: FormBuilder) { }
+  constructor(private adminService: AdminService, private router: Router) { }
 onSubmit(): void {
-  this.adminService.getAccessToken(this.email, this.password, this.rol).subscribe(
+  const userData:DataUser={
+    email: this.form.value.email || '',
+    password: this.form.value.password || '',
+    rol: this.form.value.rol || '',
+  }
+  this.adminService.getAccessToken(userData).subscribe(
     (resp) => {
       console.log(resp, 'VALIDA');
+      this.form.reset()
       // if(resp.accessToken){
       //   this.router.navigate(['/home-admin']);
       //   this.email= ' ';
@@ -110,8 +125,10 @@ onSubmit(): void {
     //  }
   )
 }
+//no toma los valores
 ngOnInit(): void {
   console.log('ENTRÓ AL ngOnInit');
+  this.obtainListUsers()
   //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
   //Add 'implements OnInit' to the class.
   this.obtainListProducts()
@@ -122,19 +139,24 @@ obtainListProducts(): void {
     console.log(data, 'DATA 388888');
   })
 }
+obtainListUsers():void{
+  this.adminService.getAllUsers().subscribe((resp)=>{
+    console.log(resp, 'RESP-GET-ALL-USERS');
+    
+  })
+}
 showTabContent(option: string): void {
   this.selectedMenu = option;
 }
 selectProduct(product: Product): void {
   this.selectedProduct = product;
 }
-openModal() {
-  // this.showModal = true;
+openModalRegisterEmployee() {
+  this.showModal = true;
 }
-
 closeModal() {
-  // this.showModal = false;
-  // this.registrationForm.reset();
+  this.showModal = false;
+  this.form.reset();
 }
 logout(): void {
   this.router.navigateByUrl('/login');

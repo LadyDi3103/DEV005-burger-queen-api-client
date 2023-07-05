@@ -12,14 +12,14 @@
     </div>
     <ng-container *ngIf="selectedMenu === 'option1'">
       <div class="btnAdd">
-        <button class="addEmployee" (click)="onSubmit()">
+        <button class="addEmployee" (click)="openModalRegisterEmployee()">
           Create Employee
         </button>
       </div>
     </ng-container>
     <ng-container *ngIf="selectedMenu === 'option2'">
       <div class="btnAddProducts">
-        <button class="addProducts" (click)="onSubmit()">
+        <button class="addProducts" (click)="openModalRegisterEmployee()">
           Create Products
         </button>
       </div>
@@ -28,39 +28,39 @@
   <ng-container *ngIf="selectedMenu === 'option1'">
     <label for="admin" class="labels" for="line">A D M I N</label>
     <hr />
+    <!-- ****** -->
+    <!-- <div *ngFor="let user of " class="employee">
+      <p class="user">lady.admin@systers.xyz</p>
+      <button class="btnEdit">Edit</button><button class="btnDelete">Delete</button>
+    </div> -->
+    <!-- ******** -->
     <div class="employee">
       <p class="user">lady.admin@systers.xyz</p>
-      <button class="btnEdit">Edit</button
-      ><button class="btnDelete">Delete</button>
+      <button class="btnEdit">Edit</button><button class="btnDelete">Delete</button>
     </div>
     <div class="employee">
       <p class="user">luna.admin@systers.xyz</p>
-      <button class="btnEdit">Edit</button
-      ><button class="btnDelete">Delete</button>
+      <button class="btnEdit">Edit</button><button class="btnDelete">Delete</button>
     </div>
     <label for="chef" class="labels">C H E F</label>
     <hr />
     <div class="employee">
       <p class="user">lady.admin@systers.xyz</p>
-      <button class="btnEdit">Edit</button
-      ><button class="btnDelete">Delete</button>
+      <button class="btnEdit">Edit</button><button class="btnDelete">Delete</button>
     </div>
     <div class="employee">
       <p class="user">luna.admin@systers.xyz</p>
-      <button class="btnEdit">Edit</button
-      ><button class="btnDelete">Delete</button>
+      <button class="btnEdit">Edit</button><button class="btnDelete">Delete</button>
     </div>
     <label for="waiter" class="labels">W A I T E R</label>
     <hr />
     <div class="employee">
       <p class="user">lady.admin@systers.xyz</p>
-      <button class="btnEdit">Edit</button
-      ><button class="btnDelete">Delete</button>
+      <button class="btnEdit">Edit</button><button class="btnDelete">Delete</button>
     </div>
     <div class="employee">
       <p class="user">luna.admin@systers.xyz</p>
-      <button class="btnEdit">Edit</button
-      ><button class="btnDelete">Delete</button>
+      <button class="btnEdit">Edit</button><button class="btnDelete">Delete</button>
     </div>
   </ng-container>
   <ng-container *ngIf="selectedMenu === 'option2'">
@@ -70,11 +70,7 @@
         <hr />
       </div>
       <div class="containerProducts">
-        <button
-          *ngFor="let product of menuItem.drinks"
-          (click)="selectProduct(product)"
-          class="icons-Breakfast"
-        >
+        <button *ngFor="let product of menuItem.drinks" (click)="selectProduct(product)" class="icons-Breakfast">
           <img class="imgProduct" src="{{ product.image }}" />
           <div class="namePrice">
             <p>{{ product.name }}</p>
@@ -91,11 +87,7 @@
         <hr />
       </div>
       <div class="contanerProducts">
-        <button
-          *ngFor="let product of menuItem.brunch"
-          (click)="selectProduct(product)"
-          class="icons-Breakfast"
-        >
+        <button *ngFor="let product of menuItem.brunch" (click)="selectProduct(product)" class="icons-Breakfast">
           <img class="imgProduct" src="{{ product.image }}" />
           <div class="namePrice">
             <p>{{ product.name }}</p>
@@ -109,31 +101,34 @@
   </ng-container>
 </div>
 
-    <!-- <form class="form" (ngSubmit)="onSubmit()">
-      <h1 class="title">Register User</h1><span class="closeModal" (click)="closeModal()">&times;</span>
-
+<div class="modal" *ngIf="showModal">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h1 class="title">Register User</h1>
       <div class="inputContainer">
-        <input class="input" type="email" id="mail" [(ngModel)]="email" name="user_mail" placeholder="a"
+        <input class="input" type="email" id="mail" formControlName="email" name="user_mail" placeholder="a"
           title="El email es incorrecto" placeholder="ejemplo@ejemplo.com" required>
         <label for="" class="label">Email</label>
       </div>
 
       <div class="inputContainer">
-        <input class="input" type="password" [(ngModel)]="password" id="password" name="user_password"
+        <input class="input" type="password" formControlName="password" id="password" name="user_password"
           placeholder="**********" id="password" required>
         <label for="" class="label">Password</label>
       </div>
 
       <div class="inputContainer">
-        <input type="text" class="input" [(ngModel)]="rol" id="rol" name="rol" placeholder="a" required>
+        <input type="text" class="input" formControlName="rol" id="rol" name="rol" placeholder="a" required>
         <label for="" class="label">rol</label>
       </div>
       <button class="add-employee" (click)="onSubmit()">Create Employee</button>
     </form>
   </div>
-</div> -->
+</div>
+<!-- </div>  -->
 
-        <!-- <hr>
+<!-- <hr>
         <span class="closeModal" (click)="closeModal()">&times;</span>
         <button type="submit">Add Employee</button>
         <button type="button" (click)="closeModal()">Cancel</button>

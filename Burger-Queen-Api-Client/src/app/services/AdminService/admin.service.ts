@@ -1,46 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders,HttpInterceptor,HttpRequest,HttpHandler, HttpEvent  } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { DataUser } from 'src/app/interfaces/interfaces';
+import { Data } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class AdminService{
-  // intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-  //   // Implementara lógica de interceptación aquí
-  //   const authToken = localStorage.getItem('accessToken');
-  //   if(authToken){
-  //     const authReq = req.clone({
-  //       headers: req.headers.set('Authorization', `Bearer ${authToken}`)
-  //     });
-  //     return next.handle(authReq);  
-  //   }
-  //   return next.handle(req);
-  // }
-
   constructor(private http: HttpClient) { }
   //Con esta función crea a los usuarios
-  getAccessToken(email: string, password: string, rol: string): Observable<any> {
+  getAccessToken(userData: DataUser): Observable<any> {
     const user = {
-      email: email, // traer el valor de los imputs
-      password: password, // traer la información de ambos
-      rol: rol,
+      email: userData.email, // traer el valor de los imputs
+      password: userData.password, // traer la información de ambos
+      rol: userData.rol,
     };
     return this.http.post('http://localhost:8080/users', user);
-
   }
-  // intercept(req: HttpRequest, next: HttpHandler) {
-  //   const token = this.authService.getJWTToken();
-  //   req = req.clone({
-  //     url:  req.url,
-  //     setHeaders: {
-  //       Authorization: `Bearer ${token}`
-  //     }
-  //   });
-  //   return next.handle(req);
-  // }
-
   //30junio  USO ENDPOINT GET
   getListProducts(): Observable<any> {
     const headers = new HttpHeaders({
@@ -50,6 +28,18 @@ export class AdminService{
       //'AQUÌ VA UN TOKEN'
     })
     return this.http.get('http://localhost:8080/products',{headers});
+  }
+  getAllUsers(): Observable<any>{
+    // const users = {
+    //   email: userData.email,
+    //   password: userData.password,
+    //   rol: userData.rol,
+    // }
+    const headers = new HttpHeaders({
+      'accept': 'application/json',
+      'Authorization': 'Bearer ' + localStorage.getItem("accessToken")
+    })
+    return this.http.get('http://localhost:8080/users', {headers});
   }
 
   createProduct(name: string, price:number, image: string, type:string): Observable<any> {

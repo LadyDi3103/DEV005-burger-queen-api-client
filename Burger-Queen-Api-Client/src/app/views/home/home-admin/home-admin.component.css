@@ -3,6 +3,7 @@
   font-style: italic;
   font-family: var(--font-family-1);
 }
+
 .adminName {
   margin-bottom: 7px;
   font-size: 22px;
@@ -10,6 +11,7 @@
   padding-left: 25px;
   background: var(--color-6);
 }
+
 .containerGeneral {
   margin: auto;
   background-image: url(../../../../assets/img/LogoBackGround_waiter.png);
@@ -18,6 +20,7 @@
   background-attachment: fixed;
   min-height: 80vh;
 }
+
 .btnHead {
   /* background: red; */
   max-width: 100%;
@@ -27,6 +30,7 @@
   /* display: flex; */
   /* justify-content: space-between; */
 }
+
 .btnAdd {
   /* background: blue; */
   /* max-width: 100%; */
@@ -34,6 +38,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .addEmployee {
   /* float: right; */
   background-color: var(--color-3);
@@ -50,17 +55,19 @@
   /* align-self: center; */
   text-shadow: 2px 2px var(--color-2);
 }
-.employee{
-  display: flex ;
+
+.employee {
+  display: flex;
   /* background: red; */
   justify-content: space-around;
   align-items: center;
 }
-.user{
+
+.user {
   font-size: 30px;
 }
 
-.btnEdit{
+.btnEdit {
   background-color: var(--color-3);
   letter-spacing: 1.5px;
   width: 15%;
@@ -75,7 +82,8 @@
   /* align-self: center; */
   text-shadow: 2px 2px var(--color-2);
 }
-.btnDelete{
+
+.btnDelete {
   background-color: var(--color-3);
   letter-spacing: 1.5px;
   width: 15%;
@@ -90,6 +98,7 @@
   /* align-self: center; */
   text-shadow: 2px 2px var(--color-2);
 }
+
 .btnAddProducts {
   /* background: blue; */
   /* max-width: 100%; */
@@ -97,6 +106,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .addProducts {
   /* float: right; */
   background-color: var(--color-3);
@@ -113,6 +123,7 @@
   /* align-self: center; */
   text-shadow: 2px 2px var(--color-2);
 }
+
 .tagProducts {
   padding-top: 20px;
   width: 47%;
@@ -126,19 +137,22 @@
   border-radius: 25px 10px 0px 0px;
   font-size: 30px;
 }
-.containerProducts{
+
+.containerProducts {
   padding: 20px;
   height: 300px;
   background: var(--color-4);
   display: flex;
   flex-wrap: wrap;
 }
+
 .labels {
   font-size: 25px;
   /* background: blue; */
   background: var(--color-4);
   padding-left: 5px;
 }
+
 .icons-Breakfast {
   background: black;
   width: 195px;
@@ -151,16 +165,19 @@
   background-color: transparent;
   border: none;
 }
-.imgProduct{
+
+.imgProduct {
   width: 30%;
   height: 45%;
   border: 0;
 }
-.namePrice{
-font-size: 15px ;
-color: var(--color-2);
-font-family: var(--font-family-1);
+
+.namePrice {
+  font-size: 15px;
+  color: var(--color-2);
+  font-family: var(--font-family-1);
 }
+
 .tagEmployee {
   padding-top: 20px;
   width: 47%;
@@ -178,97 +195,121 @@ font-family: var(--font-family-1);
 
 
 /* MODAL REGISTRAR USUARIO */
-.body {
+/* .body {
   color: var(--color-2);
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     background-color: white;
     font-family: "lato", sans-serif;
+} */
+.modal {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  display: block;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* height: 100vh; */
 }
-.signupFrm {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  .form {
-    background-color:var(--color-6);
-    width: 400px;
-    border-radius: 8px;
-    padding: 20px 40px;
-    box-shadow: 0 10px 25px var(--color-2);
-  }
-  
-  .title {
-    font-size: 50px;
-    margin-bottom: 50px;
-  }
-  .inputContainer {
-    position: relative;
-    height: 45px;
-    width: 90%;
-    margin-bottom: 17px;
-  }
+.modal-content{
+  background-color: #fff;
+  margin: 20% auto;
+  padding: 20px;
+  width: 400px;
+  border-radius: 5px;
+  position: relative;
+}
 
-  .input {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    width: 100%;
-    border: 1px solid #DADCE0;
-    border-radius: 7px;
-    font-size: 22px;
-    padding: 0 20px;
-    outline: none;
-    background: none;
-    z-index: 1;
-  }
-  
-  /* Hide the placeholder texts (a) */
-  
-  ::placeholder {
-    color: transparent;
-  }
+.form {
+  background-color: var(--color-6);
+  width: 400px;
+  border-radius: 8px;
+  padding: 20px 40px;
+  box-shadow: 0 10px 25px var(--color-2);
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
 
-  /* Styling text labels */
+.title {
+  font-size: 50px;
+  margin-bottom: 50px;
+}
+
+.inputContainer {
+  position: relative;
+  height: 45px;
+  width: 90%;
+  margin-bottom: 17px;
+}
+
+.input {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #DADCE0;
+  border-radius: 7px;
+  font-size: 22px;
+  padding: 0 20px;
+  outline: none;
+  background: none;
+  z-index: 1;
+}
+
+/* Hide the placeholder texts (a) */
+
+::placeholder {
+  color: transparent;
+}
+
+/* Styling text labels */
 
 .label {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    padding: 0 4px;
-    background-color: white;
-    color: #DADCE0;
-    font-size: 16px;
-    transition: 0.5s;
-    z-index: 0;
-  }
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 0 4px;
+  background-color: white;
+  color: #DADCE0;
+  font-size: 16px;
+  transition: 0.5s;
+  z-index: 0;
+}
 
-  .submitBtn {
-    display: block;
-    margin-left: auto;
-    padding: 15px 30px;
-    border: none;
-    background: var(--color-3);
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 20px;
-    margin-top: 30px;
-  }
-  
-  .submitBtn:hover {
-    background-color: #9867C5;
-    transform: translateY(-2px);
-  }
+.submitBtn {
+  display: block;
+  margin-left: auto;
+  padding: 15px 30px;
+  border: none;
+  background: var(--color-3);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 30px;
+}
 
-  .input:focus + .label {
-    top: -7px;
-    left: 3px;
-    z-index: 10;
-    font-size: 16px;
-    font-weight: 800;
-    color: var(--color-2);
-  }
+.submitBtn:hover {
+  background-color: #9867C5;
+  transform: translateY(-2px);
+}
+
+.input:focus+.label {
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--color-2);
+}
