@@ -1,8 +1,10 @@
 export interface DataOrder{
-    // id: any;
     client: string;
     products: [];
     status: string;
-    // dateEntry: string;
-    // dateProcessed: string;
+}
+export interface DataUser{
+    email: string;
+    password: string;
+    rol: string;
 }
