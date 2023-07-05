@@ -80,10 +80,15 @@
     height: 80%;
     border: 0;
 }
+.ngDrinks{
+    height: 600px;
+}
 .drinks,
 .brunch {
     background: var(--color-6);
     border-right: 2px solid var(--color-2);
+    overflow-y: auto;
+    height: 600px;
     /* background: var(--color-4); */
     /* display: flex; */
     /* flex-direction:column; */
@@ -93,6 +98,8 @@
 }
 .Hamburguer, 
 .Pizzas{
+    overflow-y: auto;
+    height: 600px;
     background: var(--color-4);
     border-right: 2px solid var(--color-2);
 }
