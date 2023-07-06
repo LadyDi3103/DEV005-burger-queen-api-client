@@ -8,3 +8,9 @@ export interface DataUser{
     password: string;
     rol: string;
 }
+export interface DataProduct {
+    name: string;
+    price: number;
+    image: string;
+    type: string;
+  }

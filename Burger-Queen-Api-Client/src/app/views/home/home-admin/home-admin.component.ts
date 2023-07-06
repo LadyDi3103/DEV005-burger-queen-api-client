@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/AdminService/admin.service';
 import { FormControl, FormGroup } from '@angular/forms';
-import { DataUser } from 'src/app/interfaces/interfaces';
+import { DataUser, DataProduct } from 'src/app/interfaces/interfaces';
 interface Menu {
   drinks: Product[],
   brunch: Product[],
@@ -28,16 +28,20 @@ export class HomeAdminComponent {
   selectedMenu: string = 'option1';
   selectedProduct: Product | null = null; // Product representa el tipo de datos de tus productos
   showModal: boolean = false;
+  showModalProduct: boolean = false;
   // F O R M  R E A C T I V O
   //form va toda la data que se ingresa en un input
   form = new FormGroup({
     email: new FormControl(''),
     password: new FormControl(''),
     rol: new FormControl(''),
+    name: new FormControl(''),
+    price: new FormControl(0),
+    image: new FormControl(''),
+    type: new FormControl(''),
   });
   // registrationForm: FormGroup;
   // showModal: boolean = false;
-
   menuItem: Menu = {
     drinks: [
       {
@@ -125,6 +129,26 @@ onSubmit(): void {
     //  }
   )
 }
+createProducts(): void {
+  // const image: File | null = this.form.value.image instanceof File ? this.form.value.image : null;
+  // const image: File | null =
+  //   this.form.value.image instanceof File &&
+  //   this.isImageFile(this.form.value.image)
+  //     ? this.form.value.image
+  //     : null;
+  const userProduct: DataProduct = {
+    name: this.form.value.name || '',
+    price: this.form.value.price || 0,
+    image: this.form.value.image || '',
+    type: this.form.value.type || '',
+  };
+  this.adminService.createProduct(userProduct).subscribe(
+    (resp) => {
+      console.log(resp, 'VALIDA');
+      this.form.reset();
+    }
+  )
+}
 //no toma los valores
 ngOnInit(): void {
   console.log('ENTRÓ AL ngOnInit');
@@ -134,6 +158,13 @@ ngOnInit(): void {
   this.obtainListProducts()
     console.log('sigue en el ngOnInit');
 }
+isImageFile(file: File): boolean {
+  const allowedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
+  const fileExtension = file.name
+    .substring(file.name.lastIndexOf('.'))
+    .toLowerCase();
+  return allowedExtensions.includes(fileExtension);
+}
 obtainListProducts(): void {
   this.adminService.getListProducts().subscribe((data) => {
     console.log(data, 'DATA 388888');
@@ -142,7 +173,6 @@ obtainListProducts(): void {
 obtainListUsers():void{
   this.adminService.getAllUsers().subscribe((resp)=>{
     console.log(resp, 'RESP-GET-ALL-USERS');
-    
   })
 }
 showTabContent(option: string): void {
@@ -153,6 +183,9 @@ selectProduct(product: Product): void {
 }
 openModalRegisterEmployee() {
   this.showModal = true;
+}
+openModalCreateProduct() {
+  this.showModalProduct = true;
 }
 closeModal() {
   this.showModal = false;
