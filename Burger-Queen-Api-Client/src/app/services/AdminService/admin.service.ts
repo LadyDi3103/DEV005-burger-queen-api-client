@@ -1,9 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders,HttpInterceptor,HttpRequest,HttpHandler, HttpEvent  } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpHeaders,
+  HttpInterceptor,
+  HttpRequest,
+  HttpHandler,
+  HttpEvent,
+} from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { DataUser } from 'src/app/interfaces/interfaces';
+import { DataUser, DataProduct } from 'src/app/interfaces/interfaces';
 import { Data } from '@angular/router';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -19,13 +25,10 @@ export class AdminService{
     };
     return this.http.post('http://localhost:8080/users', user);
   }
-  //30junio  USO ENDPOINT GET
   getListProducts(): Observable<any> {
     const headers = new HttpHeaders({
       'accept': 'application/json',
       'Authorization': 'Bearer ' + localStorage.getItem("accessToken")
-      // se reemplaza el valor de mi variable que está en environment
-      //'AQUÌ VA UN TOKEN'
     })
     return this.http.get('http://localhost:8080/products',{headers});
   }
@@ -41,14 +44,14 @@ export class AdminService{
     })
     return this.http.get('http://localhost:8080/users', {headers});
   }
-
-  createProduct(name: string, price:number, image: string, type:string): Observable<any> {
-    return this.http.post('http://localhost:8080/products', {
-      name: name,
-      price: price,
-      image: image,
-      type: type,
-    })
+  createProduct(userProduct: DataProduct): Observable<any> {
+    const products = {
+      name: userProduct.name, // traer el valor de los inputs
+      price: userProduct.price,
+      image: userProduct.image,
+      type: userProduct.type,
+    };
+    return this.http.post('http://localhost:8080/products', products);
   }
   //CREAR EL PRODUCT LO HACE EL ADMIN/    
   // HACER PETICIÓN PETICIÓN POST..
