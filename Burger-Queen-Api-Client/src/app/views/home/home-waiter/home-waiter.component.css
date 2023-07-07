@@ -13,6 +13,7 @@
     background-attachment: fixed;
     min-height: 100vh;
 }
+/*landscape*/
 @media (min-width: 900px) {
     .Container-general {
         min-height: 100vh;

@@ -7,22 +7,25 @@
   <!-- End Header -->
   <!-- Order Area -->
   <div class="containerOrders">
-    <div class="order">
-      <label for="clientsName">Client: Juan Cristobal </label>
+
+
+    <div *ngFor="let order of orders" class="order">
+      <label for="clientsName">Clients Name: {{order.client}} </label>
       <hr />
-      <label for="nOrder">N° Order: 0000003</label>
+      <label for="nOrder">Order Id: {{order.id}}</label>
       <hr />
-      <label for="nTable">N° Table: 03 </label>
-      <hr />
+      <!-- <label for="nTable">N° Table: 03 </label>
+      <hr /> -->
       <label for="resumeOrder" class="resumeOrder"> Resume Order: </label>
       <div class="orederResume">
-        <span class="Number1"> 5 </span>
-        <span class="item">short coffe</span>
+        {{order.products}}
+        <!-- <span class="Number1"> {{orders.products.product.qty}} </span>
+        <span class="item">{{order.products.product.name}} </span> -->
       </div>
       <hr />
       <div class="containerBottom">
         <div class="timer">
-          <p>Date: 2023-06-27</p>
+          <p>Date: {{order.products.product.dateEntry}}</p>
           <p>Timer: 00:16:58</p>
         </div>
         <hr />
@@ -31,7 +34,11 @@
         </button>
       </div>
     </div>
-    <div class="order">
+
+
+
+
+    <!-- <div class="order">
       <label for="clientsName">Client: Maria Jimena </label>
       <hr />
       <label for="nOrder">N° Order: 0000005</label>
@@ -51,6 +58,6 @@
           {{ buttonState ? 'To Deliver' : 'To Prepare' }}
         </button>
       </div>
-    </div>
+    </div> -->
   </div>
 </section>
