@@ -21,13 +21,7 @@ interface GetProduct {
   styleUrls: ['./home-waiter.component.css'],
 })
 export class HomeWaiterComponent {
-  // Casita de la data de la api 
-  // id: any='';
-  // client: string ='';
-  // products: []= [];
-  // status: string= '';
-  // dateEntry: string= '';
-  // dateProcessed: string = '';
+
 
   waiterName: string = 'Lady Diana';
   getProduct: GetProduct[] = [];
@@ -47,7 +41,6 @@ getData(product: Product) {
     }
     // console.log(this.getProduct, 'linea 40')
   }
-
 clearOrderOnSubmit():void{
   this.getProduct = [];
 }
