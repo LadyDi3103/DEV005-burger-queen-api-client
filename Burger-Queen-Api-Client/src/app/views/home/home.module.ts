@@ -12,6 +12,8 @@ import { SharedModule } from '@shared/shared.module';
 import { HeaderHomeWaiterComponent } from './home-waiter/childrenComponents/header/header-home-waiter/header-home-waiter.component';
 import { MenuHomeWaiterComponent } from './home-waiter/childrenComponents/menu/menu-home-waiter/menu-home-waiter.component';
 import { FormHomeWaiterComponent } from './home-waiter/childrenComponents/form/form-home-waiter/form-home-waiter.component';
+import { TimerComponent } from './home-chef/Home-chef-Children/timer/timer.component';
+import { CardsComponent } from './home-chef/Home-chef-Children/cards/cards.component';
 
 
 @NgModule({
@@ -22,6 +24,8 @@ import { FormHomeWaiterComponent } from './home-waiter/childrenComponents/form/f
     HeaderHomeWaiterComponent,
     MenuHomeWaiterComponent,
     FormHomeWaiterComponent,
+    TimerComponent,
+    CardsComponent,
   ],
   imports: [
     CommonModule,

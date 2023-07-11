@@ -12,9 +12,10 @@ export class OrderService {
     //El WAITER llama a esta función para crear la orden
     createOrder(orderData: DataOrder): Observable<any> {
         return this.http.post('http://localhost:8080/orders', {
-            cliente: orderData.client,
+            client: orderData.client,
             products: orderData.products,
             status: orderData.status,
+            dataEntry: orderData.dataEntry,
         })
     }
     getOrders(): Observable<any> {

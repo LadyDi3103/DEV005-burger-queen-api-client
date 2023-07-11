@@ -2,6 +2,7 @@ export interface DataOrder{
     client: string;
     products: [];
     status: string;
+    dataEntry: string;
 }
 export interface DataUser{
     email: string;

@@ -56,6 +56,25 @@
   text-shadow: 2px 2px var(--color-2);
 }
 
+/* .employee {
+  display: flex; */
+  /* background: red; */
+  /* justify-content: space-around;
+  align-items: center;
+} */
+
+/* .containerAdmin {
+  justify-content: space-around;
+} */
+.ulUsers{
+  display: flex;
+  flex-direction: column;
+}
+.user {
+  /* background: red; */
+  font-size: 30px;
+  max-width: 100%;
+}
 .employee {
   display: flex;
   /* background: red; */

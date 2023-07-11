@@ -28,40 +28,69 @@
   <ng-container *ngIf="selectedMenu === 'option1'">
     <label for="admin" class="labels" for="line">A D M I N</label>
     <hr />
+    <section *ngIf="adminUsers.length > 0" class="user">
+      <ul style="list-style: none" class="ulUsers">
+        <li *ngFor="let user of adminUsers">
+          {{ user.email }}
+          <button class="btnEdit">Edit</button>
+          <button class="btnDelete">Delete</button>
+        </li>
+      </ul>
+    </section>
     <!-- ****** -->
     <!-- <div *ngFor="let user of " class="employee">
       <p class="user">lady.admin@systers.xyz</p>
       <button class="btnEdit">Edit</button><button class="btnDelete">Delete</button>
     </div> -->
     <!-- ******** -->
-    <div class="employee">
+    <!-- <div class="employee">
       <p class="user">lady.admin@systers.xyz</p>
       <button class="btnEdit">Edit</button><button class="btnDelete">Delete</button>
     </div>
     <div class="employee">
       <p class="user">luna.admin@systers.xyz</p>
       <button class="btnEdit">Edit</button><button class="btnDelete">Delete</button>
-    </div>
+    </div> -->
     <label for="chef" class="labels">C H E F</label>
     <hr />
-    <div class="employee">
+    <section *ngIf="chefUsers.length > 0" class="containerAdmin">
+      <ul style="list-style: none" class="ulUsers">
+        <li *ngFor="let user of chefUsers" class="user">
+          {{ user.email }} 
+          
+          <button class="btnEdit">Edit</button>
+          <button class="btnDelete">Delete</button>
+       
+        </li>
+      </ul>
+    </section>
+    <!-- <div class="employee">
       <p class="user">lady.admin@systers.xyz</p>
       <button class="btnEdit">Edit</button><button class="btnDelete">Delete</button>
     </div>
     <div class="employee">
       <p class="user">luna.admin@systers.xyz</p>
       <button class="btnEdit">Edit</button><button class="btnDelete">Delete</button>
-    </div>
+    </div> -->
     <label for="waiter" class="labels">W A I T E R</label>
     <hr />
-    <div class="employee">
+    <section *ngIf="waiterUsers.length > 0" class="user">
+      <ul style="list-style: none" class="ulUsers">
+        <li *ngFor="let user of waiterUsers" class="prueba">
+          {{ user.email }} 
+          <button class="btnEdit">Edit</button>
+          <button class="btnDelete">Delete</button>
+        </li>
+      </ul>
+    </section>
+    <!-- <div class="employee">
       <p class="user">lady.admin@systers.xyz</p>
       <button class="btnEdit">Edit</button><button class="btnDelete">Delete</button>
     </div>
     <div class="employee">
       <p class="user">luna.admin@systers.xyz</p>
       <button class="btnEdit">Edit</button><button class="btnDelete">Delete</button>
-    </div>
+    </div> -->
   </ng-container>
   
   <ng-container *ngIf="selectedMenu === 'option2'">
@@ -71,7 +100,7 @@
         <hr />
       </div>
       <div class="containerProducts">
-        <button *ngFor="let product of menuItem.drinks" (click)="selectProduct(product)" class="icons-Breakfast">
+        <button *ngFor="let product of APIDATA" (click)="selectProduct(product)" class="icons-Breakfast">
           <img class="imgProduct" src="{{ product.image }}" />
           <div class="namePrice">
             <p>{{ product.name }}</p>

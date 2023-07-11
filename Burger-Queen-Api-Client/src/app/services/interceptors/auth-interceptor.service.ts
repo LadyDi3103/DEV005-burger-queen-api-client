@@ -10,6 +10,9 @@ export class AuthInterceptorService implements HttpInterceptor{
   //El método intercept es el método principal del interceptor y se ejecuta cada vez que se realiza una solicitud HTTP.
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     // se obtiene el token de acceso del almacenamiento local
+
+    console.log(req, 'hollaaa');
+    
     const authToken = localStorage.getItem('accessToken');
     if(authToken){
       // se crea una nueva solicitud clonando la solicitud original utilizando el método clone
