@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { min } from 'rxjs';
 import { DataOrder } from 'src/app/interfaces/interfaces';
 import { OrderService } from 'src/app/services/OrderService/order.service';
 interface Product {
@@ -24,6 +25,8 @@ export class FormHomeWaiterComponent {
 
   numOrder: string = '0000001';
   totalCost: number = 0;
+
+  // dataEntry : Date;
   // F O R M  R E A C T I V O
   //form va toda la data que se ingresa en un input
   form = new FormGroup({
@@ -33,13 +36,43 @@ export class FormHomeWaiterComponent {
     totalCost: new FormControl(''),
   });
   constructor(private orderService: OrderService) { }
+  timeDataEntry = new Date();
+  formattedDataEntry = this.timeDataEntry.toLocaleString('es-ES')
+
+ padTo2Digits(num:number) {
+    return num.toString().padStart(2, '0');
+  }
+  
+formatDate(date: Date) {
+    return (
+      [
+        date.getFullYear(),
+        this.padTo2Digits(date.getMonth() + 1),
+        this.padTo2Digits(date.getDate()),
+      ].join('-') +
+      ' ' +
+      [
+        this.padTo2Digits(date.getHours()),
+        this.padTo2Digits(date.getMinutes()),
+        this.padTo2Digits(date.getSeconds()),
+      ].join(':')
+    );
+  }
   onSubmit(): void {
+
+  const  date = this.formatDate(new Date());
+  console.log(date, 'date');
+  
+
     const orderData: DataOrder = 
-      {
-        client: this.form.value.clientsName || '', // De esta manera capturo el valor del input correspondiente. 
-        products: this.newItem as [], // castear
-        status: 'pending',
-      };
+    {
+      client: this.form.value.clientsName || '', // De esta manera capturo el valor del input correspondiente. 
+      products: this.newItem as [], // castear
+      status: 'pending',
+      dataEntry: date, 
+      // .toLocaleString('es-ES') || '',
+      // this.formattedDate
+    };
       //Aquí hago un request a la api
     this.orderService.createOrder(orderData).subscribe({
       next: (resp) => {

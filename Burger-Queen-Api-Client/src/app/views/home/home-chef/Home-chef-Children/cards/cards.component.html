@@ -1,0 +1,32 @@
+<!-- <p>cards works!</p> -->
+
+<label for="clientsName"><b>Clients Name:</b> {{orderOne.client}} </label>
+<hr />
+<label for="nOrder"><b>Order Id:</b> {{orderOne.id}}</label>
+<hr />
+<!-- <label for="nTable">N° Table: 03 </label>
+    <hr /> -->
+<label for="resumeOrder" class="resumeOrder"><b>Resume Order:</b></label>
+<div class="orderResume">
+    <p *ngFor=" let item of orderOne.products"> {{item.qty}} {{item.product.name}}</p>
+    <!-- {{order.products}} -->
+    <!-- <span class="Number1"> {{orders.products.product.qty}} </span>
+        <span class="item">{{order.products.product.name}} </span> -->
+</div>
+
+<div class="containerBottom">
+    <div class="timer">
+        <div>
+            <label for="resumeOrder" class="resumeOrder"><b>Date:</b></label>
+            <p>{{ orderOne.dataEntry }}</p>
+        </div>
+        <div>
+            <!-- <p> Timer: 00:16:58 </p> -->
+            <app-timer [dataEntry]="orderOne.dataEntry"></app-timer>
+        </div>
+    </div>
+    <hr />
+    <button [ngClass]="{'red-button': !buttonState, 'green-button': buttonState}" (click)="toggleButtonState()">
+        {{ buttonState ? 'To Deliver' : 'To Prepare' }}
+    </button>
+</div>

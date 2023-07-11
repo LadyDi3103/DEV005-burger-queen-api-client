@@ -1,44 +1,11 @@
-<!-- <p>home-chef works!</p> -->
-<!-- <app-header-home-waiter></app-header-home-waiter> -->
-<!-- Inicio Header -->
-<section class="Container-general">
-  <!-- <app-header-home-waiter></app-header-home-waiter> -->
+<section class="containerGeneral">
   <p class="chefName">Chef: {{ chefName }}</p>
-  <!-- End Header -->
-  <!-- Order Area -->
   <div class="containerOrders">
-
-
     <div *ngFor="let order of orders" class="order">
-      <label for="clientsName">Clients Name: {{order.client}} </label>
-      <hr />
-      <label for="nOrder">Order Id: {{order.id}}</label>
-      <hr />
-      <!-- <label for="nTable">N° Table: 03 </label>
-      <hr /> -->
-      <label for="resumeOrder" class="resumeOrder"> Resume Order: </label>
-      <div class="orederResume">
-        {{order.products}}
-        <!-- <span class="Number1"> {{orders.products.product.qty}} </span>
-        <span class="item">{{order.products.product.name}} </span> -->
-      </div>
-      <hr />
-      <div class="containerBottom">
-        <div class="timer">
-          <p>Date: {{order.products.product.dateEntry}}</p>
-          <p>Timer: 00:16:58</p>
-        </div>
-        <hr />
-        <button [ngClass]="{'red-button': !buttonState, 'green-button': buttonState}" (click)="toggleButtonState()">
-          {{ buttonState ? 'To Deliver' : 'To Prepare' }}
-        </button>
-      </div>
+      <app-cards [orderOne]=order></app-cards>
     </div>
-
-
-
-
-    <!-- <div class="order">
+  </div>
+  <!-- <div class="order">
       <label for="clientsName">Client: Maria Jimena </label>
       <hr />
       <label for="nOrder">N° Order: 0000005</label>
@@ -59,5 +26,4 @@
         </button>
       </div>
     </div> -->
-  </div>
 </section>

@@ -11,25 +11,29 @@ import { HomeModule } from './views/home/home.module';
 import { LoginModule } from './views/login/login.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthInterceptorService } from './services/interceptors/auth-interceptor.service';
+import { CardComponent } from './home/home-chef/Home-chef-Children/card/card.component';
+// import { TimerComponent } from './src/app/views/home-chef/Home-chef-Children/timer/timer.component';
 @NgModule({
   //TODO: Declaraciones, componentes, directivas, pipes
-  declarations: [ 
-    AppComponent
+  declarations: [
+    AppComponent,
+    CardComponent,
+    //  TimerComponent
   ],
   //TODO: Solo se importan otros modulos
-   //disponible todos los componentes en otros
-    //se importará en todos los módulos que se vaya a usar
-  imports: [  
+  //disponible todos los componentes en otros
+  //se importará en todos los módulos que se vaya a usar
+  imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    SharedModule, 
+    SharedModule,
     HomeModule,
     LoginModule,
     BrowserAnimationsModule,
-   
-    ],
+
+  ],
   providers: [
     LoginService,
     {
@@ -37,8 +41,8 @@ import { AuthInterceptorService } from './services/interceptors/auth-interceptor
       useClass: AuthInterceptorService,
       multi: true
     }
-    
+
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

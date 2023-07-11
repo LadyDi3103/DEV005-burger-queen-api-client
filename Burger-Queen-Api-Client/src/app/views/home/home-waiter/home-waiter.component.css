@@ -11,7 +11,7 @@
     background-position: center;
     background-size: 100% 100%;
     background-attachment: fixed;
-    min-height: 100vh;
+    min-height: 70vh;
 }
 /*landscape*/
 @media (min-width: 900px) {

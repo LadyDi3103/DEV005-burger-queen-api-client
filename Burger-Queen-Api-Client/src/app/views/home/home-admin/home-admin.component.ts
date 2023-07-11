@@ -21,27 +21,31 @@ interface Product {
 })
 export class HomeAdminComponent {
   adminName: string = 'LadyDiana';
-  // email: string = '';
-  // password: string = '';
-  // rol: string = '';
   errorMessage: string = '';
   selectedMenu: string = 'option1';
   selectedProduct: Product | null = null; // Product representa el tipo de datos de tus productos
   showModal: boolean = false;
   showModalProduct: boolean = false;
+  public APIDATA: any = '';
+  users: any[] = [];
+  filteredUsers: any[] = [];
+  adminUsers: any[] = [];
+  chefUsers: any[] = [];
+  waiterUsers: any[] = [];
+  selectedRole: string = ''; 
+
   // F O R M  R E A C T I V O
-  //form va toda la data que se ingresa en un input
+  //form: todos los input que recolectan la Data
   form = new FormGroup({
     email: new FormControl(''),
     password: new FormControl(''),
     rol: new FormControl(''),
     name: new FormControl(''),
-    price: new FormControl(0),
+    price: new FormControl(),
     image: new FormControl(''),
     type: new FormControl(''),
   });
-  // registrationForm: FormGroup;
-  // showModal: boolean = false;
+
   menuItem: Menu = {
     drinks: [
       {
@@ -105,103 +109,134 @@ export class HomeAdminComponent {
     ],
   }
   constructor(private adminService: AdminService, private router: Router) { }
-onSubmit(): void {
-  const userData:DataUser={
-    email: this.form.value.email || '',
-    password: this.form.value.password || '',
-    rol: this.form.value.rol || '',
-  }
-  this.adminService.getAccessToken(userData).subscribe(
-    (resp) => {
-      console.log(resp, 'VALIDA');
-      this.form.reset()
-      // if(resp.accessToken){
-      //   this.router.navigate(['/home-admin']);
-      //   this.email= ' ';
-      //   this.password= ' ';
-      // }else if(resp.accessToken === undefined){
-      //   this.errorMessage = 'Wrong Credentials!!!'
-      // }
-
-    },
-    //  error: ()=>{
-    //   this.errorMessage = 'Wrong Credentials!!!';
-    //  }
-  )
-}
-createProducts(): void {
-  // const image: File | null = this.form.value.image instanceof File ? this.form.value.image : null;
-  // const image: File | null =
-  //   this.form.value.image instanceof File &&
-  //   this.isImageFile(this.form.value.image)
-  //     ? this.form.value.image
-  //     : null;
-  const userProduct: DataProduct = {
-    name: this.form.value.name || '',
-    price: this.form.value.price || 0,
-    image: this.form.value.image || '',
-    type: this.form.value.type || '',
-  };
-  this.adminService.createProduct(userProduct).subscribe(
-    (resp) => {
-      console.log(resp, 'VALIDA');
-      this.form.reset();
+  onSubmit(): void {
+    const userData: DataUser = {
+      email: this.form.value.email || '',
+      password: this.form.value.password || '',
+      rol: this.form.value.rol || '',
     }
-  )
-}
-//no toma los valores
-ngOnInit(): void {
-  console.log('ENTRÓ AL ngOnInit');
-  this.obtainListUsers()
-  //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-  //Add 'implements OnInit' to the class.
-  this.obtainListProducts()
-    console.log('sigue en el ngOnInit');
-}
-isImageFile(file: File): boolean {
-  const allowedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
-  const fileExtension = file.name
-    .substring(file.name.lastIndexOf('.'))
-    .toLowerCase();
-  return allowedExtensions.includes(fileExtension);
-}
-obtainListProducts(): void {
-  this.adminService.getListProducts().subscribe((data) => {
-    console.log(data, 'DATA 388888');
-  })
-}
-obtainListUsers():void{
-  this.adminService.getAllUsers().subscribe((resp)=>{
-    console.log(resp, 'RESP-GET-ALL-USERS');
-  })
-}
-showTabContent(option: string): void {
-  this.selectedMenu = option;
-}
-selectProduct(product: Product): void {
-  this.selectedProduct = product;
-}
-openModalRegisterEmployee() {
-  this.showModal = true;
-}
-openModalCreateProduct() {
-  this.showModalProduct = true;
-}
-closeModal() {
-  this.showModal = false;
-  this.form.reset();
-}
-logout(): void {
-  this.router.navigateByUrl('/login');
-}
+    this.adminService.getAccessToken(userData).subscribe(
+      (resp) => {
+        console.log(resp, 'VALIDA');
+        this.form.reset()
+        // if(resp.accessToken){
+        //   this.router.navigate(['/home-admin']);
+        //   this.email= ' ';
+        //   this.password= ' ';
+        // }else if(resp.accessToken === undefined){
+        //   this.errorMessage = 'Wrong Credentials!!!'
+        // }
+
+      },
+      //  error: ()=>{
+      //   this.errorMessage = 'Wrong Credentials!!!';
+      //  }
+    )
+  }
+  // falta el edit users
+  // falta el delete users
+  // falta el edit products
+  // falta el delete products
+  getProducts(): void {
+    this.adminService.getListProducts().subscribe((resp) => {
+      console.log(resp);
+      this.APIDATA = resp;
+      // En caso de querer entrar APIDATA debemos indicar el índice correspondiente []
+    });
+  }
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    this.getProducts();
+    this.getListUsers();
+  }
+  createProducts(): void {
+    const userProduct: DataProduct = {
+      name: this.form.value.name || '',
+      price: this.form.value.price || 0,
+      image: this.form.value.image || '',
+      type: this.form.value.type || '',
+    };
+    this.adminService.createProduct(userProduct).subscribe(
+      (resp) => {
+        console.log(resp, 'VALIDA');
+        this.form.reset();
+      }
+    )
+  }
+  getListUsers(): void {
+    this.adminService.getAllUsers().subscribe((resp) => {
+      console.log(resp, 'RESP-GET-ALL-USERS');
+      this.users = resp;
+      this.filterUsersByRole();
+    })
+  }
+  filterUsersByRole() {
+    this.adminUsers = this.users.filter(user => user.rol === 'admin');
+    this.chefUsers = this.users.filter(user => user.rol === 'chef');
+    this.waiterUsers = this.users.filter(user => user.rol === 'waiter');
+
+    this.filteredUsers = this.users.filter(user => {
+      return user.role === this.selectedRole || this.selectedRole === '';
+    });
+  }
+  showTabContent(option: string): void {
+    this.selectedMenu = option;
+  }
+  selectProduct(product: Product): void {
+    this.selectedProduct = product;
+  }
+  openModalRegisterEmployee() {
+    this.showModal = true;
+  }
+  openModalCreateProduct() {
+    this.showModalProduct = true;
+  }
+  closeModal() {
+    this.showModal = false;
+    this.showModalProduct = false;
+    this.form.reset();
+  }
+  logout(): void {
+    this.router.navigateByUrl('/login');
+  }
 }
 //TENER EN CUENTA LA DATA HARDCODEADA...
 // LAMO AL SERVICIO Y A LA FUNCIÓN Y GUARDO MI RESPUESTA EN EL ARRAY DE PRODUCTOS...
 // COPIAR LO DEL LOGIN-PAGE.COMPONENT.TS PARA HACER EL RUTEO RESPECTIVO A HOME-ADMIN
 // Y MANEJO DE ERROR
 
+// *For File*
+  // const image: File | null = this.form.value.image instanceof File ? this.form.value.image : null;
+  // const image: File | null =
+  //   this.form.value.image instanceof File &&
+  //   this.isImageFile(this.form.value.image)
+  //     ? this.form.value.image
+  //     : null;
 
-
+  // *Otro onInit*
+//no toma los valores
+// ngOnInit(): void {
+//   console.log('ENTRÓ AL ngOnInit');
+//   this.obtainListUsers()
+  //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+  //Add 'implements OnInit' to the class.
+//   this.obtainListProducts()
+//     console.log('sigue en el ngOnInit');
+// }
+// *Condiciones si es una imagen*
+// isImageFile(file: File): boolean {
+//   const allowedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
+//   const fileExtension = file.name
+//     .substring(file.name.lastIndexOf('.'))
+//     .toLowerCase();
+//   return allowedExtensions.includes(fileExtension);
+// }
+// *Otro Para Obtener list de productos
+ // obtainListProducts(): void {
+  //   this.adminService.getListProducts().subscribe((data) => {
+  //     console.log(data, 'DATA 388888');
+  //   })
+  // }
 
 
 
