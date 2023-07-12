@@ -22,11 +22,12 @@
         </div>
         <div>
             <!-- <p> Timer: 00:16:58 </p> -->
-            <app-timer [dataEntry]="orderOne.dataEntry"></app-timer>
+            <app-timer *ngIf="orderOne.dataEntry != undefined" (stopTimerTimer)="setTime($event)" [dataEntry]="orderOne.dataEntry" [stop]="stop"></app-timer>
+            <div *ngIf="time != undefined "> {{time}}</div>
         </div>
     </div>
     <hr />
-    <button [ngClass]="{'red-button': !buttonState, 'green-button': buttonState}" (click)="toggleButtonState()">
+    <button class="btnCustom" [ngClass]="{'red-button': !buttonState, 'green-button ': buttonState}" (click)="toggleButtonState()">
         {{ buttonState ? 'To Deliver' : 'To Prepare' }}
     </button>
 </div>

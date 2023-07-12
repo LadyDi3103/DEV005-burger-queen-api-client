@@ -53,11 +53,12 @@
   /* justify-content: space-around; */
 }
 .order {
+  /* background-color: red !important; */
   margin: 10px;
-  padding: 10px;
+  padding: 5px 10px;
   /* margin-top: 10px; */
-  width: 360px;
-  height: 430px;
+  width: 334px;
+  height: 470px;
   color: var(--color-2);
   font-family: var(--font-family-1);
   font-style: italic;
@@ -67,4 +68,4 @@
   box-shadow: 5px 5px 5px var(--color-2);
   border-radius: 5px;
 }
-
+  /* check el minheight */

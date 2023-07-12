@@ -1,4 +1,15 @@
 /* R E S U M E  O R D E R */
+/* container card */
+.btnCustom{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  left: 10px;
+}
+.resumeOrder{
+  margin-top: 15px;
+
+}
   .orderResume {
     width: 340px;
     height: 150px;
@@ -10,8 +21,10 @@
     border-top: 2px solid var(--color-2);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 200px;
+    justify-content: start;
+    height: 206px;
+    padding: 0px 18px;
+    position: relative;
   }
   .timer{
   /* background: red; */
@@ -20,6 +33,7 @@
 
   
   }
+
   .red-button {
     height: 30px;
     padding: 20px;
