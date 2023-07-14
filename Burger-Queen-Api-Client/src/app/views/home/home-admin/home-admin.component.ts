@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/AdminService/admin.service';
 import { FormControl, FormGroup } from '@angular/forms';
-import { DataUser, DataProduct } from 'src/app/interfaces/interfaces';
+import { DataUser, DataProduct, DataUserEdit } from 'src/app/interfaces/interfaces';
 interface Menu {
   drinks: Product[],
   brunch: Product[],
@@ -26,7 +26,10 @@ export class HomeAdminComponent {
   selectedProduct: Product | null = null; // Product representa el tipo de datos de tus productos
   showModal: boolean = false;
   showModalProduct: boolean = false;
+  showModalEdit: boolean = false;
   public APIDATA: any = '';
+  public RESP: any = '';
+  public oneUser: any;
   users: any[] = [];
   filteredUsers: any[] = [];
   adminUsers: any[] = [];
@@ -58,7 +61,7 @@ export class HomeAdminComponent {
       {
         id: 2,
         name: 'Double Coffe',
-        price: 3.00,
+        price: 4.00,
         image: "../../../../../../../assets/img/icons8-vaso-100.png",
         type: 'breakfast'
       },
@@ -113,27 +116,58 @@ export class HomeAdminComponent {
     const userData: DataUser = {
       email: this.form.value.email || '',
       password: this.form.value.password || '',
-      rol: this.form.value.rol || '',
+      role: this.form.value.rol || '',
     }
-    this.adminService.getAccessToken(userData).subscribe(
+    this.adminService.createUser(userData).subscribe(
       (resp) => {
         console.log(resp, 'VALIDA');
-        this.form.reset()
-        // if(resp.accessToken){
-        //   this.router.navigate(['/home-admin']);
-        //   this.email= ' ';
-        //   this.password= ' ';
-        // }else if(resp.accessToken === undefined){
-        //   this.errorMessage = 'Wrong Credentials!!!'
-        // }
-
+        this.form.reset();
       },
-      //  error: ()=>{
-      //   this.errorMessage = 'Wrong Credentials!!!';
-      //  }
     )
   }
-  // falta el edit users
+// ME FALTA ACTUALIZAR IMPLEMENTAR LÓGICA PARA HACER QUE ACTUALICE LA DATA MODIFICADA
+  showInfoModalEdit(user: DataUser) {
+    this.form.patchValue({
+      email: user.email,
+      rol: user.role,
+      password: user.password
+    });
+
+    this.oneUser = user;
+    this.showModalEdit = true;
+  }
+  updateData(id:number){
+      for (let i = 0; i < this.users.length; i++) {
+        if(this.users[i].id  === id){
+          this.users[i] = this.RESP;
+        }    
+      }
+    }
+  
+  editDataUser(): void {
+    const userData: DataUserEdit = {
+      email: this.form.value.email || '',
+      password: this.form.value.password || '',
+      role: this.form.value.rol || '',
+      id: this.oneUser.id
+    }
+    // obtengo la data del usuario editado
+    this.adminService.editUser(userData).subscribe((resp) =>{
+      console.log(resp, 'WENDY');
+      this.RESP = resp;
+      this.showModalEdit = false;
+
+    this.updateData(this.RESP.id)
+      // actualizar en users - el nuevo valor del usuario
+    this.filterUsersByRole()
+    },
+    err => {
+      this.showModalEdit = false;
+    })
+    
+  }
+
+// agregar un atributo con el id de cada usuario
   // falta el delete users
   // falta el edit products
   // falta el delete products
@@ -171,9 +205,9 @@ export class HomeAdminComponent {
     })
   }
   filterUsersByRole() {
-    this.adminUsers = this.users.filter(user => user.rol === 'admin');
-    this.chefUsers = this.users.filter(user => user.rol === 'chef');
-    this.waiterUsers = this.users.filter(user => user.rol === 'waiter');
+    this.adminUsers = this.users.filter(user => user.role === 'admin');
+    this.chefUsers = this.users.filter(user => user.role === 'chef');
+    this.waiterUsers = this.users.filter(user => user.role === 'waiter');
 
     this.filteredUsers = this.users.filter(user => {
       return user.role === this.selectedRole || this.selectedRole === '';
@@ -191,19 +225,23 @@ export class HomeAdminComponent {
   openModalCreateProduct() {
     this.showModalProduct = true;
   }
+  openModalEditUser() {
+    this.showModalEdit = true;
+    // user.id
+    // lammar un usuario???
+    // llamar funcion editUser
+    
+  }
   closeModal() {
     this.showModal = false;
     this.showModalProduct = false;
+    this.showModalEdit = false;
     this.form.reset();
   }
   logout(): void {
     this.router.navigateByUrl('/login');
   }
 }
-//TENER EN CUENTA LA DATA HARDCODEADA...
-// LAMO AL SERVICIO Y A LA FUNCIÓN Y GUARDO MI RESPUESTA EN EL ARRAY DE PRODUCTOS...
-// COPIAR LO DEL LOGIN-PAGE.COMPONENT.TS PARA HACER EL RUTEO RESPECTIVO A HOME-ADMIN
-// Y MANEJO DE ERROR
 
 // *For File*
   // const image: File | null = this.form.value.image instanceof File ? this.form.value.image : null;
