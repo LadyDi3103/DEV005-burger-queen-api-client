@@ -26,15 +26,16 @@ export class OrderService {
         return this.http.get<any>('http://localhost:8080/orders', { headers });
 
     }
+    changeStatusOrder(id: any, status: string): Observable<any> {
+        const headers = new HttpHeaders({
+            'accept': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem("accessToken")
+        })
 
 
-    // sendOrder(order:): Observable<any>{
-    //   const token = localStorage.getItem("accessToken");
-    //   const headers = new HttpHeaders({
-    //     Authorization: `Bearer ${token}`
-    //   });
-    //   return this.http.post<any>('http://localhost:8080/orders', {order}, { headers });
-    // }
+        return this.http.patch<any>(`http://localhost:8080/orders/${id}`, { status: String, dateProcessed: new Date() }, { headers })
+    }
+
 }
 
 

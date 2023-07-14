@@ -28,11 +28,11 @@ export class LoginPageComponent {
         // implementar para guardar el token 
         //un servicio  podría tener una variable que permanezca, cuando tengamos el token.. guarda el token en el servicio. check sí hay alguna mejor manera. para luego mandar el token para autentificación. Check sí angular tiene algo para guardar.. o manejar lo del token!!!!
         // console.log('RESP', resp);
-        if (resp.user.rol === 'waiter') {
+        if (resp.user.role === 'waiter') {
           this.router.navigate(['/home-waiter']);
-        } else if (resp.user.rol === 'chef') {
+        } else if (resp.user.role === 'chef') {
           this.router.navigate(['/home-chef']);
-        } else if (resp.user.rol === 'admin') {
+        } else if (resp.user.role === 'admin') {
           this.router.navigate(['/home-admin']);
         } else {
           this.errorMessage = 'Wrong Credentials!!!';

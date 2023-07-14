@@ -7,7 +7,7 @@ export interface DataOrder{
 export interface DataUser{
     email: string;
     password: string;
-    rol: string;
+    role: string;
 }
 export interface DataProduct {
     name: string;
@@ -15,3 +15,9 @@ export interface DataProduct {
     image: string;
     type: string;
   }
+export interface DataUserEdit {
+    id: number;
+    email: string;
+    password: string;
+    role: string;
+}

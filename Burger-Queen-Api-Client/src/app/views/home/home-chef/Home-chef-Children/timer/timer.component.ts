@@ -36,7 +36,6 @@ export class TimerComponent implements OnInit, OnChanges{
       this.restHours(this.createTime);
     }, 1000);
   }
-
   restHours(createTime: string) {
 
     const date = new Date();    
@@ -92,7 +91,6 @@ export class TimerComponent implements OnInit, OnChanges{
     //check donde se convierte en NaN y que rompe la lógica
     this.stopTimerTimer.emit(elapsedTime)
   }
-
   formatElapsedTime(elapsedTimeMs: number): string {
     const totalSeconds = Math.floor(elapsedTimeMs / 1000);
     const hours = Math.floor(totalSeconds / 3600);
@@ -100,24 +98,5 @@ export class TimerComponent implements OnInit, OnChanges{
     const seconds = totalSeconds % 60;
     return `${hours}:${minutes}:${seconds}`;
   }
-// startTimer(){
-//   this.timer= setInterval(()=>{
-// if(this.seconds< 59){
-//   this.seconds++;
-// }else{
-//   this.seconds = 0;
-//   this.minutes++;
-// }
-// }, 1000);
-// }
-// stopTimer(){
-// clearInterval(this.timer);
-// }
-
-// resetTimer(){
-//   this.minutes = 0;
-//   this.seconds= 0;
-//   clearInterval(this.timer);
-// }
 
 }
