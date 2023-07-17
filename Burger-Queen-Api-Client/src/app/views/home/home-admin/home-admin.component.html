@@ -33,67 +33,40 @@
         <!-- SOLO RECORRE EL adminUsers -->
         <li *ngFor="let user of adminUsers">
           {{ user.email }}
-          <button (click)="showInfoModalEdit(user)" class="btnEdit" id= {{user.id}}>Edit</button>
-          <button class="btnDelete">Delete</button>
+          <button (click)="showInfoModalEdit(user)" class="btnEdit">Edit</button>
+          <button (click)="openDeleteUserModal(user.id)" class="btnDelete">Delete</button>
         </li>
       </ul>
     </section>
-    <!-- ****** -->
-    <!-- <div *ngFor="let user of " class="employee">
-      <p class="user">lady.admin@systers.xyz</p>
-      <button class="btnEdit">Edit</button><button class="btnDelete">Delete</button>
-    </div> -->
-    <!-- ******** -->
-    <!-- <div class="employee">
-      <p class="user">lady.admin@systers.xyz</p>
-      <button class="btnEdit">Edit</button><button class="btnDelete">Delete</button>
-    </div>
-    <div class="employee">
-      <p class="user">luna.admin@systers.xyz</p>
-      <button class="btnEdit">Edit</button><button class="btnDelete">Delete</button>
-    </div> -->
+
     <label for="chef" class="labels">C H E F</label>
     <hr />
     <section *ngIf="chefUsers.length > 0" class="containerAdmin">
       <ul style="list-style: none" class="ulUsers">
         <li *ngFor="let user of chefUsers" class="user">
-          {{ user.email }} 
-          
+          {{ user.email }}
+
           <button (click)="showInfoModalEdit(user)" class="btnEdit">Edit</button>
-          <button class="btnDelete">Delete</button>
-       
+          <button (click)="openDeleteUserModal(user.id)" class="btnDelete">Delete</button>
+
         </li>
       </ul>
     </section>
-    <!-- <div class="employee">
-      <p class="user">lady.admin@systers.xyz</p>
-      <button class="btnEdit">Edit</button><button class="btnDelete">Delete</button>
-    </div>
-    <div class="employee">
-      <p class="user">luna.admin@systers.xyz</p>
-      <button class="btnEdit">Edit</button><button class="btnDelete">Delete</button>
-    </div> -->
+
     <label for="waiter" class="labels">W A I T E R</label>
     <hr />
     <section *ngIf="waiterUsers.length > 0" class="user">
       <ul style="list-style: none" class="ulUsers">
         <li *ngFor="let user of waiterUsers" class="prueba">
-          {{ user.email }} 
+          {{ user.email }}
           <button (click)="showInfoModalEdit(user)" class="btnEdit">Edit</button>
-          <button class="btnDelete">Delete</button>
+          <button (click)="openDeleteUserModal(user.id)" class="btnDelete">Delete</button>
         </li>
       </ul>
     </section>
-    <!-- <div class="employee">
-      <p class="user">lady.admin@systers.xyz</p>
-      <button class="btnEdit">Edit</button><button class="btnDelete">Delete</button>
-    </div>
-    <div class="employee">
-      <p class="user">luna.admin@systers.xyz</p>
-      <button class="btnEdit">Edit</button><button class="btnDelete">Delete</button>
-    </div> -->
+
   </ng-container>
-  
+  <!-- P R O D U C T S -->
   <ng-container *ngIf="selectedMenu === 'option2'">
     <div class="drinks">
       <div class="labels">
@@ -101,7 +74,7 @@
         <hr />
       </div>
       <div class="containerProducts">
-        <button *ngFor="let product of APIDATA" (click)="selectProduct(product)" class="icons-Breakfast">
+        <button *ngFor="let product of APIDATA" (click)="openModalEditProduct()" class="icons-Breakfast">
           <img class="imgProduct" src="{{ product.image }}" />
           <div class="namePrice">
             <p>{{ product.name }}</p>
@@ -150,8 +123,8 @@
       </div>
 
       <div class="inputContainer">
-        <input class="input" type="text" formControlName="rol" id="rol" name="rol" placeholder="a" required>
-        <label for="" class="label">rol</label>
+        <input class="input" type="text" formControlName="role" id="role" name="role" placeholder="a" required>
+        <label for="" class="label">role</label>
       </div>
       <button class="addeMployee">Create Employee</button>
     </form>
@@ -163,6 +136,64 @@
     <span class="close" (click)="closeModal()">&times;</span>
     <form class="form" [formGroup]="form" (ngSubmit)="createProducts()">
       <h1 class="title">Create Product</h1>
+      <div class="inputContainer">
+        <input class="input" type="name" id="name" formControlName="name" name="user_name" placeholder="a"
+          title="El email es incorrecto" placeholder="Large Coffe" required>
+        <label for="" class="label">Name Product</label>
+      </div>
+
+      <div class="inputContainer">
+        <input class="input" type="price" formControlName="price" id="price" name="user_price" placeholder="0000"
+          required>
+        <label for="" class="label">Price</label>
+      </div>
+
+      <div class="inputContainer">
+        <input class="input" type="text" formControlName="image" id="image" required>
+        <label for="" class="label">Image</label>
+      </div>
+
+      <div class="inputContainer">
+        <input class="input" type="text" formControlName="type" id="type" name="type" placeholder="a" required>
+        <label for="" class="label">Type</label>
+      </div>
+      <button class="addeMployee">Create Product</button>
+    </form>
+  </div>
+</div>
+<!-- M O D A L  E D I T A R  U S U A R I O -->
+<div class="modal" *ngIf="showModalEdit">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <form class="form" [formGroup]="form" (ngSubmit)="editDataUser()">
+      <h1 class="title">Edit User</h1>
+      <div class="inputContainer">
+        <input class="input" type="email" id="mail" formControlName="email" name="user_mail" placeholder="a"
+          title="El email es incorrecto" placeholder="ejemplo@ejemplo.com" required value="HOLA">
+        <label for="" class="label">Email</label>
+      </div>
+
+      <div class="inputContainer">
+        <input class="input" type="password" formControlName="password" id="password" name="user_password"
+          placeholder="**********" id="password" value="password">
+        <label for="" class="label">Password</label>
+      </div>
+
+      <div class="inputContainer">
+        <input class="input" type="text" formControlName="role" id="role" name="role" placeholder="a"
+          value={{oneUser.role}} required>
+        <label for="" class="label">role</label>
+      </div>
+      <button class="addeMployee">Edit Employee</button>
+    </form>
+  </div>
+</div>
+<!-- M O D A L  E D I T A R  P R O D U C T O -->
+<!-- <div class="modal" *ngIf="showModalEditProduct">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <form class="form" [formGroup]="form" (ngSubmit)="editinProduct()">
+      <h1 class="title">Edit Product</h1>
       <div class="inputContainer">
         <input class="input" type="name" id="name" formControlName="name" name="user_name" placeholder="a"
           title="El email es incorrecto" placeholder="Large Coffe" required>
@@ -184,45 +215,7 @@
         <input class="input" type="text" formControlName="type" id="type" name="type" placeholder="a" required>
         <label for="" class="label">Type</label>
       </div>
-      <button class="addeMployee" (click)="createProducts()">Create Product</button>
+      <button class="addeMployee">Edit Product</button>
     </form>
   </div>
-</div>
-<!-- M O D A L  E D I T A R  U S U A R I O -->
-<div class="modal" *ngIf="showModalEdit">
-  <div class="modal-content">
-    <span class="close" (click)="closeModal()">&times;</span>
-    <form class="form" [formGroup]="form" (ngSubmit)="editDataUser()">
-      <h1 class="title">Edit User</h1>
-      <div class="inputContainer">
-        <input class="input" type="email" id="mail" formControlName="email" name="user_mail" placeholder="a"
-          title="El email es incorrecto" placeholder="ejemplo@ejemplo.com" required value="HOLA" >
-        <label for="" class="label">Email</label>
-      </div>
-
-      <div class="inputContainer">
-        <input class="input" type="password" formControlName="password" id="password" name="user_password"
-          placeholder="**********" id="password" value="password">
-        <label for="" class="label">Password</label>
-      </div>
-
-      <div class="inputContainer">
-        <input class="input" type="text" formControlName="rol" id="rol" name="rol" placeholder="a" value= {{oneUser.rol}} required  >
-        <label for="" class="label">rol</label>
-      </div>
-      <button class="addeMployee">Edit Employee</button>
-    </form>
-  </div>
-</div>
-<!-- </div>  -->
-
-<!-- <hr>
-        <span class="closeModal" (click)="closeModal()">&times;</span>
-        <button type="submit">Add Employee</button>
-        <button type="button" (click)="closeModal()">Cancel</button>
-        <hr>
-    </form> 
-</div>
-<div>
-    <ul>
-        <li *ngFor="let user of users">Email: {{ user.email }} - Rol: {{ user.role }}-->
+</div> -->

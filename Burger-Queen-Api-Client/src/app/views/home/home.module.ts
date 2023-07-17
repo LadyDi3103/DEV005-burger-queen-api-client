@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs'
-import {MatButtonModule} from '@angular/material/button'
+import { MatButtonModule } from '@angular/material/button'
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeWaiterComponent } from './home-waiter/home-waiter.component';
@@ -14,6 +14,9 @@ import { MenuHomeWaiterComponent } from './home-waiter/childrenComponents/menu/m
 import { FormHomeWaiterComponent } from './home-waiter/childrenComponents/form/form-home-waiter/form-home-waiter.component';
 import { TimerComponent } from './home-chef/Home-chef-Children/timer/timer.component';
 import { CardsComponent } from './home-chef/Home-chef-Children/cards/cards.component';
+import { DeleteUserModalComponent } from './home-admin/delete-user-modal/delete-user-modal.component';
+// import { EditProductModalComponent } from './home-admin/edit-product-modal/edit-product-modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -26,6 +29,9 @@ import { CardsComponent } from './home-chef/Home-chef-Children/cards/cards.compo
     FormHomeWaiterComponent,
     TimerComponent,
     CardsComponent,
+    DeleteUserModalComponent,
+    // EditProductModalComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -35,6 +41,7 @@ import { CardsComponent } from './home-chef/Home-chef-Children/cards/cards.compo
     MatTabsModule,
     MatButtonModule,
     ReactiveFormsModule,
+    MatDialogModule,
   ],
   exports: [
     HomeWaiterComponent,

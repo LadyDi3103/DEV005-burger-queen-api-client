@@ -1,5 +1,3 @@
-<!-- <p>cards works!</p> -->
-
 <label for="clientsName"><b>Clients Name:</b> {{orderOne.client}} </label>
 <hr />
 <label for="nOrder"><b>Order Id:</b> {{orderOne.id}}</label>
@@ -23,7 +21,7 @@
         <div>
             <!-- <p> Timer: 00:16:58 </p> -->
             <app-timer *ngIf="orderOne.dataEntry != undefined" (stopTimerTimer)="setTime($event)" [dataEntry]="orderOne.dataEntry" [stop]="stop"></app-timer>
-            <div *ngIf="time != undefined "> {{time}}</div>
+            <!-- <div *ngIf="time != undefined "> {{time}}</div> -->
         </div>
     </div>
     <hr />
