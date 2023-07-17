@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginModule } from '../../login/login.module';
 import { LoginService } from 'src/app/services/LoginService/login.service';
 import { Router } from '@angular/router';
 import { OrderService } from '../../../services/OrderService/order.service';
-import { DataOrder } from 'src/app/interfaces/interfaces';
 
 @Component({
   selector: 'app-home-chef',
@@ -14,19 +12,9 @@ export class HomeChefComponent implements OnInit {
   chefName: string = 'IndiraDavoin';
   orders: any = '';
   // dataEntry : Date;
-  
   formattedDate: any = '';
   constructor(private orderService: OrderService, private loginService: LoginService, private router: Router) { }
   ngOnInit() {
-    // this.dataEntry = new Date();
-    // this.formattedDate = this.dataEntry.toLocaleString('es-ES', { 
-    //   year: 'numeric',
-    //   month: '2-digit',
-    //   day: '2-digit',
-    //   hour: '2-digit',
-    //   minute: '2-digit',
-    //   second: '2-digit'
-    // }),
     this.getWaitersOrders();
   }
   getWaitersOrders(): void {
@@ -34,11 +22,19 @@ export class HomeChefComponent implements OnInit {
       next: (resp) => {
         console.log(resp);
         this.orders = resp;
+        this.sortOrders();
       },
       error: (err) => {
         console.log(err);
       }
     })
+  }
+  sortOrders():void{
+    this.orders.sort((a: any, b: any)=>{
+      const dateA = new Date(a.formattedDate);
+      const dateB = new Date(b.formattedDate);
+      return dateA.getTime() - dateB.getTime();
+    });
   }
   logout(): void {
     this.router.navigateByUrl('/login');

@@ -21,3 +21,10 @@ export interface DataUserEdit {
     password: string;
     role: string;
 }
+export interface DataProductEdit {
+    id: number;
+    name: string;
+    price: number;
+    image: string;
+    type: string;
+  }

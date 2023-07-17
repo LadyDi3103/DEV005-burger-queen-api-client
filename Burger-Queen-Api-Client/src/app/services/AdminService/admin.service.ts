@@ -4,7 +4,7 @@ import {
   HttpHeaders,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { DataUser, DataProduct, DataUserEdit } from 'src/app/interfaces/interfaces';
+import { DataUser, DataProduct, DataUserEdit, DataProductEdit } from 'src/app/interfaces/interfaces';
 @Injectable({
   providedIn: 'root'
 })
@@ -28,7 +28,7 @@ export class AdminService {
     const user = {
       email: userData.email, // traer el valor de los imputs
       password: userData.password, // traer la información de ambos
-      rol: userData.role,
+      role: userData.role,
     };
     return this.http.post('http://localhost:8080/users', user);
   }
@@ -47,11 +47,14 @@ export class AdminService {
   }
   //obtener los valor que escribimos en el modal
   deleteUser(id: number): Observable<any> {
-    return this.http.delete(`http://localhost:8080/users/${id}`);
+    const headers = new HttpHeaders({
+      'accept': 'application/json',
+      'Authorization': 'Bearer ' + localStorage.getItem("accessToken")
+    })
+    return this.http.delete(`http://localhost:8080/users/${id}`, {headers});
   }
 
-
-
+  // P R O D U C T S  S E R V I C E S
   getListProducts(): Observable<any> {
     const headers = new HttpHeaders({
       'accept': 'application/json',
@@ -67,5 +70,12 @@ export class AdminService {
       type: userProduct.type,
     };
     return this.http.post('http://localhost:8080/products', products);
+  }
+  editProduct(userProduct: DataProductEdit ): Observable<any> {
+    const headers = new HttpHeaders({
+      'accept': 'application/json',
+      'Authorization': 'Bearer ' + localStorage.getItem("accessToken")
+    })
+    return this.http.patch(`http://localhost:8080/products/${userProduct.id}`, userProduct, {headers});
   }
 }

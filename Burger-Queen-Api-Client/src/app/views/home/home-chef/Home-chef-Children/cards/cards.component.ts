@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { DataOrder } from 'src/app/interfaces/interfaces';
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
@@ -10,9 +9,8 @@ export class CardsComponent {
   stop: boolean = false;
   time: string = '';
 
-  constructor() {
-    console.log(this.orderOne);
-  }
+  constructor() {}
+  
   public buttonState: boolean = false;
 
   public toggleButtonState(): void {

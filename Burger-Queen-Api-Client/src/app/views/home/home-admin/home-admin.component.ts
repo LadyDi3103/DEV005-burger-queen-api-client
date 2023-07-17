@@ -2,7 +2,10 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/AdminService/admin.service';
 import { FormControl, FormGroup } from '@angular/forms';
-import { DataUser, DataProduct, DataUserEdit } from 'src/app/interfaces/interfaces';
+import { DataUser, DataProduct, DataUserEdit, DataProductEdit } from 'src/app/interfaces/interfaces';
+import { MatDialog } from '@angular/material/dialog';
+import { DeleteUserModalComponent } from './delete-user-modal/delete-user-modal.component';
+// import { EditProductModalComponent } from './edit-product-modal/edit-product-modal.component';
 interface Menu {
   drinks: Product[],
   brunch: Product[],
@@ -27,9 +30,12 @@ export class HomeAdminComponent {
   showModal: boolean = false;
   showModalProduct: boolean = false;
   showModalEdit: boolean = false;
+  showModalEditProduct: boolean = false;
   public APIDATA: any = '';
   public RESP: any = '';
+  public APIPRODUCT: any = '';
   public oneUser: any;
+  public oneProduct: any;
   users: any[] = [];
   filteredUsers: any[] = [];
   adminUsers: any[] = [];
@@ -42,7 +48,7 @@ export class HomeAdminComponent {
   form = new FormGroup({
     email: new FormControl(''),
     password: new FormControl(''),
-    rol: new FormControl(''),
+    role: new FormControl(''),
     name: new FormControl(''),
     price: new FormControl(),
     image: new FormControl(''),
@@ -111,12 +117,12 @@ export class HomeAdminComponent {
       },
     ],
   }
-  constructor(private adminService: AdminService, private router: Router) { }
+  constructor(private adminService: AdminService, private router: Router, private dialog: MatDialog) { }
   onSubmit(): void {
     const userData: DataUser = {
       email: this.form.value.email || '',
       password: this.form.value.password || '',
-      role: this.form.value.rol || '',
+      role: this.form.value.role || '',
     }
     this.adminService.createUser(userData).subscribe(
       (resp) => {
@@ -129,7 +135,7 @@ export class HomeAdminComponent {
   showInfoModalEdit(user: DataUser) {
     this.form.patchValue({
       email: user.email,
-      rol: user.role,
+      role: user.role,
       password: user.password
     });
 
@@ -148,12 +154,12 @@ export class HomeAdminComponent {
     const userData: DataUserEdit = {
       email: this.form.value.email || '',
       password: this.form.value.password || '',
-      role: this.form.value.rol || '',
+      role: this.form.value.role || '',
       id: this.oneUser.id
     }
     // obtengo la data del usuario editado
     this.adminService.editUser(userData).subscribe((resp) =>{
-      console.log(resp, 'WENDY');
+      console.log(resp, 'RESP EDITTT');
       this.RESP = resp;
       this.showModalEdit = false;
 
@@ -161,16 +167,12 @@ export class HomeAdminComponent {
       // actualizar en users - el nuevo valor del usuario
     this.filterUsersByRole()
     },
-    err => {
+    (err) => {
       this.showModalEdit = false;
     })
     
   }
 
-// agregar un atributo con el id de cada usuario
-  // falta el delete users
-  // falta el edit products
-  // falta el delete products
   getProducts(): void {
     this.adminService.getListProducts().subscribe((resp) => {
       console.log(resp);
@@ -197,6 +199,36 @@ export class HomeAdminComponent {
       }
     )
   }
+  showInfoModalEditProduct(product: DataProduct) {
+    this.form.patchValue({
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      type: product.type,
+    });
+
+    this.oneProduct = product;
+    console.log(this.oneProduct, 'ONEproduct');
+    
+    this.showModalEditProduct = true;
+  }
+  editinProduct(): void {
+    const productData: DataProductEdit = {
+      name: this.form.value.name || '',
+      price: this.form.value.price || '',
+      image: this.form.value.image || '',
+      type: this.form.value.type || '' ,
+      id: this.oneProduct.id,  
+      }
+    this.adminService.editProduct(this.APIDATA.id).subscribe(
+      (resp) => {
+        console.log(' LINEAAAA 223 Producto actualizado:', resp);
+        this.APIPRODUCT = resp;
+      },
+      (err) => {
+        console.error('Error al editar el producto:', err);
+      });
+    }
   getListUsers(): void {
     this.adminService.getAllUsers().subscribe((resp) => {
       console.log(resp, 'RESP-GET-ALL-USERS');
@@ -213,6 +245,7 @@ export class HomeAdminComponent {
       return user.role === this.selectedRole || this.selectedRole === '';
     });
   }
+   //  T A G S  &  M O D A L S
   showTabContent(option: string): void {
     this.selectedMenu = option;
   }
@@ -227,21 +260,39 @@ export class HomeAdminComponent {
   }
   openModalEditUser() {
     this.showModalEdit = true;
-    // user.id
-    // lammar un usuario???
-    // llamar funcion editUser
-    
+  }
+  openModalEditProduct(): void {
+    this.showModalEditProduct = true;
   }
   closeModal() {
     this.showModal = false;
     this.showModalProduct = false;
     this.showModalEdit = false;
+    this.showModalEditProduct = false;
     this.form.reset();
   }
+  openDeleteUserModal(id: number):void {
+    const dialogRef = this.dialog.open(DeleteUserModalComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === true) {
+        this.delete(id); // Llamar a la función para eliminar al usuario
+        console.log('ELIMINAR  257');
+        //OBTENER EL ID DEL USUARIO  QUE LE DAMOS CLICK
+      }
+    });
+  }
+  delete(id:number):void{
+    this.adminService.deleteUser(id).subscribe((resp) =>{
+      console.log(resp, 'RESP DELETE');
+    })
+  }
+
   logout(): void {
     this.router.navigateByUrl('/login');
   }
 }
+
 
 // *For File*
   // const image: File | null = this.form.value.image instanceof File ? this.form.value.image : null;
@@ -275,22 +326,6 @@ export class HomeAdminComponent {
   //     console.log(data, 'DATA 388888');
   //   })
   // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import { Injectable } from '@angular/core';
 // import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -350,18 +385,3 @@ export class HomeAdminComponent {
 //   ngOnInit(): void {
 //     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
 //     //Add 'implements OnInit' to the class.
-
-//   }
-//   openModal() {
-//     this.showModal = true;
-//   }
-
-//   closeModal() {
-//     this.showModal = false;
-//     // this.form.reset();
-//   }
-//   logout(): void {
-//     // Redirige al usuario a la página de inicio de sesión
-//     this.router.navigateByUrl('/login');
-//   }
-// }

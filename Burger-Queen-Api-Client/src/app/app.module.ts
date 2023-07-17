@@ -12,6 +12,8 @@ import { LoginModule } from './views/login/login.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthInterceptorService } from './services/interceptors/auth-interceptor.service';
 import { CardComponent } from './home/home-chef/Home-chef-Children/card/card.component';
+import {MatDialogModule} from '@angular/material/dialog'
+
 // import { TimerComponent } from './src/app/views/home-chef/Home-chef-Children/timer/timer.component';
 @NgModule({
   //TODO: Declaraciones, componentes, directivas, pipes
@@ -32,6 +34,7 @@ import { CardComponent } from './home/home-chef/Home-chef-Children/card/card.com
     HomeModule,
     LoginModule,
     BrowserAnimationsModule,
+    MatDialogModule,
 
   ],
   providers: [
