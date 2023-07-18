@@ -24,7 +24,7 @@ const routes: Routes = [
   {
     path: 'login', //TODO: http://localhost:4200/ <--- /login
     component: LoginPageComponent,
-    canActivate: [authGuard]
+    // canActivate: [authGuard]
   },
   {
     path: 'home-waiter', //TODO: http://localhost:4200/ <--- /home

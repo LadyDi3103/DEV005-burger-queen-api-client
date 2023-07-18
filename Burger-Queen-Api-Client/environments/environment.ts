@@ -11,3 +11,6 @@
 //     apiURL: 'http://localhost:8080/'
 //   };
 // }
+// la url deployada
+//enviroment develop httpm local host 8080
+// lo que  se usa es trabajar con environments

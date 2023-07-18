@@ -80,7 +80,7 @@
         <hr />
       </div>
       <div class="containerProducts">
-        <button *ngFor="let product of APIDATA" (click)="openModalEditProduct()" class="icons-Breakfast">
+        <button *ngFor="let product of APIDATA" (click)="showInfoModalEditProduct(product)" class="icons-Breakfast">
           <img class="imgProduct" src="{{ product.image }}" />
           <div class="namePrice">
             <p>{{ product.name }}</p>
@@ -194,8 +194,8 @@
     </form>
   </div>
 </div>
-<!-- M O D A L  E D I T A R  P R O D U C T O -->
-<!-- <div class="modal" *ngIf="showModalEditProduct">
+<!-- <-- M O D A L  E D I T A R  P R O D U C T O -->
+<div class="modal" *ngIf="showModalEditProduct">
   <div class="modal-content">
     <span class="close" (click)="closeModal()">&times;</span>
     <form class="form" [formGroup]="form" (ngSubmit)="editinProduct()">
@@ -224,4 +224,4 @@
       <button class="addeMployee">Edit Product</button>
     </form>
   </div>
-</div> -->
+</div>
