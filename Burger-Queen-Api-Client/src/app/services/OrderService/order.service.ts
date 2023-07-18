@@ -33,9 +33,9 @@ export class OrderService {
         })
 
 
-        return this.http.patch<any>(`http://localhost:8080/orders/${id}`, { status: String, dateProcessed: new Date() }, { headers })
+        return this.http.patch<any>(`http://localhost:8080/orders/${id}`, { status: status, dateProcessed: new Date() }, { headers })
     }
-
+// check body objeto con la información que voy a cambiar...
 }
 
 

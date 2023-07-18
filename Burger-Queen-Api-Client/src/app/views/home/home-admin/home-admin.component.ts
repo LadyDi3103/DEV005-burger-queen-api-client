@@ -200,6 +200,8 @@ export class HomeAdminComponent {
     )
   }
   showInfoModalEditProduct(product: DataProduct) {
+    console.log(product, 'PRODUCT');
+
     this.form.patchValue({
       name: product.name,
       price: product.price,
@@ -261,9 +263,9 @@ export class HomeAdminComponent {
   openModalEditUser() {
     this.showModalEdit = true;
   }
-  openModalEditProduct(): void {
-    this.showModalEditProduct = true;
-  }
+  // openModalEditProduct(): void {
+  //   this.showModalEditProduct = true;
+  // }
   closeModal() {
     this.showModal = false;
     this.showModalProduct = false;

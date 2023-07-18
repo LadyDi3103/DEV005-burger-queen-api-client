@@ -22,6 +22,7 @@ export class LoginPageComponent {
     this.loginService.getCredentials(this.email, this.password).subscribe({
       next: (resp) => {
         localStorage.setItem("accessToken", resp.accessToken)
+        localStorage.setItem("role", resp.user.role)
         if (resp.user.role === 'waiter') {
           this.router.navigate(['/home-waiter']);
         } else if (resp.user.role === 'chef') {
