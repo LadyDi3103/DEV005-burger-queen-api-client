@@ -4,6 +4,13 @@ import { LoginPageComponent } from './views/login/login-page/login-page.componen
 import { HomeWaiterComponent } from './views/home/home-waiter/home-waiter.component';
 import { HomeAdminComponent } from './views/home/home-admin/home-admin.component';
 import { HomeChefComponent } from './views/home/home-chef/home-chef.component';
+import { authGuard } from './services/guards/auth.guard';
+import { waiterGuard } from './services/guards/waiter.guard';
+import { adminGuard } from './services/guards/admin.guard';
+import { chefGuard } from './services/guards/chef.guard';
+
+
+
 
 const routes: Routes = [
   /*lazy-loading
@@ -17,18 +24,22 @@ const routes: Routes = [
   {
     path: 'login', //TODO: http://localhost:4200/ <--- /login
     component: LoginPageComponent,
+    canActivate: [authGuard]
   },
   {
     path: 'home-waiter', //TODO: http://localhost:4200/ <--- /home
     component: HomeWaiterComponent,
+    canActivate: [authGuard, waiterGuard]
   },
   {
     path: 'home-admin', //TODO: http://localhost:4200/ <--- /home
     component: HomeAdminComponent,
+    canActivate: [authGuard, adminGuard]
   },
   {
     path: 'home-chef', //TODO: http://localhost:4200/ <--- /home
     component: HomeChefComponent,
+    canActivate: [authGuard, chefGuard]
   },
   // {
   //   path: 'dashboard' ,//TODO: http://localhost:4200/ <--- /home

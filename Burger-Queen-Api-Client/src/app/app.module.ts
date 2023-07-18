@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthInterceptorService } from './services/interceptors/auth-interceptor.service';
 import { CardComponent } from './home/home-chef/Home-chef-Children/card/card.component';
 import {MatDialogModule} from '@angular/material/dialog'
+// import { AuthGuard } from './services/guards/auth.guard';
 
 // import { TimerComponent } from './src/app/views/home-chef/Home-chef-Children/timer/timer.component';
 @NgModule({
@@ -35,7 +36,7 @@ import {MatDialogModule} from '@angular/material/dialog'
     LoginModule,
     BrowserAnimationsModule,
     MatDialogModule,
-
+    
   ],
   providers: [
     LoginService,
@@ -43,7 +44,8 @@ import {MatDialogModule} from '@angular/material/dialog'
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,
       multi: true
-    }
+    },
+    // AuthGuard
 
   ],
   bootstrap: [AppComponent]
