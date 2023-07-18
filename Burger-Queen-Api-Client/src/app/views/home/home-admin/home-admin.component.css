@@ -58,23 +58,37 @@
 
 /* .employee {
   display: flex; */
-  /* background: red; */
-  /* justify-content: space-around;
+/* background: red; */
+/* justify-content: space-around;
   align-items: center;
 } */
 
 /* .containerAdmin {
   justify-content: space-around;
 } */
-.ulUsers{
+.ulUsers {
   display: flex;
   flex-direction: column;
 }
+
 .user {
   /* background: red; */
   font-size: 30px;
   max-width: 100%;
 }
+
+.gridUser {
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+/* .inUsers { */
+  /* background: rebeccapurple; */
+  /* display: flex;
+  justify-content: space-around;
+  align-items: center; */
+/* } */
+
 .employee {
   display: flex;
   /* background: red; */
@@ -82,9 +96,9 @@
   align-items: center;
 }
 
-.user {
+/* .user {
   font-size: 30px;
-}
+} */
 
 .btnEdit {
   background-color: var(--color-3);
@@ -236,7 +250,8 @@
   background-color: rgba(0, 0, 0, 0.5);
   /* height: 100vh; */
 }
-.modal-content{
+
+.modal-content {
   background-color: #fff;
   margin: 20% auto;
   padding: 20px;

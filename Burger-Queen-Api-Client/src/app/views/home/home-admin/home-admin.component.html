@@ -31,24 +31,30 @@
     <section *ngIf="adminUsers.length > 0" class="user">
       <ul style="list-style: none" class="ulUsers">
         <!-- SOLO RECORRE EL adminUsers -->
-        <li *ngFor="let user of adminUsers">
-          {{ user.email }}
-          <button (click)="showInfoModalEdit(user)" class="btnEdit">Edit</button>
-          <button (click)="openDeleteUserModal(user.id)" class="btnDelete">Delete</button>
+        <li *ngFor="let user of adminUsers" class="gridUser">
+          <div class="inUser">
+            {{ user.email }}
+          </div>
+          <div class="inUser">
+            <button (click)="showInfoModalEdit(user)" class="btnEdit">Edit</button>
+            <button (click)="openDeleteUserModal(user.id)" class="btnDelete">Delete</button>
+          </div>
         </li>
       </ul>
     </section>
 
     <label for="chef" class="labels">C H E F</label>
     <hr />
-    <section *ngIf="chefUsers.length > 0" class="containerAdmin">
+    <section *ngIf="chefUsers.length > 0" class="user">
       <ul style="list-style: none" class="ulUsers">
-        <li *ngFor="let user of chefUsers" class="user">
-          {{ user.email }}
-
-          <button (click)="showInfoModalEdit(user)" class="btnEdit">Edit</button>
-          <button (click)="openDeleteUserModal(user.id)" class="btnDelete">Delete</button>
-
+        <li *ngFor="let user of chefUsers" class="gridUser">
+          <div>
+            {{ user.email }}
+          </div>
+          <div>
+            <button (click)="showInfoModalEdit(user)" class="btnEdit">Edit</button>
+            <button (click)="openDeleteUserModal(user.id)" class="btnDelete">Delete</button>
+          </div>
         </li>
       </ul>
     </section>
@@ -57,7 +63,7 @@
     <hr />
     <section *ngIf="waiterUsers.length > 0" class="user">
       <ul style="list-style: none" class="ulUsers">
-        <li *ngFor="let user of waiterUsers" class="prueba">
+        <li *ngFor="let user of waiterUsers" class="gridUser">
           {{ user.email }}
           <button (click)="showInfoModalEdit(user)" class="btnEdit">Edit</button>
           <button (click)="openDeleteUserModal(user.id)" class="btnDelete">Delete</button>
