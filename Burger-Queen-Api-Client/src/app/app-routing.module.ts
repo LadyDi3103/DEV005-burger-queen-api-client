@@ -16,7 +16,7 @@ const routes: Routes = [
   /*lazy-loading
 /* se declaran las rutas*/
   {
-    path: '', //TODO: http://localhost:4200/ <--- /login
+    path: '', //TODO: https://api-mock-laboratoria.onrender.com/ <--- /login
     // loadChildren: ()=> import(`./modules/home/home.module`).then(m => m.HomeModule)
     redirectTo: 'login',
     pathMatch: 'full',

@@ -1,39 +1,23 @@
 <section class="containerGeneral">
   <p class="chefName">Chef: {{ chefName }}</p>
   <div class="btnTags">
-    <button (click)="showTabContent('option1')" class="tagToPrepare">
+    <button (click)="showTabContent('pending')" class="tagToPrepare">
       To Prepare
     </button>
-    <button (click)="showTabContent('option2')" class="tagToDeliver">
+    <button (click)="showTabContent('delivered')" class="tagToDeliver">
       To Deliver
     </button>
   </div>
   <div class="containerOrders">
-    <ng-container *ngIf="selectedMenu === 'option1'">
-    <div *ngFor="let order of orders" class="order">
-      <app-cards [orderOne]=order></app-cards>
-    </div>
-  </ng-container>
-  </div>
-  <!-- <div class="order">
-      <label for="clientsName">Client: Maria Jimena </label>
-      <hr />
-      <label for="nOrder">N° Order: 0000005</label>
-      <hr />
-      <label for="nTable">N° Table: 05 </label>
-      <hr />
-      <label for="resumeOrder" class="resumeOrder"> Resume Order: </label>
-      <div class="orederResume"></div>
-      <hr />
-      <div class="containerBottom">
-        <div class="timer">
-          <p>Date: 2023-06-27</p>
-          <p>Timer: 00:16:58</p>
-        </div>
-        <hr />
-        <button [ngClass]="{'red-button': !buttonState, 'green-button': buttonState}" (click)="toggleButtonState()">
-          {{ buttonState ? 'To Deliver' : 'To Prepare' }}
-        </button>
+    <ng-container *ngIf="selectedFilter === 'pending'">
+      <div *ngFor="let order of orders" class="order">
+        <app-cards [orderOne]=order></app-cards>
       </div>
-    </div> -->
+    </ng-container>
+    <ng-container *ngIf="selectedFilter === 'delivered'">
+      <div *ngFor="let order of orders" class="order">
+        <app-cards [orderOne]=order></app-cards>
+      </div>
+    </ng-container>
+  </div>
 </section>

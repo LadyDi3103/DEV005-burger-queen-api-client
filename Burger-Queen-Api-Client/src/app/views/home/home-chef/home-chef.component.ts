@@ -11,9 +11,11 @@ import { OrderService } from '../../../services/OrderService/order.service';
 export class HomeChefComponent implements OnInit {
   chefName: string = 'IndiraDavoin';
   orders: any = '';
-  selectedMenu: string = 'option1';
+  selectedFilter: string = 'pending';
   // dataEntry : Date;
   formattedDate: any = '';
+  pendingOrders: any[] = [];
+  deliveredOrders: any[] = [];
   constructor(private orderService: OrderService, private loginService: LoginService, private router: Router) { }
   ngOnInit() {
     this.getWaitersOrders();
@@ -23,22 +25,30 @@ export class HomeChefComponent implements OnInit {
       next: (resp) => {
         console.log(resp);
         this.orders = resp;
-        this.sortOrders();
+        // this.sortOrders();
+        this.filterCardsByStatus();
       },
       error: (err) => {
         console.log(err);
       }
     })
   }
-  sortOrders():void{
-    this.orders.sort((a: any, b: any)=>{
-      const dateA = new Date(a.formattedDate);
-      const dateB = new Date(b.formattedDate);
-      return dateA.getTime() - dateB.getTime();
-    });
+    filterCardsByStatus() {
+    this.pendingOrders = this.orders.filter((order:any) => order.status === 'pending')
+    console.log(this.pendingOrders, 'PENDING ORDERS');
+    this.deliveredOrders = this.orders.filter((order:any) => order.status === 'delivered')
+    console.log(this.deliveredOrders, 'DELIVERED ORDERS');
   }
-  showTabContent(option: string): void {
-    this.selectedMenu = option;
+
+  // sortOrders():void{
+  //   this.orders.sort((a: any, b: any)=>{
+  //     const dateA = new Date(a.formattedDate);
+  //     const dateB = new Date(b.formattedDate);
+  //     return dateA.getTime() - dateB.getTime();
+  //   });
+  // }
+  showTabContent(status: string): void {
+    this.selectedFilter = status;
   }
   logout(): void {
     this.router.navigateByUrl('/login');
