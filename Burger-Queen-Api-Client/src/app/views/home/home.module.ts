@@ -17,6 +17,7 @@ import { CardsComponent } from './home-chef/Home-chef-Children/cards/cards.compo
 import { DeleteUserModalComponent } from './home-admin/delete-user-modal/delete-user-modal.component';
 // import { EditProductModalComponent } from './home-admin/edit-product-modal/edit-product-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { DeleteProductModalComponent } from './home-admin/delete-product-modal/delete-product-modal.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     TimerComponent,
     CardsComponent,
     DeleteUserModalComponent,
+    DeleteProductModalComponent,
     // EditProductModalComponent,
     
   ],

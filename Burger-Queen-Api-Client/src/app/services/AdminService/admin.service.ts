@@ -78,4 +78,12 @@ export class AdminService {
     })
     return this.http.patch(`http://localhost:8080/products/${userProduct.id}`, userProduct, {headers});
   }
+  deleteProduct(id: number): Observable<any> {
+    const headers = new HttpHeaders({
+      'accept': 'application/json',
+      'Authorization': 'Bearer ' + localStorage.getItem("accessToken")
+    })
+    return this.http.delete(`http://localhost:8080/products/${id}`, {headers});
+  }
+
 }

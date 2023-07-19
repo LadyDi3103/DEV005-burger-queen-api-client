@@ -35,7 +35,7 @@
           <div class="inUser">
             {{ user.email }}
           </div>
-          <div class="inUser">
+          <div>
             <button (click)="showInfoModalEdit(user)" class="btnEdit">Edit</button>
             <button (click)="openDeleteUserModal(user.id)" class="btnDelete">Delete</button>
           </div>
@@ -48,7 +48,7 @@
     <section *ngIf="chefUsers.length > 0" class="user">
       <ul style="list-style: none" class="ulUsers">
         <li *ngFor="let user of chefUsers" class="gridUser">
-          <div>
+          <div class="inUser">
             {{ user.email }}
           </div>
           <div>
@@ -64,9 +64,13 @@
     <section *ngIf="waiterUsers.length > 0" class="user">
       <ul style="list-style: none" class="ulUsers">
         <li *ngFor="let user of waiterUsers" class="gridUser">
+          <div class="inUser">
           {{ user.email }}
+        </div>
+        <div>
           <button (click)="showInfoModalEdit(user)" class="btnEdit">Edit</button>
           <button (click)="openDeleteUserModal(user.id)" class="btnDelete">Delete</button>
+        </div>
         </li>
       </ul>
     </section>
@@ -80,7 +84,7 @@
         <hr />
       </div>
       <div class="containerProducts">
-        <button *ngFor="let product of APIDATA" (click)="showInfoModalEditProduct(product)" class="icons-Breakfast">
+        <button *ngFor="let product of APIDATAPRODUCT" (click)="showInfoModalEditProduct(product)" class="icons-Breakfast">
           <img class="imgProduct" src="{{ product.image }}" />
           <div class="namePrice">
             <p>{{ product.name }}</p>
@@ -91,23 +95,6 @@
         </button>
       </div>
     </div>
-    <!-- <div class="brunch">
-      <div class="labels">
-        <label class="labels" for="line">Brunch</label>
-        <hr />
-      </div>
-      <div class="contanerProducts">
-        <button *ngFor="let product of menuItem.brunch" (click)="selectProduct(product)" class="icons-Breakfast">
-          <img class="imgProduct" src="{{ product.image }}" />
-          <div class="namePrice">
-            <p>{{ product.name }}</p>
-          </div>
-          <div class="namePrice">
-            <p>$ {{ product.price }}</p>
-          </div>
-        </button>
-      </div>
-    </div> -->
   </ng-container>
 </div>
 <!-- M O D A L  R E G I S T E R  U S E R -->
@@ -129,9 +116,16 @@
       </div>
 
       <div class="inputContainer">
-        <input class="input" type="text" formControlName="role" id="role" name="role" placeholder="a" required>
-        <label for="" class="label">role</label>
+        <!-- <input class="input" type="text" formControlName="role" id="role" name="role" placeholder="a" required>
+        <label for="" class="label">role</label> -->
+        <select class="select" formControlName="role">
+          <option value="">Select Role</option>
+          <option value="admin">Admin</option>
+          <option value="chef">Chef</option>
+          <option value="waiter">Waiter</option>
+        </select>
       </div>
+
       <button class="addeMployee">Create Employee</button>
     </form>
   </div>
@@ -160,8 +154,13 @@
       </div>
 
       <div class="inputContainer">
-        <input class="input" type="text" formControlName="type" id="type" name="type" placeholder="a" required>
-        <label for="" class="label">Type</label>
+        <!-- <input class="input" type="text" formControlName="type" id="type" name="type" placeholder="a" required>
+        <label for="" class="label">Type</label> -->
+        <select class="select" formControlName="type">
+          <option value="">Select type</option>
+          <option value="breakfast">Breakfast</option>
+          <option value="meals">Meals</option>
+        </select>
       </div>
       <button class="addeMployee">Create Product</button>
     </form>
@@ -222,6 +221,7 @@
         <label for="" class="label">Type</label>
       </div>
       <button class="addeMployee">Edit Product</button>
+      <button class="addeMployee" (click)="openDeleteProductModal(APIDATAPRODUCT.id)">Delete Product</button>
     </form>
   </div>
 </div>

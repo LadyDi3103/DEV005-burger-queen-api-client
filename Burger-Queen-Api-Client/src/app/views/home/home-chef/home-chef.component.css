@@ -41,6 +41,33 @@
   padding-left: 25px;
  
 }
+.tagToPrepare {
+  padding-top: 20px;
+  width: 49%;
+  height: 100%;
+  /* margin-left: 20px; */
+  background: var(--color-4);
+  border: none;
+  border-top: 2px solid var(--color-2);
+  border-left: 2px solid var(--color-2);
+  border-bottom: 2px solid var(--color-4);
+  border-radius: 25px 10px 0px 0px;
+  font-size: 30px;
+}
+.tagToDeliver {
+  padding-top: 20px;
+  width: 49%;
+  height: 100%;
+  /* margin-left: 20px; */
+  background: var(--color-6);
+  border: none;
+  border-top: 2px solid var(--color-2);
+  border-left: 2px solid var(--color-2);
+  border-bottom: 2px solid var(--color-4);
+  border-radius: 25px 10px 0px 0px;
+  font-size: 30px;
+}
+
 .containerOrders {
   max-width: 100%;
   height: 1000px;

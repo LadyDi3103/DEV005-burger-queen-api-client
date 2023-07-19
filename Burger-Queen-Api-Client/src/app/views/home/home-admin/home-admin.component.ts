@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/AdminService/admin.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { DataUser, DataProduct, DataUserEdit, DataProductEdit } from 'src/app/interfaces/interfaces';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteUserModalComponent } from './delete-user-modal/delete-user-modal.component';
+import { DeleteProductModalComponent } from './delete-product-modal/delete-product-modal.component';
 // import { EditProductModalComponent } from './edit-product-modal/edit-product-modal.component';
 interface Menu {
   drinks: Product[],
@@ -31,7 +32,7 @@ export class HomeAdminComponent {
   showModalProduct: boolean = false;
   showModalEdit: boolean = false;
   showModalEditProduct: boolean = false;
-  public APIDATA: any = '';
+  public APIDATAPRODUCT: any = '';
   public RESP: any = '';
   public APIPRODUCT: any = '';
   public oneUser: any;
@@ -53,71 +54,9 @@ export class HomeAdminComponent {
     price: new FormControl(),
     image: new FormControl(''),
     type: new FormControl(''),
+    selected: new FormControl(''),
   });
-
-  menuItem: Menu = {
-    drinks: [
-      {
-        id: 1,
-        name: 'Short Coffe',
-        price: 2.00,
-        image: "../../../../../../../assets/img/icons8-vaso-100.png",
-        type: 'breakfast'
-      },
-      {
-        id: 2,
-        name: 'Double Coffe',
-        price: 4.00,
-        image: "../../../../../../../assets/img/icons8-vaso-100.png",
-        type: 'breakfast'
-      },
-      {
-        id: 3,
-        name: 'Water',
-        price: 1.00,
-        image: "../../../../../../../assets/img/icons8-plástico-100.png",
-        type: 'breakfast'
-      },
-      {
-        id: 4,
-        name: 'Juice',
-        price: 3.00,
-        image: "../../../../../../../assets/img/icons8-jugo-64.png",
-        type: 'breakfast'
-      },
-    ],
-    brunch: [
-      {
-        id: 5,
-        name: 'Croissant',
-        price: 2.00,
-        image: "../../../../../../../assets/img/icons8-cruasán-100.png",
-        type: 'breakfast'
-      },
-      {
-        id: 6,
-        name: 'Slice Bread',
-        price: 1.00,
-        image: "../../../../../../../assets/img/icons8-pan-100.png",
-        type: 'breakfast'
-      },
-      {
-        id: 7,
-        name: 'Sandwich',
-        price: 6.00,
-        image: "../../../../../../../assets/img/icons8-sándwich-100.png",
-        type: 'breakfast'
-      },
-      {
-        id: 8,
-        name: 'Pancakes',
-        price: 6.00,
-        image: "../../../../../../../assets/img/icons8-panqueques-64.png",
-        type: 'breakfast'
-      },
-    ],
-  }
-  constructor(private adminService: AdminService, private router: Router, private dialog: MatDialog) { }
+  constructor(private adminService: AdminService, private router: Router, private dialog: MatDialog, private formBuilder: FormBuilder ) { }
   onSubmit(): void {
     const userData: DataUser = {
       email: this.form.value.email || '',
@@ -127,18 +66,33 @@ export class HomeAdminComponent {
     this.adminService.createUser(userData).subscribe(
       (resp) => {
         console.log(resp, 'VALIDA');
-        this.form.reset();
+        this.getListUsers();
+        // this.form.reset(); // falta resetear el modal y que se cierre
       },
-    )
-  }
-// ME FALTA ACTUALIZAR IMPLEMENTAR LÓGICA PARA HACER QUE ACTUALICE LA DATA MODIFICADA
+      )
+    }
+    getListUsers(): void {
+      this.adminService.getAllUsers().subscribe((resp) => {
+        console.log(resp, 'RESP-GET-ALL-USERS');
+        this.users = resp;
+        this.filterUsersByRole();
+      })
+    }
+    filterUsersByRole() {
+      this.adminUsers = this.users.filter(user => user.role === 'admin');
+      this.chefUsers = this.users.filter(user => user.role === 'chef');
+      this.waiterUsers = this.users.filter(user => user.role === 'waiter');
+    
+      this.filteredUsers = this.users.filter(user => {
+        return user.role === this.selectedRole || this.selectedRole === '';
+      });
+    }
   showInfoModalEdit(user: DataUser) {
     this.form.patchValue({
       email: user.email,
       role: user.role,
       password: user.password
     });
-
     this.oneUser = user;
     this.showModalEdit = true;
   }
@@ -149,7 +103,6 @@ export class HomeAdminComponent {
         }    
       }
     }
-  
   editDataUser(): void {
     const userData: DataUserEdit = {
       email: this.form.value.email || '',
@@ -162,29 +115,30 @@ export class HomeAdminComponent {
       console.log(resp, 'RESP EDITTT');
       this.RESP = resp;
       this.showModalEdit = false;
-
-    this.updateData(this.RESP.id)
+      
+      this.updateData(this.RESP.id)
       // actualizar en users - el nuevo valor del usuario
-    this.filterUsersByRole()
+      this.filterUsersByRole()
     },
     (err) => {
       this.showModalEdit = false;
     })
-    
-  }
-
-  getProducts(): void {
-    this.adminService.getListProducts().subscribe((resp) => {
-      console.log(resp);
-      this.APIDATA = resp;
-      // En caso de querer entrar APIDATA debemos indicar el índice correspondiente []
-    });
   }
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     this.getProducts();
     this.getListUsers();
+    // this.initializeForm();
   }
+  // P R O D U C T S
+  getProducts(): void {
+    this.adminService.getListProducts().subscribe((resp) => {
+      console.log(resp);
+      this.APIDATAPRODUCT = resp;
+      // En caso de querer entrar APIDATAPRODUCTPRODUCT debemos indicar el índice correspondiente []
+    });
+  }
+
   createProducts(): void {
     const userProduct: DataProduct = {
       name: this.form.value.name || '',
@@ -195,6 +149,7 @@ export class HomeAdminComponent {
     this.adminService.createProduct(userProduct).subscribe(
       (resp) => {
         console.log(resp, 'VALIDA');
+        this.getProducts();
         this.form.reset();
       }
     )
@@ -222,31 +177,24 @@ export class HomeAdminComponent {
       type: this.form.value.type || '' ,
       id: this.oneProduct.id,  
       }
-    this.adminService.editProduct(this.APIDATA.id).subscribe(
+    this.adminService.editProduct(productData).subscribe(
       (resp) => {
         console.log(' LINEAAAA 223 Producto actualizado:', resp);
         this.APIPRODUCT = resp;
+        this.showModalEditProduct = false;
+        this.updateProduct(this.APIPRODUCT.id)
       },
       (err) => {
-        console.error('Error al editar el producto:', err);
+        this.showModalEditProduct = false;
       });
     }
-  getListUsers(): void {
-    this.adminService.getAllUsers().subscribe((resp) => {
-      console.log(resp, 'RESP-GET-ALL-USERS');
-      this.users = resp;
-      this.filterUsersByRole();
-    })
-  }
-  filterUsersByRole() {
-    this.adminUsers = this.users.filter(user => user.role === 'admin');
-    this.chefUsers = this.users.filter(user => user.role === 'chef');
-    this.waiterUsers = this.users.filter(user => user.role === 'waiter');
-
-    this.filteredUsers = this.users.filter(user => {
-      return user.role === this.selectedRole || this.selectedRole === '';
-    });
-  }
+    updateProduct(id:number){
+      for (let i = 0; i < this.APIDATAPRODUCT.length; i++) {
+        if(this.APIDATAPRODUCT[i].id  === id){
+          this.APIDATAPRODUCT[i] = this.APIPRODUCT;
+        }    
+      }
+    }
    //  T A G S  &  M O D A L S
   showTabContent(option: string): void {
     this.selectedMenu = option;
@@ -263,9 +211,6 @@ export class HomeAdminComponent {
   openModalEditUser() {
     this.showModalEdit = true;
   }
-  // openModalEditProduct(): void {
-  //   this.showModalEditProduct = true;
-  // }
   closeModal() {
     this.showModal = false;
     this.showModalProduct = false;
@@ -278,112 +223,42 @@ export class HomeAdminComponent {
   
     dialogRef.afterClosed().subscribe(result => {
       if (result === true) {
-        this.delete(id); // Llamar a la función para eliminar al usuario
+        this.deleteUsr(id); // FN para eliminar al usuario
         console.log('ELIMINAR  257');
-        //OBTENER EL ID DEL USUARIO  QUE LE DAMOS CLICK
+        this.getListUsers();                // FN para refrescarOBTENER EL ID DEL USUARIO  QUE LE DAMOS CLICK
       }
     });
   }
-  delete(id:number):void{
+  deleteUsr(id:number):void{
     this.adminService.deleteUser(id).subscribe((resp) =>{
       console.log(resp, 'RESP DELETE');
     })
   }
-
+  // updateDataDelete(id:number){
+  //   for (let i = 0; i < this.users.length; i++) {
+  //     if(this.users[i].id  === id){
+  //       this.users[i] = this.RESP;
+  //     }    
+  //   }
+  // }
+  openDeleteProductModal(id: number):void {
+    const dialogRefProduct = this.dialog.open(DeleteProductModalComponent);
+  
+    dialogRefProduct.afterClosed().subscribe(result => {
+      if (result === true) {
+        this.deleteProduct(id); // Llamar a la función para eliminar al usuario
+        console.log('ELIMINAR  257');
+        this.getProducts();                                //OBTENER EL ID DEL USUARIO  QUE LE DAMOS CLICK
+      }
+    });
+  }
+  deleteProduct(id:number):void{
+    this.adminService.deleteProduct(id).subscribe((resp) =>{
+      console.log(resp, 'RESP DELETE');
+     
+    })
+  }
   logout(): void {
     this.router.navigateByUrl('/login');
   }
 }
-
-
-// *For File*
-  // const image: File | null = this.form.value.image instanceof File ? this.form.value.image : null;
-  // const image: File | null =
-  //   this.form.value.image instanceof File &&
-  //   this.isImageFile(this.form.value.image)
-  //     ? this.form.value.image
-  //     : null;
-
-  // *Otro onInit*
-//no toma los valores
-// ngOnInit(): void {
-//   console.log('ENTRÓ AL ngOnInit');
-//   this.obtainListUsers()
-  //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-  //Add 'implements OnInit' to the class.
-//   this.obtainListProducts()
-//     console.log('sigue en el ngOnInit');
-// }
-// *Condiciones si es una imagen*
-// isImageFile(file: File): boolean {
-//   const allowedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
-//   const fileExtension = file.name
-//     .substring(file.name.lastIndexOf('.'))
-//     .toLowerCase();
-//   return allowedExtensions.includes(fileExtension);
-// }
-// *Otro Para Obtener list de productos
- // obtainListProducts(): void {
-  //   this.adminService.getListProducts().subscribe((data) => {
-  //     console.log(data, 'DATA 388888');
-  //   })
-  // }
-
-// import { Injectable } from '@angular/core';
-// import { HttpClient, HttpHeaders } from '@angular/common/http';
-// import { Observable } from 'rxjs';
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class AuthService {
-//   private token: string | null = null;
-
-//   constructor(private http: HttpClient) { }
-
-//   admin(email: string, password: string, role: string): Observable<any> {
-//     const credentials = {
-//       email,
-//       password,
-//       role
-//     };
-
-//     const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`);
-
-//     return this.http.post<any>('http://localhost:8080/users', credentials, { headers });
-//   }
-
-//   setToken(token: string): void {
-//     this.token = token;
-//   }
-
-//   getToken(): string | null {
-//     return this.token;
-//   }
-
-//   isAuthenticated(): boolean {
-//     return !!this.token;
-//   }
-// }
-// ---------
-// import { Component, OnInit } from '@angular/core';
-// import { Router } from '@angular/router';
-// import { AuthService } from 'src/app/services/Auth/auth.service';
-
-
-// @Component({
-//   selector: 'app-home-admin',
-//   templateUrl: './home-admin.component.html',
-//   styleUrls: ['./home-admin.component.css']
-// })
-// export class HomeAdminComponent implements OnInit {
-//   showModal = false;
-//   Email: string = "";
-//   password: string = "";
-//   rol: string = "";
-//   users: any[] = [];
-
-//   constructor(private authService: AuthService, private adminService: AdminService, private router: Router) { }
-//   ngOnInit(): void {
-//     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-//     //Add 'implements OnInit' to the class.
