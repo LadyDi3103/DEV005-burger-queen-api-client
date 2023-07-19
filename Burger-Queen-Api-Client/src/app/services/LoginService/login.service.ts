@@ -9,9 +9,10 @@ Headers
 export class LoginService {
 
   constructor(private http: HttpClient, private router: Router) { }
-//
+//https://api-mock-laboratoria.onrender.com
+//http://localhost:8080
   getCredentials(email: string, password: string): Observable<any> { 
-    return this.http.post('http://localhost:8080/login', {
+    return this.http.post('https://api-mock-laboratoria.onrender.com/login', {
     email: email, // traer el valor de los imputs
     password: password, // traaer la información de ambos
     }

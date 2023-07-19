@@ -11,7 +11,7 @@ export class OrderService {
     constructor(private http: HttpClient) { }
     //El WAITER llama a esta función para crear la orden
     createOrder(orderData: DataOrder): Observable<any> {
-        return this.http.post('http://localhost:8080/orders', {
+        return this.http.post('https://api-mock-laboratoria.onrender.com/orders', {
             client: orderData.client,
             products: orderData.products,
             status: orderData.status,
@@ -23,7 +23,7 @@ export class OrderService {
             'accept': 'application/json',
             'Authorization': 'Bearer ' + localStorage.getItem("accessToken")
         })
-        return this.http.get<any>('http://localhost:8080/orders', { headers });
+        return this.http.get<any>('https://api-mock-laboratoria.onrender.com/orders', { headers });
 
     }
     changeStatusOrder(id: any, status: string): Observable<any> {
@@ -31,9 +31,7 @@ export class OrderService {
             'accept': 'application/json',
             'Authorization': 'Bearer ' + localStorage.getItem("accessToken")
         })
-
-
-        return this.http.patch<any>(`http://localhost:8080/orders/${id}`, { status: status, dateProcessed: new Date() }, { headers })
+        return this.http.patch<any>(`https://api-mock-laboratoria.onrender.com/orders/${id}`, { status: status, dateProcessed: new Date() }, { headers })
     }
 // check body objeto con la información que voy a cambiar...
 }
