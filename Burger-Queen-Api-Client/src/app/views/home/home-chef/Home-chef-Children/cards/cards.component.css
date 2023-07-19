@@ -38,22 +38,22 @@
     height: 30px;
     padding: 20px;
     padding-bottom: 50px;
-    background-color: var(--color-1);
+    background-color: var(--color-6);
     border-radius: 10px;
-    color: var(--color-6);
+    color: var(--color-1); 
     font-size: 30px;
     text-align: center;
-    border: none;
+    border: solid;
   }
   .green-button {
     height: 30px;
     padding: 20px;
     padding-bottom: 50px;
-    background-color: var(--color-3);
+    background-color: var(--color-6);
     border-radius: 10px;
-    color: var(--color-6);
+    color: var(--color-3);
     font-size: 30px;
-    border: none;
+    border: solid;
   }
   
   .timer {

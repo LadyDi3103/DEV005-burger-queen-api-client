@@ -24,7 +24,6 @@ const routes: Routes = [
   {
     path: 'login', //TODO: http://localhost:4200/ <--- /login
     component: LoginPageComponent,
-    // canActivate: [authGuard]
   },
   {
     path: 'home-waiter', //TODO: http://localhost:4200/ <--- /home
@@ -39,6 +38,7 @@ const routes: Routes = [
   {
     path: 'home-chef', //TODO: http://localhost:4200/ <--- /home
     component: HomeChefComponent,
+    // canActivate: [authGuard]
     canActivate: [authGuard, chefGuard]
   },
   // {

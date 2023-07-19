@@ -11,6 +11,7 @@ import { OrderService } from '../../../services/OrderService/order.service';
 export class HomeChefComponent implements OnInit {
   chefName: string = 'IndiraDavoin';
   orders: any = '';
+  selectedMenu: string = 'option1';
   // dataEntry : Date;
   formattedDate: any = '';
   constructor(private orderService: OrderService, private loginService: LoginService, private router: Router) { }
@@ -35,6 +36,9 @@ export class HomeChefComponent implements OnInit {
       const dateB = new Date(b.formattedDate);
       return dateA.getTime() - dateB.getTime();
     });
+  }
+  showTabContent(option: string): void {
+    this.selectedMenu = option;
   }
   logout(): void {
     this.router.navigateByUrl('/login');

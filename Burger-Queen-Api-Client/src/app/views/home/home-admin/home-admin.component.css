@@ -49,45 +49,27 @@
   margin-right: 5%;
   border-radius: 8px;
   color: var(--color-6);
-  font-size: 25px;
+  font-size: 22px;
   font-style: italic;
   text-align: center;
   /* align-self: center; */
   text-shadow: 2px 2px var(--color-2);
 }
 
-/* .employee {
-  display: flex; */
-/* background: red; */
-/* justify-content: space-around;
-  align-items: center;
-} */
-
-/* .containerAdmin {
-  justify-content: space-around;
-} */
-.ulUsers {
-  display: flex;
-  flex-direction: column;
-}
 
 .user {
   /* background: red; */
   font-size: 30px;
   max-width: 100%;
 }
-
 .gridUser {
   display: grid;
   grid-template-columns: 60% 40%;
 }
-
-/* .inUsers { */
-  /* background: rebeccapurple; */
-  /* display: flex;
-  justify-content: space-around;
-  align-items: center; */
-/* } */
+.inUser{
+  display: flex;
+  align-items: center
+}
 
 .employee {
   display: flex;
@@ -96,40 +78,37 @@
   align-items: center;
 }
 
-/* .user {
-  font-size: 30px;
-} */
-
 .btnEdit {
   background-color: var(--color-3);
-  letter-spacing: 1.5px;
-  width: 15%;
-  height: 60%;
+  letter-spacing: 1.0px;
+  width: 30%;
+  height: 90%;
   padding: 2.2%;
+  margin-top: 5px;
   margin-right: 5%;
   border-radius: 8px;
   color: var(--color-6);
-  font-size: 25px;
+  font-size: 20px;
   font-style: italic;
-  text-align: center;
+  /* text-align: center; */
   /* align-self: center; */
-  text-shadow: 2px 2px var(--color-2);
+  /* text-shadow: 2px 2px var(--color-2); */
 }
 
 .btnDelete {
   background-color: var(--color-3);
-  letter-spacing: 1.5px;
-  width: 15%;
-  height: 60%;
+  letter-spacing: 1.0px;
+  width: 30%;
+  height: 90%;
   padding: 2.2%;
   margin-right: 5%;
   border-radius: 8px;
   color: var(--color-6);
-  font-size: 25px;
+  font-size: 20px;
   font-style: italic;
   text-align: center;
   /* align-self: center; */
-  text-shadow: 2px 2px var(--color-2);
+  /* text-shadow: 2px 2px var(--color-2); */
 }
 
 .btnAddProducts {
@@ -150,7 +129,7 @@
   margin-right: 5%;
   border-radius: 8px;
   color: var(--color-6);
-  font-size: 25px;
+  font-size: 22px;
   font-style: italic;
   text-align: center;
   /* align-self: center; */

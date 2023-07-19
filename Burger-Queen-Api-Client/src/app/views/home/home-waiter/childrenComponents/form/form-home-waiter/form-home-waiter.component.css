@@ -81,7 +81,7 @@
   margin-top: 5%;
   border-radius: 8px;
   color: var(--color-6);
-  font-size: 25px;
+  font-size: 24px;
   font-style: italic;
   text-align: center;
   align-self: center;
@@ -89,19 +89,20 @@
 }
 .btnCancel {
   /* background-color: black; */
-  background-color: var(--color-1);
+  background-color: var(--color-6);
   letter-spacing: 1.5px;
   width: 45%;
   height: 70px;
   padding: 2.2%;
   margin-top: 5%;
   border-radius: 8px;
-  color: var(--color-6);
-  font-size: 25px;
+  color: var(--color-1);
+  font-size: 24px;
   font-style: italic;
   text-align: center;
   align-self: center;
   text-shadow: 2px 2px var(--color-2);
+  border: solid;
 }
 /* Estilos DIV2 */
 .priceTag {

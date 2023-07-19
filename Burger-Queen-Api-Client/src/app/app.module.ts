@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS, } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,8 +11,7 @@ import { HomeModule } from './views/home/home.module';
 import { LoginModule } from './views/login/login.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthInterceptorService } from './services/interceptors/auth-interceptor.service';
-import { CardComponent } from './home/home-chef/Home-chef-Children/card/card.component';
-import {MatDialogModule} from '@angular/material/dialog'
+import { MatDialogModule } from '@angular/material/dialog'
 // import { AuthGuard } from './services/guards/auth.guard';
 
 // import { TimerComponent } from './src/app/views/home-chef/Home-chef-Children/timer/timer.component';
@@ -20,7 +19,6 @@ import {MatDialogModule} from '@angular/material/dialog'
   //TODO: Declaraciones, componentes, directivas, pipes
   declarations: [
     AppComponent,
-    CardComponent,
     //  TimerComponent
   ],
   //TODO: Solo se importan otros modulos
@@ -36,7 +34,7 @@ import {MatDialogModule} from '@angular/material/dialog'
     LoginModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    
+    ReactiveFormsModule
   ],
   providers: [
     LoginService,
