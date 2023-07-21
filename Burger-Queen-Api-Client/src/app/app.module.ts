@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS, } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule, } from '@angular/forms';
@@ -11,7 +11,9 @@ import { HomeModule } from './views/home/home.module';
 import { LoginModule } from './views/login/login.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthInterceptorService } from './services/interceptors/auth-interceptor.service';
-import { MatDialogModule } from '@angular/material/dialog'
+import { MatDialogModule } from '@angular/material/dialog';
+import { ServiceWorkerModule } from '@angular/service-worker';
+// import { ServiceWorkerModule } from '@angular/service-worker'
 // import { AuthGuard } from './services/guards/auth.guard';
 
 // import { TimerComponent } from './src/app/views/home-chef/Home-chef-Children/timer/timer.component';
@@ -34,7 +36,19 @@ import { MatDialogModule } from '@angular/material/dialog'
     LoginModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
+    // ServiceWorkerModule.register('ngsw-worker.js', {
+    //   enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      // registrationStrategy: 'registerWhenStable:30000'
+    // })
   ],
   providers: [
     LoginService,
