@@ -26,7 +26,7 @@ describe('LoginPageComponent', () => {
     email: 'test@test.com', //TODO: user.waiter@systers.xyz
     password: '123456'
   }
-  const emailForm: any = component.()
+  // const emailForm: any = component.()
   //TODO: Act
   
   //TODO: Assert
