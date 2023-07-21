@@ -7,6 +7,5 @@ if ('serviceWorker' in navigator) {
     .then(registration => console.log('Service Worker registrado con éxito', registration))
     .catch(error => console.error('Error al registrar el Service Worker', error));
 }
-
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
