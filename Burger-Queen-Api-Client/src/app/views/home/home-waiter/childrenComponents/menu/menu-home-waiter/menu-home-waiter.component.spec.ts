@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { MenuHomeWaiterComponent } from './menu-home-waiter.component';
 
 describe('MenuHomeWaiterComponent', () => {
@@ -8,7 +8,8 @@ describe('MenuHomeWaiterComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [MenuHomeWaiterComponent]
+      declarations: [MenuHomeWaiterComponent],
+      imports: [HttpClientTestingModule], 
     });
     fixture = TestBed.createComponent(MenuHomeWaiterComponent);
     component = fixture.componentInstance;

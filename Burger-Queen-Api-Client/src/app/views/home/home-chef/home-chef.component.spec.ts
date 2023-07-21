@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { HomeChefComponent } from './home-chef.component';
 
 describe('HomeChefComponent', () => {
@@ -8,7 +8,8 @@ describe('HomeChefComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HomeChefComponent]
+      declarations: [HomeChefComponent],
+      imports: [HttpClientTestingModule],
     });
     fixture = TestBed.createComponent(HomeChefComponent);
     component = fixture.componentInstance;
