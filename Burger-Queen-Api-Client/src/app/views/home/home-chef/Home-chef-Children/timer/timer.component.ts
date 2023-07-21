@@ -14,17 +14,19 @@ export class TimerComponent implements OnInit, OnChanges{
   // tiempoTranscurrido!: string;
   intervalId: any;
 
-  @Input() dataEntry: string = '';
+  @Input() dataEntry!: string;
   @Input() stop: boolean = false;
   @Output() stopTimerTimer: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() {}
   ngOnInit(): void {
-    const time = this.dataEntry.split(' ');
-    this.createTime = time[1]
-    console.log(this.dataEntry, 'DATAENTRY');
+    if(this.dataEntry){
+      const time = this.dataEntry.split(' ');
+      this.createTime = time[1]
+      console.log(this.dataEntry, 'DATAENTRY');
+      this.restHours(this.createTime)  
+    }
     // this.calcularTiempoTranscurrido();
-    this.restHours(this.createTime)  
   }
   ngOnChanges(changes: SimpleChanges) {
     console.log('CAMBIO DETECTADO');

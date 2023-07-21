@@ -9,6 +9,7 @@
     </button>
   </div>
   <div class="containerOrders">
+    <!-- Revisar sí se puede de alguna manera llamar para renderizar los arrays delivered orders and pending orders -->
     <ng-container *ngIf="selectedFilter === 'pending'">
       <div *ngFor="let order of orders" class="order">
         <app-cards [orderOne]=order></app-cards>
@@ -21,3 +22,5 @@
     </ng-container>
   </div>
 </section>
+<!--  -->
+

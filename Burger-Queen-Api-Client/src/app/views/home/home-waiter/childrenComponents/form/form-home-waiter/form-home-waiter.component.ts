@@ -1,8 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { min } from 'rxjs';
 import { DataOrder } from 'src/app/interfaces/interfaces';
 import { OrderService } from 'src/app/services/OrderService/order.service';
+
 interface Product {
   id: number;
   name: string;

@@ -156,8 +156,14 @@ export class HomeAdminComponent {
   }
   showInfoModalEditProduct(product: DataProduct) {
     console.log(product, 'PRODUCT');
+// Hay que separar el mostrar los valores del botón del producto
+// Estamos dentro del llamado Patch..Nunca se llama el delete, tanto para el edit y el delete
+// Hay que separar lógica de los botones, del botón product del producto hay que decirle que sólo muestre el modal
+// dentro del modal, hay que darle la función al botón edit para que muestre los valores del producto y que llame al patch
+// y dentro del modal hay que darle la función al botón delete para que llame al dialog(modal) del delete y haga la fn del delete.
 
-    this.form.patchValue({
+
+this.form.patchValue({
       name: product.name,
       price: product.price,
       image: product.image,
@@ -169,6 +175,7 @@ export class HomeAdminComponent {
     
     this.showModalEditProduct = true;
   }
+
   editinProduct(): void {
     const productData: DataProductEdit = {
       name: this.form.value.name || '',
