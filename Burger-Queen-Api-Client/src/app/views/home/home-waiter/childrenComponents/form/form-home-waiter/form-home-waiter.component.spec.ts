@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { FormHomeWaiterComponent } from './form-home-waiter.component';
-// import { FormsModule} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { By } from '@angular/platform-browser';
 
 
 describe('FormHomeWaiterComponent', () => {
@@ -22,4 +22,16 @@ describe('FormHomeWaiterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should have the word "Submit Order"', ()=>{
+    const elementRefSubmit = fixture.debugElement.query(By.css('.btnSubmit'))
+    const getInnertextSubmit = elementRefSubmit.nativeElement.innerText
+
+    expect(getInnertextSubmit).toEqual('Submit Order')
+  });
+  it('should have the word "Cancel Order"', () => {
+    const elementRef = fixture.debugElement.query(By.css('.btnCancel'))
+    const getInnerText = elementRef.nativeElement.innerText
+
+    expect(getInnerText).toEqual('Cancel Order')
+  })
 });

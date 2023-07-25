@@ -10,7 +10,7 @@
       <span></span>
       <hr>
       <label for="nTable">N° Table: </label>
-      <input type="number" class= "numTable" id="nTable" min="0" max="20" formControlName="numTable" />
+      <input type="number" class="numTable" id="nTable" min="0" max="20" formControlName="numTable" />
     </div>
     <!-- </form> -->
     <!-- </div>  -->
@@ -38,15 +38,13 @@
       <span class="priceTag"> ${{calculateTotalCost()}}</span>
       <!-- se renderiza porque está escuchando -->
     </div>
-    
+
     <div class="btnOrdered">
-      
       <button (click)="onSubmit()" class="btnSubmit">Submit Order</button>
-   
-      
       <button (click)="cancelOrder()" class="btnCancel">Cancel Order</button>
-    
     </div>
+
+
 
   </form>
 </div>
