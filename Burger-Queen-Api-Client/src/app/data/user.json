@@ -1,0 +1,10 @@
+{
+    "userFail": {
+        "email": "falso@falso.com",
+        "password": "123456789"
+    },
+    "userOk": {
+        "email": "user.admin@systers.xyz",
+        "password": "123456"
+        }
+}

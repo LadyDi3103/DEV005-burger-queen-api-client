@@ -26,7 +26,6 @@ export class FormHomeWaiterComponent {
   numOrder: string = '0000001';
   totalCost: number = 0;
 
-  // dataEntry : Date;
   // F O R M  R E A C T I V O
   //form va toda la data que se ingresa en un input
   form = new FormGroup({
@@ -39,11 +38,11 @@ export class FormHomeWaiterComponent {
   timeDataEntry = new Date();
   formattedDataEntry = this.timeDataEntry.toLocaleString('es-ES')
 
- padTo2Digits(num:number) {
+  padTo2Digits(num: number) {
     return num.toString().padStart(2, '0');
   }
-  
-formatDate(date: Date) {
+
+  formatDate(date: Date) {
     return (
       [
         date.getFullYear(),
@@ -59,21 +58,15 @@ formatDate(date: Date) {
     );
   }
   onSubmit(): void {
-
-  const  date = this.formatDate(new Date());
-  console.log(date, 'date');
-  
-
-    const orderData: DataOrder = 
+    const date = this.formatDate(new Date());
+    const orderData: DataOrder =
     {
-      client: this.form.value.clientsName || '', // De esta manera capturo el valor del input correspondiente. 
+      client: this.form.value.clientsName || '', 
       products: this.newItem as [], // castear
       status: 'pending',
-      dataEntry: date, 
-      // .toLocaleString('es-ES') || '',
-      // this.formattedDate
+      dataEntry: date,
     };
-      //Aquí hago un request a la api
+    //Aquí hago un request a la api
     this.orderService.createOrder(orderData).subscribe({
       next: (resp) => {
         this.incrementOrderNumber()
