@@ -10,7 +10,7 @@
 * [6. Despliegue](#6-despliegue)
 * [7. Pistas / tips](#7-pistas--tips)
 
-***
+---
 
 ## 1. Preámbulo
 
@@ -99,8 +99,8 @@ qué parámetros esperan, qué deben responder, etc.
 
 El objetivo principal de es aprender a construir una _interfaz web_ usando
 el _framework_ elegido (React, Angular o Vue). Todos estos frameworks de
-Front-end tratan de solucionar el mismo problema: **cómo mantener la interfaz
-y el estado sincronizados**. Así que esta experiencia espera familiarizarte con
+Front-end tratan de solucionar el mismo problema: __cómo mantener la interfaz
+y el estado sincronizados__. Así que esta experiencia espera familiarizarte con
 el concepto de _estado de pantalla_, y como cada cambio sobre el estado se va
 a ir reflejando en la interfaz (por ejemplo, cada vez que agregamos un _producto_
 a un _pedido_, la interfaz debe actualizar la lista del pedido y el total).
@@ -113,361 +113,408 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Uso de HTML semántico**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [HTML semántico](https://curriculum.laboratoria.la/es/topics/html/02-html5/02-semantic-html)
-  * [Semantics - MDN Web Docs Glossary](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
+   * [HTML semántico](https://curriculum.laboratoria.la/es/topics/html/02-html5/02-semantic-html)
+   * [Semantics - MDN Web Docs Glossary](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
+
 </p></details>
 
 ### CSS
 
 - [ ] **Uso de selectores de CSS**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Intro a CSS](https://curriculum.laboratoria.la/es/topics/css/01-css/01-intro-css)
-  * [CSS Selectors - MDN](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Selectors)
+   * [Intro a CSS](https://curriculum.laboratoria.la/es/topics/css/01-css/01-intro-css)
+   * [CSS Selectors - MDN](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Selectors)
+
 </p></details>
 
 - [ ] **Modelo de caja (box model): borde, margen, padding**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Box Model & Display](https://curriculum.laboratoria.la/es/topics/css/01-css/02-boxmodel-and-display)
-  * [The box model - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
-  * [Introduction to the CSS box model - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
-  * [CSS display - MDN](https://developer.mozilla.org/pt-BR/docs/Web/CSS/display)
-  * [display - CSS Tricks](https://css-tricks.com/almanac/properties/d/display/)
+   * [Box Model & Display](https://curriculum.laboratoria.la/es/topics/css/01-css/02-boxmodel-and-display)
+   * [The box model - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
+   * [Introduction to the CSS box model - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+   * [CSS display - MDN](https://developer.mozilla.org/pt-BR/docs/Web/CSS/display)
+   * [display - CSS Tricks](https://css-tricks.com/almanac/properties/d/display/)
+
 </p></details>
 
 - [ ] **Uso de flexbox en CSS**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [A Complete Guide to Flexbox - CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-  * [Flexbox Froggy](https://flexboxfroggy.com/#es)
-  * [Flexbox - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
+   * [A Complete Guide to Flexbox - CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+   * [Flexbox Froggy](https://flexboxfroggy.com/#es)
+   * [Flexbox - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
+
 </p></details>
 
 - [ ] **Uso de CSS Grid Layout**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [A Complete Guide to Grid - CSS Tricks](https://css-tricks.com/snippets/css/complete-guide-grid/)
-  * [Grids - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids)
+   * [A Complete Guide to Grid - CSS Tricks](https://css-tricks.com/snippets/css/complete-guide-grid/)
+   * [Grids - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids)
+
 </p></details>
 
 - [ ] **Uso de media queries**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [CSS media queries - MDN](https://developer.mozilla.org/es/docs/CSS/Media_queries)
+   * [CSS media queries - MDN](https://developer.mozilla.org/es/docs/CSS/Media_queries)
+
 </p></details>
 
 ### JavaScript
 
 - [ ] **Pruebas unitarias (unit tests)**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Empezando con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/getting-started)
+   * [Empezando con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/getting-started)
+
 </p></details>
 
 - [ ] **Pruebas asíncronas**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Tests de código asincrónico con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/asynchronous)
+   * [Tests de código asincrónico con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/asynchronous)
+
 </p></details>
 
 - [ ] **Uso de mocks y espías**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Manual Mocks con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/manual-mocks)
+   * [Manual Mocks con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/manual-mocks)
+
 </p></details>
 
 - [ ] **Módulos de ECMAScript (ES Modules)**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [import - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/import)
-  * [export - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/export)
+   * [import - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/import)
+   * [export - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/export)
+
 </p></details>
 
 - [ ] **Uso de linter (ESLINT)**
-
 - [ ] **Uso de identificadores descriptivos (Nomenclatura y Semántica)**
 
 ### Control de Versiones (Git y GitHub)
 
 - [ ] **Git: Instalación y configuración**
-
 - [ ] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
-
 - [ ] **Git: Integración de cambios entre ramas (branch, checkout, fetch, merge, reset, rebase, tag)**
-
 - [ ] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**
-
 - [ ] **GitHub: Despliegue con GitHub Pages**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Sitio oficial de GitHub Pages](https://pages.github.com/)
+   * [Sitio oficial de GitHub Pages](https://pages.github.com/)
+
 </p></details>
 
 - [ ] **GitHub: Colaboración en Github (branches | forks | pull requests | code review | tags)**
-
 - [ ] **GitHub: Organización en Github (projects | issues | labels | milestones | releases)**
 
 ### HTTP
 
+```plaintext { vsls_cell_id=655a16a0-c678-49ae-8850-43b906a0e809 }
+
+```
+
 - [ ] **Consulta o petición (request) y respuesta (response).**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Generalidades del protocolo HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Overview)
-  * [Mensajes HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Messages)
+   * [Generalidades del protocolo HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Overview)
+   * [Mensajes HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Messages)
+
 </p></details>
 
 - [ ] **Cabeceras (headers)**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [HTTP headers - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Headers)
+   * [HTTP headers - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Headers)
+
 </p></details>
 
 - [ ] **Cuerpo (body)**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Cuerpo de Mensajes HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Messages#cuerpo)
+   * [Cuerpo de Mensajes HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Messages#cuerpo)
+
 </p></details>
 
 - [ ] **Verbos HTTP**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Métodos de petición HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Methods)
+   * [Métodos de petición HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Methods)
+
 </p></details>
 
 - [ ] **Códigos de status de HTTP**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Códigos de estado de respuesta HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Status)
-  * [The Complete Guide to Status Codes for Meaningful ReST APIs - dev.to](https://dev.to/khaosdoctor/the-complete-guide-to-status-codes-for-meaningful-rest-apis-1-5c5)
+   * [Códigos de estado de respuesta HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Status)
+   * [The Complete Guide to Status Codes for Meaningful ReST APIs - dev.to](https://dev.to/khaosdoctor/the-complete-guide-to-status-codes-for-meaningful-rest-apis-1-5c5)
+
 </p></details>
 
 - [ ] **Encodings y JSON**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Introducción a JSON - Documentación oficial](https://www.json.org/json-es.html)
+   * [Introducción a JSON - Documentación oficial](https://www.json.org/json-es.html)
+
 </p></details>
 
 - [ ] **CORS (Cross-Origin Resource Sharing)**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Control de acceso HTTP (CORS) - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/CORS)
+   * [Control de acceso HTTP (CORS) - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/CORS)
+
 </p></details>
 
 ### Angular
 
 - [ ] **Components & templates**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Angular Components Overview - Documentación oficial (en inglés)](https://angular.io/guide/component-overview)
-  * [Introduction to components and templates - Documentación oficial (en inglés)](https://angular.io/guide/architecture-components#introduction-to-components)
+   * [Angular Components Overview - Documentación oficial (en inglés)](https://angular.io/guide/component-overview)
+   * [Introduction to components and templates - Documentación oficial (en inglés)](https://angular.io/guide/architecture-components#introduction-to-components)
+
 </p></details>
 
 - [ ] **Directivas estructurales (ngIf / ngFor)**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Writing structural directives - Documentación oficial (en inglés)](https://angular.io/guide/structural-directives)
+   * [Writing structural directives - Documentación oficial (en inglés)](https://angular.io/guide/structural-directives)
+
 </p></details>
 
 - [ ] **@Input | @Output**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Component interaction - Documentación oficial (en inglés)](https://angular.io/guide/component-interaction#component-interaction)
+   * [Component interaction - Documentación oficial (en inglés)](https://angular.io/guide/component-interaction#component-interaction)
+
 </p></details>
 
 - [ ] **Creación y uso de servicios**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Providing services - Documentación oficial (en inglés)](https://angular.io/guide/architecture-services#providing-services)
+   * [Providing services - Documentación oficial (en inglés)](https://angular.io/guide/architecture-services#providing-services)
+
 </p></details>
 
 - [ ] **Manejo de rutas**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [In-app navigation: routing to views - Documentación oficial (en inglés)](https://angular.io/guide/router)
+   * [In-app navigation: routing to views - Documentación oficial (en inglés)](https://angular.io/guide/router)
+
 </p></details>
 
 - [ ] **Creación y uso de Observables.**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Observables in Angular - Documentación oficial (en inglés)](https://angular.io/guide/observables-in-angular)
+   * [Observables in Angular - Documentación oficial (en inglés)](https://angular.io/guide/observables-in-angular)
+
 </p></details>
 
 - [ ] **Uso de HttpClient**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Communicating with backend services using HTTP - Documentación oficial (en inglés)](https://angular.io/guide/http)
+   * [Communicating with backend services using HTTP - Documentación oficial (en inglés)](https://angular.io/guide/http)
+
 </p></details>
 
 - [ ] **Estilos de componentes (ngStyle / ngClass)**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Template syntax - Documentación oficial (en inglés)](https://angular.io/guide/template-syntax#built-in-directives)
+   * [Template syntax - Documentación oficial (en inglés)](https://angular.io/guide/template-syntax#built-in-directives)
+
 </p></details>
 
 ### React
 
 - [ ] **JSX**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Presentando JSX - Documentación oficial](https://es.react.dev/learn/writing-markup-with-jsx)
+   * [Presentando JSX - Documentación oficial](https://es.react.dev/learn/writing-markup-with-jsx)
+
 </p></details>
 
 - [ ] **Componentes y propiedades (props)**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Componentes y propiedades - Documentación oficial](https://es.react.dev/learn/passing-props-to-a-component)
+   * [Componentes y propiedades - Documentación oficial](https://es.react.dev/learn/passing-props-to-a-component)
+
 </p></details>
 
 - [ ] **Manejo de eventos**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Manejando eventos - Documentación oficial](https://es.react.dev/learn/responding-to-events)
+   * [Manejando eventos - Documentación oficial](https://es.react.dev/learn/responding-to-events)
+
 </p></details>
 
 - [ ] **Listas y keys**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Listas y keys - Documentación oficial](https://es.react.dev/learn/rendering-lists)
+   * [Listas y keys - Documentación oficial](https://es.react.dev/learn/rendering-lists)
+
 </p></details>
 
 - [ ] **Renderizado condicional**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Renderizado condicional - Documentación oficial](https://es.react.dev/learn/conditional-rendering)
+   * [Renderizado condicional - Documentación oficial](https://es.react.dev/learn/conditional-rendering)
+
 </p></details>
 
 - [ ] **Elevación de estado**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Levantando el estado - Documentación oficial](https://es.react.dev/learn/sharing-state-between-components)
+   * [Levantando el estado - Documentación oficial](https://es.react.dev/learn/sharing-state-between-components)
+
 </p></details>
 
 - [ ] **Hooks**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Presentando Hooks - Documentación oficial](https://es.react.dev/reference/react)
+   * [Presentando Hooks - Documentación oficial](https://es.react.dev/reference/react)
+
 </p></details>
 
 - [ ] **CSS modules**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Adding a CSS Modules Stylesheet - Documentación de Create React App (en inglés)](https://vitejs.dev/guide/features.html#css-modules)
+   * [Adding a CSS Modules Stylesheet - Documentación de Create React App (en inglés)](https://vitejs.dev/guide/features.html#css-modules)
+
+```plaintext { vsls_cell_id=a97e9d3a-75a1-4c40-8de4-28d9de24c668 }
+
+```
+
 </p></details>
 
 - [ ] **React Router**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Quick Start - Documentación oficial (en inglés)](https://reactrouter.com/en/main/start/tutorial)
+   * [Quick Start - Documentación oficial (en inglés)](https://reactrouter.com/en/main/start/tutorial)
+
 </p></details>
 
 ### Vue
 
 - [ ] **Instancia de Vue.js**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [La instancia Vue - Documentación oficial](https://es.vuejs.org/v2/guide/instance.html)
+   * [La instancia Vue - Documentación oficial](https://es.vuejs.org/v2/guide/instance.html)
+
 </p></details>
 
 - [ ] **Datos y métodos**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Datos y Métodos - Documentación oficial](https://es.vuejs.org/v2/guide/instance.html#Datos-y-Metodos)
+   * [Datos y Métodos - Documentación oficial](https://es.vuejs.org/v2/guide/instance.html#Datos-y-Metodos)
+
 </p></details>
 
 - [ ] **Uso y creación de componentes**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Conceptos Básicos de Componentes - Documentación oficial](https://es.vuejs.org/v2/guide/components.html)
+   * [Conceptos Básicos de Componentes - Documentación oficial](https://es.vuejs.org/v2/guide/components.html)
+
 </p></details>
 
 - [ ] **Props**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Pasando datos a componentes secundarios con Props - Documentación oficial](https://es.vuejs.org/v2/guide/components.html#Pasando-datos-a-componentes-secundarios-con-Props)
+   * [Pasando datos a componentes secundarios con Props - Documentación oficial](https://es.vuejs.org/v2/guide/components.html#Pasando-datos-a-componentes-secundarios-con-Props)
+
 </p></details>
 
 - [ ] **Directivas (v-bind | v-model)**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [v-bind - Documentación oficial](https://es.vuejs.org/v2/api/#v-bind)
-  * [Binding en Formularios - Documentación oficial](https://es.vuejs.org/v2/guide/forms.html)
+   * [v-bind - Documentación oficial](https://es.vuejs.org/v2/api/#v-bind)
+   * [Binding en Formularios - Documentación oficial](https://es.vuejs.org/v2/guide/forms.html)
+
 </p></details>
 
 - [ ] **Iteración (v-for)**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Mapeando una matriz a elementos con v-for - Documentación oficial](https://es.vuejs.org/v2/guide/list.html#Mapeando-una-matriz-a-elementos-con-v-for)
+   * [Mapeando una matriz a elementos con v-for - Documentación oficial](https://es.vuejs.org/v2/guide/list.html#Mapeando-una-matriz-a-elementos-con-v-for)
+
 </p></details>
 
 - [ ] **Eventos (v-on)**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Manejo de eventos - Documentación oficial](https://es.vuejs.org/v2/guide/events.html)
+   * [Manejo de eventos - Documentación oficial](https://es.vuejs.org/v2/guide/events.html)
+
 </p></details>
 
 - [ ] **Propiedades Computadas y Observadores**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Propiedades Computadas y Observadores](https://es.vuejs.org/v2/guide/computed.html)
+   * [Propiedades Computadas y Observadores](https://es.vuejs.org/v2/guide/computed.html)
+
 </p></details>
 
 - [ ] **Routing**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Getting Started - Documentación oficial de Vue Router](https://router.vuejs.org/guide/#html)
+   * [Getting Started - Documentación oficial de Vue Router](https://router.vuejs.org/guide/#html)
+
 </p></details>
 
 - [ ] **Clases y Estilos**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Enlace Clases y Estilos - Documentación oficial](https://es.vuejs.org/v2/guide/class-and-style.html)
+   * [Enlace Clases y Estilos - Documentación oficial](https://es.vuejs.org/v2/guide/class-and-style.html)
+
 </p></details>
 
 ### Bases de datos
@@ -481,17 +528,17 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 ### Diseño de producto
 
 - [ ] **Crear prototipos de alta fidelidad que incluyan interacciones**
-
 - [ ] **Seguir los principios básicos de diseño visual**
 
 ### Investigación
 
 - [ ] **Planear y ejecutar testeos de usabilidad de prototipos en distintos niveles de fidelidad**
 
-  <details><summary>Links</summary><p>
+     <details><summary>Links</summary><p>
 
-  * [Intro a testeos usabilidad](https://coda.io/@bootcamp-laboratoria/contenido-ux/test-de-usabilidad-15)
-  * [Pruebas con Usuarios 1 — ¿Qué, cuándo y para qué testeamos?](https://eugeniacasabona.medium.com/pruebas-con-usuarios-1-qu%C3%A9-cu%C3%A1ndo-y-para-qu%C3%A9-testeamos-7c3a89b4b5e7)
+   * [Intro a testeos usabilidad](https://coda.io/@bootcamp-laboratoria/contenido-ux/test-de-usabilidad-15)
+   * [Pruebas con Usuarios 1 — ¿Qué, cuándo y para qué testeamos?](https://eugeniacasabona.medium.com/pruebas-con-usuarios-1-qu%C3%A9-cu%C3%A1ndo-y-para-qu%C3%A9-testeamos-7c3a89b4b5e7)
+
 </p></details>
 
 ## 4. Consideraciones
@@ -514,12 +561,12 @@ En este proyecto Sí está permitido usar librerías o frameworks
 [Angular](https://angular.io/)).
 
 La aplicación debe ser un _Single Page App_. Los pedidos los tomaremos desde una
-_tablet_, pero **no queremos una app nativa**, sino una web app que sea
-**mobile-first**.
+_tablet_, pero __no queremos una app nativa__, sino una web app que sea
+__mobile-first__.
 
 Necesitamos pensar bien en el aspecto UX de de quienes van a tomar los pedidos,
- el tamaño y aspecto de los botones, la visibilidad del estado actual del
- pedido, etc.
+el tamaño y aspecto de los botones, la visibilidad del estado actual del
+pedido, etc.
 
 La aplicación desplegada debe tener 80% o más el las puntuaciones de
 Performance, Progressive Web App, Accessibility y Best Practices de Lighthouse.
@@ -543,7 +590,7 @@ El [_Product Owner_](https://www.youtube.com/watch?v=r2hU7MVIzxs&t=202s)
 nos presenta este _backlog_ que es el resultado de su trabajo con el clientx
 hasta hoy.
 
-***
+---
 
 #### [Historia de usuario 1] Mesero/a debe poder ingresar al sistema, si el admin ya le ha asignado credenciales
 
@@ -556,7 +603,7 @@ Lo que debe ocurrir para que se satisfagan las necesidades del usuario.
 * Acceder a una pantalla de login.
 * Ingresar email y contraseña.
 * Recibir mensajes de error comprensibles, dependiendo de cuál es el error
-  con la información ingresada.
+   con la información ingresada.
 * Ingresar al sistema de pedidos si las crendenciales son correctas.
 
 ##### Definición de terminado
@@ -568,7 +615,7 @@ Lo acordado que debe ocurrir para decir que la historia está terminada.
 * Hiciste _tests_ de usabilidad e incorporaste el _feedback_ del usuario.
 * Desplegaste tu aplicación y has etiquetado tu versión (git tag).
 
-***
+---
 
 #### [Historia de usuario 2] Mesero/a debe poder tomar pedido de cliente/a
 
@@ -596,7 +643,7 @@ Lo acordado que debe ocurrir para decir que la historia está terminada.
 * Hiciste _tests_ de usabilidad e incorporaste el _feedback_ del usuario.
 * Desplegaste tu aplicación y has etiquetado tu versión (git tag).
 
-***
+---
 
 #### [Historia de usuario 3] Jefe de cocina debe ver los pedidos
 
@@ -609,7 +656,7 @@ que un pedido está listo para servirlo a un clientx.
 * Ver los pedidos ordenados según se van haciendo.
 * Marcar los pedidos que se han preparado y están listos para servirse.
 * Ver el tiempo que tomó prepara el pedido desde que llegó hasta que se
-  marcó como completado.
+   marcó como completado.
 
 ##### Definición de terminado
 
@@ -618,7 +665,7 @@ que un pedido está listo para servirlo a un clientx.
 * Hiciste _tests_ de usabilidad e incorporaste el _feedback_ del usuario.
 * Desplegaste tu aplicación y has etiquetado tu versión (git tag).
 
-***
+---
 
 #### [Historia de usuario 4] Meserx debe ver pedidos listos para servir
 
@@ -637,9 +684,9 @@ rápidamente a lxs clientxs que las hicieron.
 * Hiciste _tests_ de usabilidad e incorporaste el _feedback_ del usuario.
 * Desplegaste tu aplicación y has etiquetado tu versión (git tag).
 * Los datos se deben mantener íntegros, incluso después de que un pedido ha
-  terminado. Todo esto para poder tener estadísticas en el futuro.
+   terminado. Todo esto para poder tener estadísticas en el futuro.
 
-***
+---
 
 #### [Historia de usuario 5] Administrador(a) de tienda debe administrar a sus trabajadorxs
 
@@ -660,7 +707,7 @@ la plataforma para mantener actualizado la informacion de mis trabajadorxs.
 * Hiciste _tests_ de usabilidad e incorporaste el _feedback_ del usuario.
 * Desplegaste tu aplicación y has etiquetado tu versión (git tag).
 
-***
+---
 
 #### [Historia de usuario 6] Administrador(a) de tienda debe administrar a sus productos
 
@@ -681,7 +728,7 @@ para mantener actualizado el menú.
 * Hiciste _tests_ de usabilidad e incorporaste el _feedback_ del usuario.
 * Desplegaste tu aplicación y has etiquetado tu versión (git tag).
 
-***
+---
 
 ## 6. Despliegue
 
@@ -691,13 +738,13 @@ Recuerda que si mockeaste la API, también tienes que desplegarla.
 Te recomendamos explorar las siguientes opciones:
 
 * [Vercel](https://vercel.com/) es una plataforma de _despliegue_ que
-nos permite desplegar nuestra aplicación web estática (HTML, CSS y
-JavaScript) y también nos permite desplegar aplicaciones web que se
-ejecutan en el servidor (Node.js).
+   nos permite desplegar nuestra aplicación web estática (HTML, CSS y
+   JavaScript) y también nos permite desplegar aplicaciones web que se
+   ejecutan en el servidor (Node.js).
 * [Netlify](https://www.netlify.com/) al igual que Vercel, es una
-plataforma de _despliegue_ que nos permite desplegar nuestra aplicación
-web estática (HTML, CSS y JavaScript) y también nos permite desplegar
-aplicaciones web que se ejecutan en el servidor (Node.js).
+   plataforma de _despliegue_ que nos permite desplegar nuestra aplicación
+   web estática (HTML, CSS y JavaScript) y también nos permite desplegar
+   aplicaciones web que se ejecutan en el servidor (Node.js).
 
 ## 7. Pistas / Tips
 
