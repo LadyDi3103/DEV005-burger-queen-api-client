@@ -113,7 +113,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Uso de HTML semántico**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [HTML semántico](https://curriculum.laboratoria.la/es/topics/html/02-html5/02-semantic-html)
    * [Semantics - MDN Web Docs Glossary](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
@@ -124,7 +124,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Uso de selectores de CSS**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Intro a CSS](https://curriculum.laboratoria.la/es/topics/css/01-css/01-intro-css)
    * [CSS Selectors - MDN](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Selectors)
@@ -133,7 +133,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Modelo de caja (box model): borde, margen, padding**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Box Model & Display](https://curriculum.laboratoria.la/es/topics/css/01-css/02-boxmodel-and-display)
    * [The box model - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
@@ -145,7 +145,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Uso de flexbox en CSS**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [A Complete Guide to Flexbox - CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
    * [Flexbox Froggy](https://flexboxfroggy.com/#es)
@@ -155,7 +155,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Uso de CSS Grid Layout**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [A Complete Guide to Grid - CSS Tricks](https://css-tricks.com/snippets/css/complete-guide-grid/)
    * [Grids - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids)
@@ -164,7 +164,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Uso de media queries**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [CSS media queries - MDN](https://developer.mozilla.org/es/docs/CSS/Media_queries)
 
@@ -174,7 +174,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Pruebas unitarias (unit tests)**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Empezando con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/getting-started)
 
@@ -182,7 +182,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Pruebas asíncronas**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Tests de código asincrónico con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/asynchronous)
 
@@ -190,7 +190,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Uso de mocks y espías**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Manual Mocks con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/manual-mocks)
 
@@ -198,7 +198,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Módulos de ECMAScript (ES Modules)**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [import - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/import)
    * [export - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/export)
@@ -216,7 +216,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 - [ ] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**
 - [ ] **GitHub: Despliegue con GitHub Pages**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Sitio oficial de GitHub Pages](https://pages.github.com/)
 
@@ -233,7 +233,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Consulta o petición (request) y respuesta (response).**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Generalidades del protocolo HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Overview)
    * [Mensajes HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Messages)
@@ -242,7 +242,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Cabeceras (headers)**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [HTTP headers - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Headers)
 
@@ -250,7 +250,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Cuerpo (body)**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Cuerpo de Mensajes HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Messages#cuerpo)
 
@@ -258,7 +258,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Verbos HTTP**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Métodos de petición HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Methods)
 
@@ -266,7 +266,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Códigos de status de HTTP**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Códigos de estado de respuesta HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Status)
    * [The Complete Guide to Status Codes for Meaningful ReST APIs - dev.to](https://dev.to/khaosdoctor/the-complete-guide-to-status-codes-for-meaningful-rest-apis-1-5c5)
@@ -275,7 +275,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Encodings y JSON**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Introducción a JSON - Documentación oficial](https://www.json.org/json-es.html)
 
@@ -283,7 +283,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **CORS (Cross-Origin Resource Sharing)**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Control de acceso HTTP (CORS) - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/CORS)
 
@@ -293,7 +293,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Components & templates**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Angular Components Overview - Documentación oficial (en inglés)](https://angular.io/guide/component-overview)
    * [Introduction to components and templates - Documentación oficial (en inglés)](https://angular.io/guide/architecture-components#introduction-to-components)
@@ -302,7 +302,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Directivas estructurales (ngIf / ngFor)**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Writing structural directives - Documentación oficial (en inglés)](https://angular.io/guide/structural-directives)
 
@@ -310,7 +310,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **@Input | @Output**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Component interaction - Documentación oficial (en inglés)](https://angular.io/guide/component-interaction#component-interaction)
 
@@ -318,7 +318,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Creación y uso de servicios**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Providing services - Documentación oficial (en inglés)](https://angular.io/guide/architecture-services#providing-services)
 
@@ -326,7 +326,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Manejo de rutas**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [In-app navigation: routing to views - Documentación oficial (en inglés)](https://angular.io/guide/router)
 
@@ -334,7 +334,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Creación y uso de Observables.**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Observables in Angular - Documentación oficial (en inglés)](https://angular.io/guide/observables-in-angular)
 
@@ -342,7 +342,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Uso de HttpClient**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Communicating with backend services using HTTP - Documentación oficial (en inglés)](https://angular.io/guide/http)
 
@@ -350,7 +350,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Estilos de componentes (ngStyle / ngClass)**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Template syntax - Documentación oficial (en inglés)](https://angular.io/guide/template-syntax#built-in-directives)
 
@@ -360,7 +360,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **JSX**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Presentando JSX - Documentación oficial](https://es.react.dev/learn/writing-markup-with-jsx)
 
@@ -368,7 +368,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Componentes y propiedades (props)**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Componentes y propiedades - Documentación oficial](https://es.react.dev/learn/passing-props-to-a-component)
 
@@ -376,7 +376,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Manejo de eventos**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Manejando eventos - Documentación oficial](https://es.react.dev/learn/responding-to-events)
 
@@ -384,7 +384,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Listas y keys**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Listas y keys - Documentación oficial](https://es.react.dev/learn/rendering-lists)
 
@@ -392,7 +392,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Renderizado condicional**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Renderizado condicional - Documentación oficial](https://es.react.dev/learn/conditional-rendering)
 
@@ -400,7 +400,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Elevación de estado**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Levantando el estado - Documentación oficial](https://es.react.dev/learn/sharing-state-between-components)
 
@@ -408,7 +408,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Hooks**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Presentando Hooks - Documentación oficial](https://es.react.dev/reference/react)
 
@@ -416,7 +416,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **CSS modules**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Adding a CSS Modules Stylesheet - Documentación de Create React App (en inglés)](https://vitejs.dev/guide/features.html#css-modules)
 
@@ -428,7 +428,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **React Router**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Quick Start - Documentación oficial (en inglés)](https://reactrouter.com/en/main/start/tutorial)
 
@@ -438,7 +438,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Instancia de Vue.js**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [La instancia Vue - Documentación oficial](https://es.vuejs.org/v2/guide/instance.html)
 
@@ -446,7 +446,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Datos y métodos**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Datos y Métodos - Documentación oficial](https://es.vuejs.org/v2/guide/instance.html#Datos-y-Metodos)
 
@@ -454,7 +454,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Uso y creación de componentes**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Conceptos Básicos de Componentes - Documentación oficial](https://es.vuejs.org/v2/guide/components.html)
 
@@ -462,7 +462,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Props**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Pasando datos a componentes secundarios con Props - Documentación oficial](https://es.vuejs.org/v2/guide/components.html#Pasando-datos-a-componentes-secundarios-con-Props)
 
@@ -470,7 +470,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Directivas (v-bind | v-model)**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [v-bind - Documentación oficial](https://es.vuejs.org/v2/api/#v-bind)
    * [Binding en Formularios - Documentación oficial](https://es.vuejs.org/v2/guide/forms.html)
@@ -479,7 +479,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Iteración (v-for)**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Mapeando una matriz a elementos con v-for - Documentación oficial](https://es.vuejs.org/v2/guide/list.html#Mapeando-una-matriz-a-elementos-con-v-for)
 
@@ -487,7 +487,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Eventos (v-on)**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Manejo de eventos - Documentación oficial](https://es.vuejs.org/v2/guide/events.html)
 
@@ -495,7 +495,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Propiedades Computadas y Observadores**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Propiedades Computadas y Observadores](https://es.vuejs.org/v2/guide/computed.html)
 
@@ -503,7 +503,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Routing**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Getting Started - Documentación oficial de Vue Router](https://router.vuejs.org/guide/#html)
 
@@ -511,7 +511,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Clases y Estilos**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Enlace Clases y Estilos - Documentación oficial](https://es.vuejs.org/v2/guide/class-and-style.html)
 
@@ -534,7 +534,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Planear y ejecutar testeos de usabilidad de prototipos en distintos niveles de fidelidad**
 
-     <details><summary>Links</summary><p>
+      <details><summary>Links</summary><p>
 
    * [Intro a testeos usabilidad](https://coda.io/@bootcamp-laboratoria/contenido-ux/test-de-usabilidad-15)
    * [Pruebas con Usuarios 1 — ¿Qué, cuándo y para qué testeamos?](https://eugeniacasabona.medium.com/pruebas-con-usuarios-1-qu%C3%A9-cu%C3%A1ndo-y-para-qu%C3%A9-testeamos-7c3a89b4b5e7)
