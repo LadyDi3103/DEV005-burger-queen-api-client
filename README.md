@@ -41,10 +41,10 @@ BurgerApp es un sistema de pedidos diseñado para satisfacer las necesidades del
 
 <table>
   <tr>
-    <td style = 'width :50%'>
+    <td style = 'width :70%'>
       <img src="https://github.com/LadyDi3103/DEV005-burger-queen-api-client/blob/main/Burger-Queen-Api-Client/src/assets/img/waiter.png?raw=true" alt="Descripción de la imagen">
     </td>
-    <td style = 'width :50%'>
+    <td style = 'width :30%'>
       La interfaz muestra de manera clara y organizada los dos menús disponibles: Breakfast y Meals, con todos sus productos. Los meseros/as pueden ir seleccionando los productos que desean agregar al pedido de los comensales, y la interfaz irá mostrando un resumen detallado del pedido, así como realizar modificaciones o cancelaciones en caso de que el cliente cambie de opinión. Una vez que el pedido esté completo, se enviará automáticamente a la cocina para su preparación.
     </td>
   </tr>
