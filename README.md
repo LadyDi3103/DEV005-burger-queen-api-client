@@ -5,9 +5,9 @@
 * [1. Preámbulo](#1-preámbulo)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
 * [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
-* [5. Historias de usuario](#5-historias-de-usuario)
-* [6. Despliegue](#6-despliegue)
-* [7. Pistas / tips](#7-pistas--tips)
+* [4. Historias de usuario](#5-historias-de-usuario)
+* [5. Despliegue](#6-despliegue)
+* [6. Pistas / tips](#7-pistas--tips)
 
 ## 1. Preámbulo
 
@@ -34,19 +34,21 @@ los que trabajamos.
 
 BurgerApp es un sistema de pedidos diseñado para satisfacer las necesidades del cliente, ofreciendo una experiencia culinaria más rápida y satisfactoria.
 
-![burger-queen-mockup](https://github.com/LadyDi3103/DEV005-burger-queen-api-client/blob/main/Burger-Queen-Api-Client/src/assets/img/Infograf%C3%ADa%20de%20L%C3%ADnea%20de%20Tiempo%20Timeline%20con%20Fechas%20Profesional%20Moderno%20Multicolor.png?raw=true)
+![burger-queen-mockup](https://github.com/LadyDi3103/DEV005-burger-queen-api-client/blob/main/Burger-Queen-Api-Client/src/assets/img/mockup%20proyecto.png?raw=true)
 
-La interfaz muestra de manera clara y organizada los dos menús disponibles: desayuno y resto del día, con todos sus productos. Los clientes pueden ir seleccionando los productos que desean agregar a su pedido, y la interfaz irá mostrando un resumen detallado del pedido, incluido el costo total.
+La interfaz muestra de manera clara y organizada los dos menús disponibles: Breakfast y Meals, con todos sus productos. Los meseros/as pueden ir seleccionando los productos que desean agregar al pedido de los comensales, y la interfaz irá mostrando un resumen detallado del pedido, así como realizar modificaciones o cancelaciones en caso de que el cliente cambie de opinión. Una vez que el pedido esté completo, se enviará automáticamente a la cocina para su preparación.
+
+![burger-queen-mocku-waiter](https://github.com/LadyDi3103/DEV005-burger-queen-api-client/blob/main/Burger-Queen-Api-Client/src/assets/img/mockup%20proyecto.png?raw=true)
+
 El equipo de cocina se beneficia significativamente de BurgerApp, ya que reciben los pedidos en tiempo real, lo que les permite comenzar a preparar las hamburguesas de inmediato. Esto ha optimizado los tiempos de preparación y ha agilizado la entrega de los pedidos a los clientes, garantizando una experiencia culinaria más rápida y satisfactoria.
-Además, el sistema cuenta con una funcionalidad de administrador que permite la modificación y eliminación de productos y usuarios, lo que facilita la gestión y actualización de la plataforma.
-En resumen, BurgerApp es un proyecto innovador que combina una interfaz amigable y funcional para los meseros y clientes, con una API eficiente para optimizar los procesos de cocina y entrega de pedidos. Ofrece una solución integral para el restaurante, mejorando la experiencia del cliente y aumentando la eficiencia operativa
 
-foto
+![burger-queen-mocku-chef](https://github.com/LadyDi3103/DEV005-burger-queen-api-client/blob/main/Burger-Queen-Api-Client/src/assets/img/mockup%20proyecto.png?raw=true)
 
-El proyecto se divide en dos áreas: la interfaz del cliente y la API del servidor.
+Además, el sistema cuenta con una funcionalidad de administrador que permite la modificación, administración y eliminación de productos y usuarios, lo que facilita la gestión y actualización de la plataforma.
 
-* La interfaz del cliente tiene como objetivo facilitar el proceso de toma de pedidos para los meseros.
-* A través de la integración con la API mediante peticiones HTTP, el mesero puede tomar pedidos de los clientes, así como realizar modificaciones o cancelaciones en caso de que el cliente cambie de opinión. Una vez que el pedido esté completo, se enviará automáticamente a la cocina para su preparación.
+![burger-queen-mocku-admin](https://github.com/LadyDi3103/DEV005-burger-queen-api-client/blob/main/Burger-Queen-Api-Client/src/assets/img/mockup%20proyecto.png?raw=true)
+
+En resumen, BurgerApp es un proyecto innovador que combina una interfaz amigable y funcional para los meseros, chefs y administradores, con una API eficiente para optimizar los procesos de cocina y entrega de pedidos. Ofrece una solución integral para el restaurante, mejorando la experiencia del cliente y aumentando la eficiencia operativa del restaurant.
 
 ## 3. Objetivos de aprendizaje
 
@@ -122,3 +124,7 @@ El proyecto se divide en dos áreas: la interfaz del cliente y la API del servid
 ## 4. Historias de Usuario
 
 ![burger-queen-users-history](https://github.com/LadyDi3103/DEV005-burger-queen-api-client/blob/main/Burger-Queen-Api-Client/src/assets/img/Infograf%C3%ADa%20de%20L%C3%ADnea%20de%20Tiempo%20Timeline%20con%20Fechas%20Profesional%20Moderno%20Multicolor.png?raw=true)
+
+## 5. Despliegue
+
+## 6. Pistas / tips
