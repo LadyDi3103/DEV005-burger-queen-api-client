@@ -1,5 +1,9 @@
-<p>
-  <h1 style = 'text-align:center'>Burger Queen (API Client)</h1>
+<p align="center">
+<img src="https://github.com/LadyDi3103/DEV005-burger-queen-api-client/blob/main/Burger-Queen-Api-Client/src/assets/img/LogoBurguerSmall.png?raw=true" alt="logo-pequeño"  height="350" width ="500">
+</p>
+
+<p align="center">
+  <h1 align="center">Burger Queen (API Client)</h1>
 </p>
 
 ## Índice
@@ -41,10 +45,10 @@ BurgerApp es un sistema de pedidos diseñado para satisfacer las necesidades del
 
 <table>
   <tr>
-    <td style = 'width :50%'>
+    <td width="550">
       <img src="https://github.com/LadyDi3103/DEV005-burger-queen-api-client/blob/main/Burger-Queen-Api-Client/src/assets/img/waiter.png?raw=true" alt="Descripción de la imagen">
     </td>
-    <td style = 'width :50%'>
+    <td width="550">
       La interfaz muestra de manera clara y organizada los dos menús disponibles: Breakfast y Meals, con todos sus productos. Los meseros/as pueden ir seleccionando los productos que desean agregar al pedido de los comensales, y la interfaz irá mostrando un resumen detallado del pedido, así como realizar modificaciones o cancelaciones en caso de que el cliente cambie de opinión. Una vez que el pedido esté completo, se enviará automáticamente a la cocina para su preparación.
     </td>
   </tr>
@@ -52,22 +56,27 @@ BurgerApp es un sistema de pedidos diseñado para satisfacer las necesidades del
 
 <table>
   <tr>
-    <td style = 'width :50%'>
+    <td  width="550">
       El equipo de cocina se beneficia significativamente de BurgerApp, ya que reciben los pedidos en tiempo real, lo que les permite comenzar a preparar las hamburguesas de inmediato. Esto ha optimizado los tiempos de preparación y ha agilizado la entrega de los pedidos a los clientes, garantizando una experiencia culinaria más rápida y satisfactoria.
     </td>
-    <td style = 'width :50%'>
+    <td  width="550">
           <img src="https://github.com/LadyDi3103/DEV005-burger-queen-api-client/blob/main/Burger-Queen-Api-Client/src/assets/img/chef.png?raw=true" alt="burger-queen-mockup-chef">
     </td>
   </tr>
 </table>
 
-Además, el sistema cuenta con una funcionalidad de administrador que permite la modificación, administración y eliminación de productos y usuarios, lo que facilita la gestión y actualización de la plataforma.
+Además, el sistema cuenta con una funcionalidad de administrador que permite la modificación, administración y eliminación de productos asi como de usuarios, lo que facilita la gestión y actualización de la plataforma.
 
-![burger-queen-mocku-admin1](https://github.com/LadyDi3103/DEV005-burger-queen-api-client/blob/main/Burger-Queen-Api-Client/src/assets/img/admin1.png?raw=true)![burger-queen-mocku-admin2](https://github.com/LadyDi3103/DEV005-burger-queen-api-client/blob/main/Burger-Queen-Api-Client/src/assets/img/admin2.png?raw=true)
-
-En resumen, BurgerApp es un proyecto innovador que combina una interfaz amigable y funcional para los meseros, chefs y administradores, con una API eficiente para optimizar los procesos de cocina y entrega de pedidos. Ofrece una solución integral para el restaurante, mejorando la experiencia del cliente y aumentando la eficiencia operativa del restaurant.
-
-foto
+<table>
+  <tr>
+    <td  width="550">
+          <img src="https://github.com/LadyDi3103/DEV005-burger-queen-api-client/blob/main/Burger-Queen-Api-Client/src/assets/img/admin1.png?raw=true" alt="burger-queen-mockup-admin1">
+    </td>
+    <td  width="550">
+          <img src="https://github.com/LadyDi3103/DEV005-burger-queen-api-client/blob/main/Burger-Queen-Api-Client/src/assets/img/admin2.png?raw=true" alt="burger-queen-mockup-admin2">
+    </td>
+  </tr>
+</table>
 
 ## 3. Objetivos de aprendizaje
 
