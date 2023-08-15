@@ -11,9 +11,8 @@
 * [1. Preámbulo](#1-preámbulo)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
 * [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
-* [4. Historias de usuario](#5-historias-de-usuario)
-* [5. Despliegue](#6-despliegue)
-* [6. Pistas / tips](#7-pistas--tips)
+* [4. Historias de usuario](#4-historias-de-usuario)
+* [5. Despliegue](#5-despliegue)
 
 ## 1. Preámbulo
 
@@ -41,7 +40,6 @@ los que trabajamos.
 BurgerApp es un sistema de pedidos diseñado para satisfacer las necesidades del cliente, ofreciendo una experiencia culinaria más rápida y satisfactoria.
 
 ![burger-queen-mockup](https://github.com/LadyDi3103/DEV005-burger-queen-api-client/blob/main/Burger-Queen-Api-Client/src/assets/img/mockup%20proyecto.png?raw=true)
-
 
 <table>
   <tr>
@@ -82,72 +80,63 @@ Además, el sistema cuenta con una funcionalidad de administrador que permite la
 
 ### HTML
 
-- [ ] **Uso de HTML semántico**
+- [✨] **Uso de HTML semántico**
 
 ### CSS
 
-- [ ] **Uso de selectores de CSS**
-- [ ] **Modelo de caja (box model): borde, margen, padding**
-- [ ] **Uso de flexbox en CSS**
-- [ ] **Uso de CSS Grid Layout**
-- [ ] **Uso de media queries**
-
-### JAVASCRIPT
-
-- [ ] **Pruebas unitarias (unit tests)**
-- [ ] **Pruebas asíncronas**
-- [ ] **Uso de mocks y espías**
-- [ ] **Módulos de ECMAScript (ES Modules)**
-- [ ] **Uso de linter (ESLINT)**
-- [ ] **Uso de identificadores descriptivos (Nomenclatura y Semántica)**
+- [✨] **Uso de selectores de CSS**
+- [✨] **Modelo de caja (box model): borde, margen, padding**
+- [✨] **Uso de flexbox en CSS**
+- [✨] **Uso de CSS Grid Layout**
+- [✨] **Uso de media queries**
 
 ### Control de Versiones (Git y GitHub)
 
-- [ ] **Git: Instalación y configuración**
-- [ ] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
-- [ ] **Git: Integración de cambios entre ramas (branch, checkout, fetch, merge, reset, rebase, tag)**
-- [ ] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**
-- [ ] **GitHub: Despliegue con GitHub Pages**
-- [ ] **GitHub: Colaboración en Github (branches | forks | pull requests | code review | tags)**
-- [ ] **GitHub: Organización en Github (projects | issues | labels | milestones | releases)**
+- [✨] **Git: Instalación y configuración**
+- [✨] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
+- [✨] **Git: Integración de cambios entre ramas (branch, checkout, fetch, merge, reset, rebase, tag)**
+- [✨] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**
+- [✨] **GitHub: Despliegue con GitHub Pages**
+- [✨] **GitHub: Colaboración en Github (branches | forks | pull requests | code review | tags)**
+- [✨] **GitHub: Organización en Github (projects | issues | labels | milestones | releases)**
 
 ### HTTP
 
-- [ ] **Consulta o petición (request) y respuesta (response).**
-- [ ] **Cabeceras (headers)**
-- [ ] **Cuerpo (body)**
-- [ ] **Verbos HTTP**
-- [ ] **Códigos de status de HTTP**
-- [ ] **Encodings y JSON**
-- [ ] **CORS (Cross-Origin Resource Sharing)**
+- [✨] **Consulta o petición (request) y respuesta (response).**
+- [✨] **Cabeceras (headers)**
+- [✨] **Cuerpo (body)**
+- [✨] **Verbos HTTP**
+- [✨] **Códigos de status de HTTP**
+- [✨] **Encodings y JSON**
+- [✨] **CORS (Cross-Origin Resource Sharing)**
 
 ### Angular
 
-- [ ] **Components & templates**
-- [ ] **Directivas estructurales (ngIf / ngFor)**
-- [ ] **@Input | @Output**
-- [ ] **Creación y uso de servicios**
-- [ ] **Manejo de rutas**
-- [ ] **Creación y uso de Observables.**
-- [ ] **Uso de HttpClient**
-- [ ] **Estilos de componentes (ngStyle / ngClass)**
+- [✨] **Components & templates**
+- [✨] **Directivas estructurales (ngIf / ngFor)**
+- [✨] **@Input | @Output**
+- [✨] **Creación y uso de servicios**
+- [✨] **Manejo de rutas**
+- [✨] **Creación y uso de Observables.**
+- [✨] **Uso de HttpClient**
+- [✨] **Estilos de componentes (ngStyle / ngClass)**
 
 ### Bases de datos
 
-- [ ] **Modelado de datos**
+- [✨] **Modelado de datos**
 
 ### Centrado en el usuario
 
-- [ ] **Diseñar y desarrollar un producto o servicio poniendo a las usuarias en el centro**
+- [✨] **Diseñar y desarrollar un producto o servicio poniendo a las usuarias en el centro**
 
 ### Diseño de producto
 
-- [ ] **Crear prototipos de alta fidelidad que incluyan interacciones**
-- [ ] **Seguir los principios básicos de diseño visual**
+- [✨] **Crear prototipos de alta fidelidad que incluyan interacciones**
+- [✨] **Seguir los principios básicos de diseño visual**
 
 ### Investigación
 
-- [ ] **Planear y ejecutar testeos de usabilidad de prototipos en distintos niveles de fidelidad**
+- [✨] **Planear y ejecutar testeos de usabilidad de prototipos en distintos niveles de fidelidad**
 
 ## 4. Historias de Usuario
 
@@ -155,4 +144,14 @@ Además, el sistema cuenta con una funcionalidad de administrador que permite la
 
 ## 5. Despliegue
 
-## 6. Pistas / tips
+La interfaz fue desplegada usando Vercel: [Burger Queen App Desplegada](https://dev-005-burger-queen-api-client-rose.vercel.app/login)
+
+Puedes ingresar para visualizar el proyecto dándole click aquí ☝️☝️☝️  y se mostrará la interfaz del logín donde podrás ingresar con los siguientes usuarios y contraseñas.
+
+| Usuarios                  |Contraseña|
+|---------------------------|----------|
+| user.admin@systers.xyz    |  123456  |
+| user.chef@systers.xyz     |  123456  |
+| lady.waiter@systers.xyz   |  123456  |
+
+La apiMock fue desplegada usando Render : [Appi-Mock Desplegada](https://api-mock-laboratoria.onrender.com)
