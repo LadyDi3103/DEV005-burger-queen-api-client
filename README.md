@@ -143,15 +143,3 @@ Además, el sistema cuenta con una funcionalidad de administrador que permite la
 ![burger-queen-users-history](https://github.com/LadyDi3103/DEV005-burger-queen-api-client/blob/main/Burger-Queen-Api-Client/src/assets/img/Infograf%C3%ADa%20de%20L%C3%ADnea%20de%20Tiempo%20Timeline%20con%20Fechas%20Profesional%20Moderno%20Multicolor.png?raw=true)
 
 ## 5. Despliegue
-
-La interfaz fue desplegada usando Vercel: [Burger Queen App Desplegada](https://dev-005-burger-queen-api-client-rose.vercel.app/login)
-
-Puedes ingresar para visualizar el proyecto dándole click aquí ☝️☝️☝️  y se mostrará la interfaz del logín donde podrás ingresar con los siguientes usuarios y contraseñas.
-
-| Usuarios                  |Contraseña|
-|---------------------------|----------|
-| user.admin@systers.xyz    |  123456  |
-| user.chef@systers.xyz     |  123456  |
-| lady.waiter@systers.xyz   |  123456  |
-
-La apiMock fue desplegada usando Render : [Appi-Mock Desplegada](https://api-mock-laboratoria.onrender.com)
