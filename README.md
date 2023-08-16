@@ -146,7 +146,7 @@ Además, el sistema cuenta con una funcionalidad de administrador que permite la
 
 La interfaz fue desplegada usando Vercel: [Burger Queen App Desplegada](https://dev-005-burger-queen-api-client-rose.vercel.app/login)
 
-Puedes ingresar para visualizar el proyecto dándole click aquí ☝️☝️☝️  y se mostrará la interfaz del logín donde podrás ingresar con los siguientes usuarios y contraseñas.
+Puedes ingresar para visualizar el proyecto dándole click ☝️☝️☝️  y se mostrará la interfaz del logín donde podrás ingresar con los siguientes usuarios y contraseñas.
 
 | Usuarios                  |Contraseña|
 |---------------------------|----------|
