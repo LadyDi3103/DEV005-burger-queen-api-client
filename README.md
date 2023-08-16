@@ -168,13 +168,13 @@ Cada paso ha sido una oportunidad para aprender y crecer, no solo en términos d
 <table>
   <tr>
     <td  width="550">
-          <img src="https://github.com/LadyDi3103/DEV005-burger-queen-api-client/blob/main/Burger-Queen-Api-Client/src/assets/img/admin1.png?raw=true" alt="burger-queen-mockup-admin1">
+          <img src="https://github.com/LadyDi3103/DEV005-burger-queen-api-client/blob/main/Burger-Queen-Api-Client/src/assets/img/lady-diana-front-end-developer.png?raw=true" alt="lady-diana-front-end-developer">
           <p align= "center">
           <a href="https://github.com/LadyDi3103">Link-GitHub Diana Quispe</a>
           </p>
     </td>
     <td  width="550">
-          <img src="https://github.com/LadyDi3103/DEV005-burger-queen-api-client/blob/main/Burger-Queen-Api-Client/src/assets/img/admin2.png?raw=true" alt="burger-queen-mockup-admin2">
+          <img src=https://github.com/LadyDi3103/DEV005-burger-queen-api-client/blob/main/Burger-Queen-Api-Client/src/assets/img/indira-davoin-luna-frontend-angular-desarrollo-web-cretividad-usabilidad-testing.png?raw=true alt="indira-davoin-front-end-developer">
           <p align= "center">
           <a href="https://github.com/HicoTico">Link-GitHub Indira Davoin</a>
           </p>
