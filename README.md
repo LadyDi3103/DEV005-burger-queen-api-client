@@ -13,6 +13,7 @@
 * [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
 * [4. Historias de usuario](#4-historias-de-usuario)
 * [5. Despliegue](#5-despliegue)
+* [6. Equipo de Desarrollo](#6-Equipo-de-desarrollo)
 
 ## 1. Preámbulo
 
@@ -155,3 +156,28 @@ Puedes ingresar para visualizar el proyecto dándole click aquí ☝️☝️☝
 | lady.waiter@systers.xyz   |  123456  |
 
 La apiMock fue desplegada usando Render : [Appi-Mock Desplegada](https://api-mock-laboratoria.onrender.com)
+
+## 6. Equipo de Desarrollo
+
+¡Hola🤚! Somos un equipo apasionado que ha unido 🤜fuerzas🤛 para darle vida a este proyecto. Valoramos la diversidad de ideas y experiencias ya que cada una de nosotras aporta un conjunto único de habilidades y perspectivas que enriquecen el proceso creativo✨.
+
+Nos hemos embarcado en este emocionante viaje de desarrollo colaborativo, utilizando herramientas como Live Share para el Pair-programming. Esta metodología nos ha permitido trabajar en estrecha coordinación, compartir ideas en tiempo real y superar obstáculos de manera eficiente.
+
+Cada paso ha sido una oportunidad para aprender y crecer, no solo en términos de desarrollo técnico, sino también en cuanto a habilidades de comunicación y trabajo en equipo🫂.
+
+<table>
+  <tr>
+    <td  width="550">
+          <img src="https://github.com/LadyDi3103/DEV005-burger-queen-api-client/blob/main/Burger-Queen-Api-Client/src/assets/img/admin1.png?raw=true" alt="burger-queen-mockup-admin1">
+          <p align= "center">
+          <a href="https://github.com/LadyDi3103">Link-GitHub Diana Quispe</a>
+          </p>
+    </td>
+    <td  width="550">
+          <img src="https://github.com/LadyDi3103/DEV005-burger-queen-api-client/blob/main/Burger-Queen-Api-Client/src/assets/img/admin2.png?raw=true" alt="burger-queen-mockup-admin2">
+          <p align= "center">
+          <a href="https://github.com/HicoTico">Link-GitHub Indira Davoin</a>
+          </p>
+    </td>
+  </tr>
+</table>
