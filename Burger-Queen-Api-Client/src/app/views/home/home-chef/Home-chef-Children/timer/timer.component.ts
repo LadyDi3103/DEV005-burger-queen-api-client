@@ -50,7 +50,7 @@ export class TimerComponent implements OnInit, OnChanges{
     hora2 = ( createTime).split(":"),
     t1 = new Date(),
     t2 = new Date();
- 
+
     t1.setHours(+hora1[0], +hora1[1], +hora1[2]);
     t2.setHours(+hora2[0], +hora2[1], +hora2[2]);
     
@@ -100,5 +100,4 @@ export class TimerComponent implements OnInit, OnChanges{
     const seconds = totalSeconds % 60;
     return `${hours}:${minutes}:${seconds}`;
   }
-
 }

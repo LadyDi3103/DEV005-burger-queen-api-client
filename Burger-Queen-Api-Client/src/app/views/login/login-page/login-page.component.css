@@ -9,16 +9,14 @@
         grid-template-columns: 50% 50%;
         background-image: url(../../../../assets/img/Breakfast_juice_red.png);
     }
+
     .btnLogin {
-        margin-top:10%;
-        /* margin-left: -50%; */
+        margin-top: 10%;
     }
 }
 
 .login-view {
     margin: auto;
-    /* padding: 0; */
-    /* background-color: #F72C25; */
     background-image: url(../../../../assets/img/LogoBackGround_landScape.png);
     background-position: center;
     background-size: 100% 100%;
@@ -35,7 +33,6 @@
 }
 
 .imgLogin {
-    /* display: block; */
     margin-right: auto;
     margin-left: auto;
     margin-top: 8%;
@@ -46,22 +43,16 @@
 .containerLogin {
     margin-right: auto;
     margin-left: auto;
-    /* margin-top: 5%; */
-    /* margin-block-end: 12%; */
-    /* background-color: blueviolet; */
     width: 500px;
     height: 400px;
-    /* margin-left: 140px; */
     font-size: 30px;
     display: flex;
-    /* flex-wrap: wrap; */
     flex-direction: column;
     justify-content: space-around;
     align-content: center;
 }
 
 .formLogin {
-    /* background-color: blue; */
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -79,13 +70,11 @@
     margin-block-start: 1%;
     margin-block-end: 5%;
     font-size: 20px;
-    /* opacity: 1; */
 }
 
 .containerBtn {
     display: flex;
     flex-wrap: wrap;
-    /* flex-direction: column; */
     align-content: center;
 }
 
@@ -101,18 +90,11 @@
     font-size: 25px;
     font-style: italic;
     justify-content: center;
-    /* align-self: center; */
 }
-/* .errorMessage{ */
-    /* background: blueviolet; */
-    /* justify-content: center; */
-/* } */
 
 .error-message {
-     /* background: red; */
-     display: flex;
-     flex-wrap: wrap;
-     /* flex-direction: column; */
-     justify-content:  center;
-     color: var(--color-1)
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: var(--color-1)
 }

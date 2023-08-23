@@ -48,12 +48,10 @@
       }
  
 .containerRender {
-  /* background: blue; */
   height: 400px;
   overflow-y: auto;
 }
 .order {
-  /* background: blue; */
   display: flex; 
   margin-top: 25px;
   margin-bottom: 25px;
@@ -65,14 +63,12 @@
   font-size: 20px;
  }
 .btnOrdered{
-  /* background: red; */
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   max-width: 100%;
 }
 .btnSubmit {
-  /* background-color: black; */
   background-color: var(--color-3);
   letter-spacing: 1.5px;
   width: 45%;
@@ -88,7 +84,6 @@
   text-shadow: 2px 2px var(--color-2);
 }
 .btnCancel {
-  /* background-color: black; */
   background-color: var(--color-6);
   letter-spacing: 1.5px;
   width: 45%;
@@ -121,13 +116,11 @@
   height: 30px;
 }
 .item{
-  /* background: red; */
   width: 60px;
   margin-left: 10px;
   margin-right: 5px;
 }
 .priceItem{
-  /* background: red; */
   width: 30px;
   margin-left: 10px;
   margin-right: 5px;
@@ -140,10 +133,8 @@
 }
 .material-symbols-outlined {
   margin-top: 2px;
-  /* position: absolute; */
   font-size: 35px;
   color: var(--color-2);
-  /* bottom: 5px; */
   right: 15px;
   transform: translateY(-25%);
   cursor: pointer;

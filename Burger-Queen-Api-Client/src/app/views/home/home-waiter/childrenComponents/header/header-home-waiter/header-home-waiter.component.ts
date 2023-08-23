@@ -23,6 +23,5 @@ exchangeMenu(menu: string) {
 
   onLogoutClick():void {
     this.loginService.logout();
-    // this.router.navigate(['/login']);
   }  
 }

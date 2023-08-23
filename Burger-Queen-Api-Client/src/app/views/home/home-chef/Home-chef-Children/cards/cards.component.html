@@ -2,14 +2,10 @@
 <hr />
 <label for="nOrder"><b>Order Id:</b> {{orderOne.id}}</label>
 <hr />
-<!-- <label for="nTable">N° Table: 03 </label>
-    <hr /> -->
+
 <label for="resumeOrder" class="resumeOrder"><b>Resume Order:</b></label>
 <div class="orderResume">
     <p *ngFor=" let item of orderOne.products"> {{item.qty}} {{item.product.name}}</p>
-    <!-- {{order.products}} -->
-    <!-- <span class="Number1"> {{orders.products.product.qty}} </span>
-        <span class="item">{{order.products.product.name}} </span> -->
 </div>
 
 <div class="containerBottom">
