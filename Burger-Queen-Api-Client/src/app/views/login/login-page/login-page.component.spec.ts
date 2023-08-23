@@ -3,6 +3,7 @@ import { LoginPageComponent } from './login-page.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { FormsModule, FormControl, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+
 describe('LoginPageComponent', () => {
   let component: LoginPageComponent; //instanciamiento 
   let fixture: ComponentFixture<LoginPageComponent>;

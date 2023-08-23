@@ -1,7 +1,7 @@
 import { Component, Output } from '@angular/core';
 import { OrderService } from 'src/app/services/OrderService/order.service';
 import { LoginModule } from '../../login/login.module';
-// import { findIndex } from 'rxjs';
+
 
 interface Product {
   id: number;
@@ -21,12 +21,8 @@ interface GetProduct {
   styleUrls: ['./home-waiter.component.css'],
 })
 export class HomeWaiterComponent {
-
-
   waiterName: string = 'Lady Diana';
   getProduct: GetProduct[] = [];
- 
-
 getData(product: Product) {
     const index = this.getProduct.findIndex(
       (item) => item.product.id === product.id
@@ -39,15 +35,12 @@ getData(product: Product) {
     } else {
       this.getProduct[index].qty++;
     }
-    // console.log(this.getProduct, 'linea 40')
   }
 clearOrderOnSubmit():void{
   this.getProduct = [];
 }
 getNewItem(value: any){
   this.getProduct = [];
-  // debugger
-// console.log(value, 'getting value de newItem HWC 44'); //NO RECIBE
 }
 
 }

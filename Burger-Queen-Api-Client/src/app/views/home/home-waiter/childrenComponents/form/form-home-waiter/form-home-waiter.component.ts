@@ -66,7 +66,7 @@ export class FormHomeWaiterComponent {
       status: 'pending',
       dataEntry: date,
     };
-    //Aquí hago un request a la api
+    //Se Hace un request a la api
     this.orderService.createOrder(orderData).subscribe({
       next: (resp) => {
         this.incrementOrderNumber()
@@ -83,7 +83,7 @@ export class FormHomeWaiterComponent {
 
   sendValue(): void {
     this.newEvent.emit(this.newItem);
-  } // lo envio vacio
+  } // Se envio vacio
 
   increase(product: GetProduct): void {
     product.qty += 1;
@@ -105,7 +105,7 @@ export class FormHomeWaiterComponent {
     number--;
     this.numOrder = number.toString().padStart(7, '0');
   }
-  // se asigna el valor total en totalCost
+  // se asigna el valor a total en totalCost
   calculateTotalCost(): number {
     this.totalCost = this.newItem.reduce((total, product) => total + (product.product.price * product.qty), 0);
     return this.totalCost;

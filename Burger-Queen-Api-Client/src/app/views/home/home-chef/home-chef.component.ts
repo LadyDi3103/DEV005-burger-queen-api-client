@@ -12,7 +12,6 @@ export class HomeChefComponent implements OnInit {
   chefName: string = 'IndiraDavoin';
   orders: any = '';
   selectedFilter: string = 'pending';
-  // dataEntry : Date;
   formattedDate: any = '';
   pendingOrders: any[] = [];
   deliveredOrders: any[] = [];
@@ -29,7 +28,6 @@ export class HomeChefComponent implements OnInit {
       next: (resp) => {
         console.log(resp);
         this.orders = resp; 
-        // 
         // this.sortOrders();
         this.filterCardsByStatus();
         // llamar nuevamente el método para actualizar ¿?

@@ -6,7 +6,6 @@ import { DataUser, DataProduct, DataUserEdit, DataProductEdit } from 'src/app/in
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteUserModalComponent } from './delete-user-modal/delete-user-modal.component';
 import { DeleteProductModalComponent } from './delete-product-modal/delete-product-modal.component';
-// import { EditProductModalComponent } from './edit-product-modal/edit-product-modal.component';
 interface Menu {
   drinks: Product[],
   brunch: Product[],
@@ -67,14 +66,11 @@ export class HomeAdminComponent {
       (resp) => {
         console.log(resp, 'VALIDA');
         this.getListUsers();
-        // this.form.reset(); // falta resetear el modal y que se cierre
       },
       )
     }
     getListUsers(): void {
       this.adminService.getAllUsers().subscribe((resp) => {
-        console.log(resp, 'RESP-GET-ALL-USERS');
-        this.users = resp;
         this.filterUsersByRole();
       })
     }
