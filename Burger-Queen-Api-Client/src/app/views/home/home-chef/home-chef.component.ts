@@ -28,14 +28,24 @@ export class HomeChefComponent implements OnInit {
       next: (resp) => {
         console.log(resp);
         this.orders = resp; 
-        // this.sortOrders();
+        this.sortOrdersByIdDescending();
         this.filterCardsByStatus();
         // llamar nuevamente el método para actualizar ¿?
+        
       },
       error: (err) => {
         console.log(err);
       }
     })
+  }
+
+  sortOrdersByIdDescending():void{
+    this.orders.sort((a: any, b: any)=>{
+      // const dateA = new Date(a.formattedDate);
+      // const dateB = new Date(b.formattedDate);
+      // return dateA.getTime()-  dateB.getTime() ;
+      return b.id - a.id;
+    });
   }
 
 // REVISAR LA FUNCIÓN.. VER LO DEL LLAMADO DE LAS ÓRDENES Y INCORPORAR EN EL FILTERCARDS BY STATUS
@@ -47,13 +57,7 @@ export class HomeChefComponent implements OnInit {
     console.log(this.deliveredOrders, 'DELIVERED ORDERS');
   }
 
-  // sortOrders():void{
-  //   this.orders.sort((a: any, b: any)=>{
-  //     const dateA = new Date(a.formattedDate);
-  //     const dateB = new Date(b.formattedDate);
-  //     return dateA.getTime() - dateB.getTime();
-  //   });
-  // }
+
   showTabContent(status: string): void {
     this.selectedFilter = status;
   }
